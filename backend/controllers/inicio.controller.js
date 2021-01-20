@@ -1,5 +1,3 @@
-const { get } = require('mongoose');
-const { insertMany, update } = require('../models/inicio.dto.js');
 const INICIO = require('../models/inicio.dto.js');
 
 const CONTROLADOR = {
@@ -47,7 +45,7 @@ const CONTROLADOR = {
      */
     async update(req, res) {
         try {
-            let inicio = await INICIO.findOneAndUpdate(req.body, req.body);
+            let inicio = await INICIO.findOneAndUpdate(req.body._id, req.body);
             res.status(201).send({
                 message: 'Datos del inicio actualizado correctamente.',
                 inicio
@@ -67,7 +65,7 @@ const CONTROLADOR = {
      */
     async delete(req, res) {
         try {
-            let inicio = await INICIO.deleteOne(req.body);
+            let inicio = await INICIO.deleteOne(req.body._id);
             res.status(201).send({
                 message: 'Datos del inicio eliminados correctamente.',
                 inicio
@@ -80,3 +78,5 @@ const CONTROLADOR = {
         }
     },
 }
+
+module.exports = CONTROLADOR;

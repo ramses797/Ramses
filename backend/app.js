@@ -5,14 +5,14 @@ const MONGOOSE = require('mongoose');
 /**
  * Importamos el archivo .env
  */
-require('donenv').conig();
+require('dotenv').config();
 
 /**
  * Recojemos los datos del archivo .env
  */
-const PORT = precess.env.PORT;
-const URI = proces.env.ATLAS_URI;
-const MONGO_OK_MSG = proces.env.MONGO_CONNECTION_OK_MSG;
+const PORT = process.env.PORT;
+const URI = process.env.ATLAS_URI;
+const MONGO_OK_MSG = process.env.MONGO_CONNECTION_OK_MSG;
 const LOCALHOST_URL = process.env.LOCALHOST_URL;
 const SO_MSG = process.env.SERVER_ONLINE_MSG;
 
@@ -24,7 +24,7 @@ const SO_MSG = process.env.SERVER_ONLINE_MSG;
 MONGOOSE.connect(URI,
     {
         useNewUrlParser: true,
-        useUndefinedTopology: true,
+        useUnifiedTopology: true,
         useCreateIndex: true,
         useFindAndModify: true
     }).then(() => console.log(MONGO_OK_MSG)).catch(console.error);
@@ -44,6 +44,9 @@ const _INICIO = require('./routes/inicio.router.js');
  */
 const APP = EXPRESS();
 
+/**
+ * Sca por consola los datos de la peticion Ej.(Donde se ejecuto, timepo de ejecucion...)
+ */
 APP.use(MORGAN('combined'));
 APP.use(EXPRESS.urlencoded({
     extended: true

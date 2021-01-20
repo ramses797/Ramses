@@ -2,7 +2,7 @@ const MONGOOSE = require('mongoose');
 
 const INICIO = MONGOOSE.Schema (
     {
-        tiutlo: {
+        titulo: {
             type: String
         },
         subtitulo: {
