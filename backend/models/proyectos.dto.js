@@ -11,4 +11,7 @@ const PROYECTOS = MONGOOSE.Schema(
         
     },
     {timestamps: true}
-)
+);
+
+const MODEL = MONGOOSE.model('proyectos', PROYECTOS);
+module.exports = MODEL;

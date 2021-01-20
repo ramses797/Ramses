@@ -19,10 +19,7 @@ const CONTROLADOR = {
     async getAll(req, res) {
         try {
             let proyectos = await PROYECTOS.find({});
-            res.status(200).send({
-                message: 'Datos al recoger los datos de los proyectos.',
-                proyectos
-            });
+            res.status(200).send(proyectos);
         } catch(e) {
             res.status(500).send({
                 message: 'Error al recoger los datos de los proyectos',
@@ -34,10 +31,7 @@ const CONTROLADOR = {
     async getOneById(req, res) {
         try {
             let proyectos = await PROYECTOS.findById(req.body._id);
-            res.status(200).send({
-                message: 'Datos de un proyecto recogidos correctamente.',
-                proyectos
-            });
+            res.status(200).send(proyectos);
         } catch(e) {
             res.status(500).send({
                 message: 'Error al recoger los datos de un proyecto.',
