@@ -3,7 +3,7 @@ const PROYECTOS = require('../models/proyectos.dto');
 const CONTROLADOR = {
     async insert(req, res) {
         try {
-            let proyectos = await PROYECTOS.insert(req.body);
+            let proyectos = await PROYECTOS.create(req.body);
             res.status(201).send({
                 message: 'Datos de los proyectos insertados con exito.',
                 proyectos
@@ -30,7 +30,7 @@ const CONTROLADOR = {
 
     async getOneById(req, res) {
         try {
-            let proyectos = await PROYECTOS.findById(req.body._id);
+            let proyectos = await PROYECTOS.findOne(req.body._id);
             res.status(200).send(proyectos);
         } catch(e) {
             res.status(500).send({
@@ -42,7 +42,7 @@ const CONTROLADOR = {
 
     async updateOneById(req, res) {
         try {
-            let proyectos = await PROYECTOS.findByIdAndUpdate(req.body._id, req.body);
+            let proyectos = await PROYECTOS.findOneAndUpdate(req.body._id, req.body);
             res.status(201).send({
                 message: 'Datos de un proyecto modificados correctamente.',
                 proyectos
@@ -57,7 +57,7 @@ const CONTROLADOR = {
 
     async delete(req, res) {
         try {
-            let proyectos = await PROYECTOS.delete(req.body._id);
+            let proyectos = await PROYECTOS.deleteOne(req.body._id);
             res.status(201).send({
                 message: 'Datos de un proyecto eliminados correctamente.',
                 proyectos
@@ -71,4 +71,4 @@ const CONTROLADOR = {
     }
 };
 
-module.export = CONTROLADOR;
+module.exports = CONTROLADOR;
