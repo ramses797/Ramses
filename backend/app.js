@@ -38,6 +38,7 @@ const CORS = require('./middlewares/cors.js');
  * Importamos los archivos de rutas
  */
 const _INICIO = require('./routes/inicio.router.js');
+const _PROYECTOS = require('./routes/proyectos.router.js');
 
 /**
  * Preguntar para que es esto.
@@ -56,6 +57,7 @@ APP.use(EXPRESS.json());
 APP.use(CORS);
 
 APP.use('/inicio', _INICIO);
+APP.use('/proyectos', _PROYECTOS)
 
 APP.listen(PORT, () => {
     console.log(SO_MSG + PORT);
