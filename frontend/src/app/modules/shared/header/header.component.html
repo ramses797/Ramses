@@ -1,15 +1,18 @@
 <nav class="header row-center">
-    <div class="header-contenedor row">
-        <div class="botonera">
+    <div class="header-contenedor row-center">
+        <div class="logo column-center">
             <p class="LOGO">RMR</p>
         </div>
         <div class="menu">
-            <ul class="menu-items row">
+            <ul *ngIf="screen > 425" class="menu-items row">
                 <li class="item row-center"><a>INICIO</a></li>
                 <li class="item row-center"><a>PROYECTOS</a></li>
                 <li class="item row-center"><a>SOBRE MI</a></li>
                 <li class="item row-center"><a>CONTACTO</a></li>
             </ul>
+            <div *ngIf="screen <= 425" class="menu-desplegable">
+                <i class="fas fa-bars icono"></i>
+            </div>
         </div>
     </div>
 </nav>

@@ -8,8 +8,10 @@
     &-contenedor {
         justify-content: space-between;
         width: 90%;
+        height: 70px;
 
-        .botonera {
+        .logo {
+            height: 100%;
             color:$principal-color;
         }
 
@@ -32,6 +34,12 @@
                     }
                 }
             }
+
+            .icono {
+                font-size: 25px;
+                color: $principal-color;
+            }
+
         }
     }
 }

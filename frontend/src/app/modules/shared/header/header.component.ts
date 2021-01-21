@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  public screen;
   constructor() { }
 
   ngOnInit(): void {
+    this.screen = screen.width;
+    console.log(this.screen);
   }
 
 }
