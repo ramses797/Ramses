@@ -1,9 +1,8 @@
 @import '../../../styles/index.scss';
 .header {
-    display: flex;
-    justify-content: center;
     width: 100%;
-    background-color: $components-light;
+    height: 70px;
+    background-color: $components-dark;
     
 
     &-contenedor {
@@ -11,18 +10,28 @@
         width: 90%;
 
         .botonera {
-            color:green;
+            color:#0cb9ab;
         }
 
         .menu {
-
             &-items{
                 list-style: none;
                 padding: 0;
                 width: 500px;
+                height: 100%;
 
                 .item {
+                    display: flex;
+                    align-items: center;
                     margin: auto;
+                    height: 100%;
+                    color: #0cb9ab;
+                    transition: 0.5s;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
                 }
             }
         }

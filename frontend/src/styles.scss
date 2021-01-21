@@ -3,5 +3,9 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: $background-light;
+    background-color: $background-dark;
+}
+
+ul {
+    margin: 0;
 }
