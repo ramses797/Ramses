@@ -1,12 +1,12 @@
+@import '../../../styles/index.scss';
 .header {
     display: flex;
     justify-content: center;
     width: 100%;
+    background-color: $components-light;
     
 
     &-contenedor {
-        display: flex;
-        flex-direction: row;
         justify-content: space-between;
         width: 90%;
 
@@ -17,9 +17,13 @@
         .menu {
 
             &-items{
-                display: flex;
-                flex-direction: row;
                 list-style: none;
+                padding: 0;
+                width: 500px;
+
+                .item {
+                    margin: auto;
+                }
             }
         }
     }
