@@ -1,9 +1,10 @@
+@import "./assets/fontawesome/css/all.css";
 @import 'src/app/styles';
 
 body {
     display: flex;
     flex-direction: column;
-    background-color: $background-dark;
+    background-color: $background-light;
 }
 
 ul {

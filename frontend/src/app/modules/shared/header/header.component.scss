@@ -10,7 +10,7 @@
         width: 90%;
 
         .botonera {
-            color:#0cb9ab;
+            color:$principal-color;
         }
 
         .menu {
@@ -23,7 +23,7 @@
                 .item {
                     margin: auto;
                     height: 100%;
-                    color: #0cb9ab;
+                    color: $principal-color;
                     transition: 0.5s;
                     cursor: pointer;
 
