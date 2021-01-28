@@ -5,6 +5,6 @@ export function empresaValidator(): ValidatorFn {
         if(!control.value) {
             return null;
         }
-        return !/^[a-zA-ZÀ-ÿ\s]*$/.test(control.value) ? { empresa: true } : null;
+        return !/^[a-zA-ZÀ-ÿ0-9\s]*$/.test(control.value) ? { empresa: true } : null;
     };
 }

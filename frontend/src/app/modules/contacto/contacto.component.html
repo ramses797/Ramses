@@ -6,20 +6,22 @@
                 <div class="column mBottom20">
                     <p class="titulo">Nombre:</p>
                     <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre" placeholder="Ramsés Moreno Rodríguez" for="nombre" [ngClass]="{invalid: nombre.invalid && (nombre.dirty || nombre.touched)}" required nombre/>
-                    <span [ngClass]="{error: nombre.invalid && (nombre.dirty || nombre.touched)}" >Este campo no acepta numeros.</span>
+                    <span [ngClass]="{error: nombre.invalid && (nombre.dirty || nombre.touched)}" >Este campo no acepta numeros. Ni puede estar vacío.</span>
                 </div>
                 <div class="column mBottom20">
                     <p class="titulo">Empresa:</p>
                     <input type="text" name="empresa" #empresa="ngModel" [(ngModel)]="contacto.empresa" placeholder="EncoderApe" for="empresa" [ngClass]="{invalid: empresa.invalid && (empresa.dirty || empresa.touched)}" required empresa/>
-                    <span>Este campo no acepta numeros.</span>
+                    <span [ngClass]="{error: empresa.invalid && (empresa.dirty || empresa.touched)}" >Este campo no puede estar vacío.</span>
                 </div>
                 <div class="column mBottom20">
                     <p class="titulo">Correo:</p>
                     <input type="email" name="correo" #correo="ngModel" [(ngModel)]="contacto.correo" placeholder="Nombre@dominio.com" for="correo" [ngClass]="{invalid: correo.invalid && (correo.dirty || correo.touched)}" required correo/>
-                </div>
+                    <span [ngClass]="{error: correo.invalid && (correo.dirty || correo.touched)}">Este campo debe de tener esta estructura: nombre@dominio.com. Ni puede esta vacío</span>
+                 </div>
                 <div class="column mBottom20">
                     <p class="titulo">Explicacion:</p>
-                    <textarea name="explicacion" #explicacion="ngModel" [(ngModel)]="contacto.explicacion" placeholder="Nos gustaria tener una entrevista..."  [ngClass]="invalid: explicacion.touched" required explicacion></textarea>
+                    <textarea name="explicacion" #explicacion="ngModel" [(ngModel)]="contacto.explicacion" placeholder="Nos gustaria tener una entrevista..." [ngClass]="{invalid: explicacion.touched}" required explicacion></textarea>
+                    <span [ngClass]="{error: explicacion.touched}">Este campo no puede estar vacío.</span>
                 </div>
                 <div class="politicas row">
                     <input class="checkbox" type="checkbox" required/>

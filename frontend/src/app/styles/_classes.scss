@@ -82,7 +82,6 @@ textarea {
     height: 90px;
     background-color: transparent;
     margin-top: 10px;
-    margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid $subtitle-color;
     opacity: 0.5;
@@ -92,6 +91,11 @@ textarea {
 
     &:hover, &:focus {
         border-bottom: 1px solid $title-color;
+    }
+
+    &.invalid {
+        color: $color-error;
+        border-bottom: 1px solid $color-error;
     }
 }
 
