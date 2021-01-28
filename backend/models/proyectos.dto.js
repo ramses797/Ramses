@@ -7,6 +7,9 @@ const PROYECTOS = MONGOOSE.Schema(
         },
         empresa: {
             type: String
+        },
+        tecnologias: {
+            type: String
         }
         
     },

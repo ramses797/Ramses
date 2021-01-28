@@ -1,3 +1,5 @@
+@import './_variables.scss';
+
 h1 {
     font-family: Comfortaa;
     font-size: 30px;
@@ -26,8 +28,26 @@ a {
     font-family: Comfortaa;
     font-size: 15px;
     font-weight: 600;
+    color: $title-color;
 }
 .LOGO {
     font-family: Rock Salt;
     font-size: 20px;
+    color: $title-color;
+}
+
+.titulo {
+    color: $title-color;
+}
+
+.subtitulo {
+    color: $subtitle-color;
+}
+
+.texto{
+    color: $text-color;
+}
+
+::placeholder {
+    color: $subtitle-color;
 }

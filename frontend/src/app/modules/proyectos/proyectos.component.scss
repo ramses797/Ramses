@@ -1,0 +1,11 @@
+@import '../../styles/index.scss';
+
+.contenedorProyectos {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    .proyecto {
+        width: 300px;
+        margin-top: 50px
+    }
+}
