@@ -10,6 +10,8 @@ import { InicioComponent } from 'src/app/modules/inicio/inicio.component';
 import { ProyectosComponent } from 'src/app/modules/proyectos/proyectos.component';
 import { ContactoComponent } from 'src/app/modules/contacto/contacto.component';
 import { nombreDirective } from 'src/app/modules/shared/validators/nombre/nombre.directive';
+import { empresaDirective } from 'src/app/modules/shared/validators/empresa/empresa.directive';
+import { correoDirective } from 'src/app/modules/shared/validators/correo/correo.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { nombreDirective } from 'src/app/modules/shared/validators/nombre/nombre
     InicioComponent,
     ProyectosComponent,
     ContactoComponent,
-    nombreDirective
+    nombreDirective,
+    empresaDirective,
+    correoDirective
   ],
   imports: [
     BrowserModule,

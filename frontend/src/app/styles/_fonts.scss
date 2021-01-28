@@ -30,6 +30,19 @@ a {
     font-weight: 600;
     color: $title-color;
 }
+
+span {
+    font-family: Comfortaa;
+    font-size: 12px;
+    font-weight: 40px;
+    visibility: hidden;
+
+    &.error {
+        color: $color-error;
+        visibility: visible;
+    }
+}
+
 .LOGO {
     font-family: Rock Salt;
     font-size: 20px;

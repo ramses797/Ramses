@@ -49,13 +49,15 @@
 .w100 {
     width: 100%;
 }
+.mBottom20 {
+    margin-bottom: 20px;
+}
 
 input {
     width: 90%;
     height: 22px;
     background-color: transparent;
     margin-top: 10px;
-    margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid $subtitle-color;
     opacity: 0.5;
