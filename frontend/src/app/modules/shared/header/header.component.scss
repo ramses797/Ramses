@@ -45,6 +45,11 @@
             &-icono {
                 font-size: 25px;
                 color: $title-color;
+                transition: 0.5s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
         }
     }
