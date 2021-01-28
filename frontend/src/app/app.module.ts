@@ -10,7 +10,6 @@ import { InicioComponent } from 'src/app/modules/inicio/inicio.component';
 import { ProyectosComponent } from 'src/app/modules/proyectos/proyectos.component';
 import { ContactoComponent } from 'src/app/modules/contacto/contacto.component';
 import { nombreDirective } from 'src/app/modules/shared/validators/nombre/nombre.directive';
-import { correoDirective } from 'src/app/modules/shared/validators/correo/correo.directive'
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { correoDirective } from 'src/app/modules/shared/validators/correo/correo
     InicioComponent,
     ProyectosComponent,
     ContactoComponent,
-    nombreDirective,
-    correoDirective
+    nombreDirective
   ],
   imports: [
     BrowserModule,

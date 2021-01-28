@@ -6,9 +6,9 @@
                 <p class="titulo">Nombre:</p>
                 <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre" placeholder="Ramsés Moreno Rodríguez" for="nombre" [ngClass]="{invalid: nombre.invalid && (nombre.dirty || nombre.touched)}" required nombre/>
                 <p class="titulo">Empresa:</p>
-                <input type="text" placeholder="EncoderApe" required/>
+                <input type="text" name="empresa" #empresa="ngModel" [(ngModel)]="contacto.empresa" placeholder="EncoderApe" for="empresa" [ngClass]="{invalid: empresa.invalid && (empresa.dirty || empresa.touched)}" required empresa/>
                 <p class="titulo">Correo:</p>
-                <input type="email" name="correo" #correo="ngModel" [(ngModel)]="contacto.correo" placeholder="Nombre@dominio.com" for="correo" [ngClass]="{invalid: correo.invalid && (correo.dirty || correo.touched)}"required correo/>
+                <input type="email" name="correo" #correo="ngModel" [(ngModel)]="contacto.correo" placeholder="Nombre@dominio.com" for="correo" [ngClass]="{invalid: correo.invalid && (correo.dirty || correo.touched)}" required correo/>
                 <p class="titulo">Explicacion:</p>
                 <textarea name="explicacion" #explicacion="ngModel" [(ngModel)]="contacto.explicacion" placeholder="Nos gustaria tener una entrevista..."  required></textarea>
                 <div class="politicas row">

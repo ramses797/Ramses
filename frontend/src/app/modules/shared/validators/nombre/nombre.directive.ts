@@ -4,7 +4,7 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validators } from '@a
 import { nombreValidator } from 'src/app/modules/shared/validators/nombre/nombre.validator';
 
 @Directive({
-    selector: '[nombre]',
+    selector: 'nombre',
     providers: [
         {
             provide: NG_VALIDATORS,
