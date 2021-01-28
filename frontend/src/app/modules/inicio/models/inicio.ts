@@ -1,5 +1,5 @@
 export type Inicio = {
-    titulo: String;
-    subtitulo: String;
-    explicacionPersonal: String;
+    titulo: string;
+    subtitulo: string;
+    explicacionPersonal: string;
 }

@@ -101,3 +101,12 @@ textarea {
         background-color: $title-color;
     }
 }
+
+button {
+    width: 100px;
+    background-color: transparent;
+    border: 1px solid $title-color;
+    color: $title-color;
+
+    margin-top: 30px;
+}

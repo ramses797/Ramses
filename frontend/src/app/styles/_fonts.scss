@@ -49,5 +49,10 @@ a {
 }
 
 ::placeholder {
+    font-family: Comfortaa;
     color: $subtitle-color;
+}
+
+input, textarea {
+    font-family: Comfortaa;
 }
