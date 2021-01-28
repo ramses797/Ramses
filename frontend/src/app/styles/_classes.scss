@@ -67,6 +67,11 @@ input {
     &:hover, &:focus {
         border-bottom: 1px solid $title-color;
     }
+
+    &.invalid {
+        color: $color-error;
+        border-bottom: 1px solid $color-error;
+    }
 }
 
 
