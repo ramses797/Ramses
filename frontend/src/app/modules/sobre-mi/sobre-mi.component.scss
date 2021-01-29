@@ -7,9 +7,11 @@
 
 .estudios, .trabajos, .cursos {
     display: none;
+    opacity: 0;
     transition: 0.5s;
 }
 
 .estudios.active, .trabajos.active, .cursos.active {
     display: block;
+    opacity: 1;
 }

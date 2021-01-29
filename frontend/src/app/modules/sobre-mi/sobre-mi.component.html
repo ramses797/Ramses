@@ -2,24 +2,29 @@
     <section class="sobreMi-contenedor column w50">
         <h1 class="titulo">Sobre mi</h1>
             <ul class="menu row w50">
-                <li (click)="cambioVista(estudios)">ESTUDIOS</li>
-                <li (click)="cambioVista(trabajos)">TRABAJOS</li>
-                <li (click)="cambioVista(cursos)">CURSOS</li>
+                <li (click)="cambioVista(estudios)" [ngClass]="{active: eleccion == 'estudios'}">ESTUDIOS</li>
+                <li (click)="cambioVista(trabajos)" [ngClass]="{active: eleccion == 'trabajos'}">TRABAJOS</li>
+                <li (click)="cambioVista(cursos)" [ngClass]="{active: eleccion == 'cursos'}">CURSOS</li>
             </ul>
 
             <section class="estudios column" [ngClass]="{active: eleccion == 'estudios'}">
-                <article class="estudio column">
-                    <p class="subtitulo">fechaInicio - fechaFin</p>
+                <article class="estudio column mBottom50">
+                    <p class="subtitulo mBottom10">fechaInicio - fechaFin</p>
                     <p class="subtitulo">Mislata, Valencia</p>
                     <h3 class="titulo">Sistemas Microinformaticos y Redes</h3>
                     <p class="texto">En este curso aprendi a reparar ordenadores, su mantenimiento, el manejo de excel, word, powerpoint y empece a entrar al entorno de la programacion.</p>
-                    <p></p>
+                </article>
+                <article class="estudio column mBottom50">
+                    <p class="subtitulo mBottom10">fechaInicio - fechaFin</p>
+                    <p class="subtitulo">Mislata, Valencia</p>
+                    <h3 class="titulo">Sistemas Microinformaticos y Redes</h3>
+                    <p class="texto">En este curso aprendi a reparar ordenadores, su mantenimiento, el manejo de excel, word, powerpoint y empece a entrar al entorno de la programacion.</p>
                 </article>
             </section>
 
             <section class="trabajos column" [ngClass]="{active: eleccion == 'trabajos'}">
                 <article class="trabajo column">
-                    <p class="subtitulo">fechaInicio - fechaFin</p>
+                    <p class="subtitulo mBottom10">fechaInicio - fechaFin</p>
                     <p class="subtitulo">Quart de poblet, Valencia</p>
                     <h3 class="titulo">Tecnico en Sistemas Microinformaticos y Redes</h3>
                     <p class="texto">Reparando ordenadores y otros dispositivos.</p>

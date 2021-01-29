@@ -49,8 +49,17 @@
 .w100 {
     width: 100%;
 }
+
+.mBottom10 {
+    margin-bottom: 10px;
+}
+
 .mBottom20 {
     margin-bottom: 20px;
+}
+
+.mBottom50 {
+    margin-bottom: 50px;
 }
 
 ul {
@@ -62,8 +71,12 @@ li {
     cursor: pointer;
     transition: 0.5s;
 
-    &:hover {
+    &:hover, &.active {
         transform: scale(1.2);
+    }
+
+    &.active {
+        font-weight: 700;
     }
 }
 
@@ -134,4 +147,5 @@ button {
     border: 1px solid $title-color;
     color: $title-color;
     cursor: pointer;
+    outline: none;
 }
