@@ -9,7 +9,6 @@ import { Inicio } from 'src/app/modules/inicio/models/inicio';
 @Injectable({
     providedIn: 'root'
 })
-
 export class InicioService extends CrudService<Inicio>{
 
     constructor(http: HttpClient) {
@@ -17,10 +16,7 @@ export class InicioService extends CrudService<Inicio>{
         this.withUrlPrefix(PREFIX.inicio);
     }
 
-    insert(item: Inicio): any {
-        this.insert(item).subscribe();
-    }
-    get(): Observable<Inicio[]> {
+    read(): Observable<Inicio[]> {
         return this.get();
     }
     

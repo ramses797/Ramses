@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Inicio } from 'src/app/modules/inicio/models/inicio'
-import { InicioService } from 'src/app/modules/inicio/services/inicio.service'
+import { Inicio } from 'src/app/modules/inicio/models/inicio';
+import { InicioService } from 'src/app/modules/inicio/services/inicio.service';
 
 @Component({
   selector: 'app-inicio',
@@ -9,7 +9,7 @@ import { InicioService } from 'src/app/modules/inicio/services/inicio.service'
 })
 export class InicioComponent implements OnInit {
   inicio: Inicio;
-  //inicios = this.inicioService.get();
+  inicios = this.inicioService.read();
 
   constructor(private inicioService: InicioService) { 
     this.inicio = {
@@ -20,15 +20,7 @@ export class InicioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.insertarInicio(this.inicio);
-    //console.log(this.inicios);
+    console.log(this.inicios);
   }
-
-  /*private insertarInicio(item){
-    this.inicioService.insert(item);
-  }*/
-  /*private leerInicio(): void {
-    console.log(this.inicioService.get());
-  }*/
 
 }

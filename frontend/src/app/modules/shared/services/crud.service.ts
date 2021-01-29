@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { BASEURL } from 'src/app/modules/shared/config/webApiPrefix.config';
 
 @Injectable()
-
 export class CrudService<T> {
     apiRest: String;
 
@@ -23,7 +22,7 @@ export class CrudService<T> {
      * @param item 
      */
     insert(item: T): Observable<T> {
-        return this.http.post<T>(`${this.apiRest}/create`, item);
+        return this.http.post<T>(`${this.apiRest}/insert`, item);
     }
 
     /**
