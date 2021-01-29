@@ -148,4 +148,8 @@ button {
     color: $title-color;
     cursor: pointer;
     outline: none;
+
+    &.disabled {
+        opacity: 0.3;
+    }
 }

@@ -2,7 +2,7 @@
     <section class="contacto-contenedor column w50">
         <h1 class="titulo">Contacto</h1>
         <div class="row">
-            <form class="formulario column w50">
+            <form class="formulario column w50" #contctoForm="ngForm">
                 <div class="column mBottom20">
                     <p class="titulo">Nombre:</p>
                     <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre" placeholder="Ramsés Moreno Rodríguez" for="nombre" [ngClass]="{invalid: nombre.invalid && (nombre.dirty || nombre.touched)}" required nombre/>
@@ -28,7 +28,7 @@
                     <p class="texto w75">La información que proporciones unicamente se utilizara para hacerme llegar un correo que les hara ponerse en contacto conmigo.</p>
                 </div>
                 <div class="enviar column-center">
-                    <button>ENVIAR</button>
+                    <button [ngClass]="{disabled: contactoForm.invalid}">ENVIAR</button>
                 </div>
             </form>
             <article class="texto w50">
