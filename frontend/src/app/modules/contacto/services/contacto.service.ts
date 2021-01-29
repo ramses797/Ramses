@@ -4,24 +4,17 @@ import { Observable } from 'rxjs';
 
 import { CrudService } from 'src/app/modules/shared/services/crud.service';
 import { PREFIX } from 'src/app/modules/shared/config/webApiPrefix.config';
-import { Inicio } from 'src/app/modules/inicio/models/inicio';
+import { Contacto } from 'src/app/modules/contacto/models/contacto';
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class InicioService extends CrudService<Inicio>{
+export class ContactoService extends CrudService<Contacto> {
 
     constructor(http: HttpClient) {
         super(http);
-        this.withUrlPrefix(PREFIX.inicio);
+        this.withUrlPrefix(PREFIX.contacto);
     }
 
-    insert(item: Inicio): any {
-        this.insert(item).subscribe();
-    }
-    get(): Observable<Inicio[]> {
-        return this.get();
-    }
-    
 }
