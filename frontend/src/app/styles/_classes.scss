@@ -53,6 +53,20 @@
     margin-bottom: 20px;
 }
 
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
 input {
     width: 90%;
     height: 22px;
@@ -119,4 +133,5 @@ button {
     background-color: transparent;
     border: 1px solid $title-color;
     color: $title-color;
+    cursor: pointer;
 }

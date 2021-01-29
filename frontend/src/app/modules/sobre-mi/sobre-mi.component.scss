@@ -1,0 +1,15 @@
+@import '../../styles/index.scss';
+
+.menu {
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.estudios, .trabajos, .cursos {
+    display: none;
+    transition: 0.5s;
+}
+
+.estudios.active, .trabajos.active, .cursos.active {
+    display: block;
+}

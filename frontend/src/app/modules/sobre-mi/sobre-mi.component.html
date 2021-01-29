@@ -1,3 +1,36 @@
-<main class="sobreMi column-center w100">
+<main class="sobreMi column-center vw90">
+    <section class="sobreMi-contenedor column w50">
+        <h1 class="titulo">Sobre mi</h1>
+            <ul class="menu row w50">
+                <li (click)="cambioVista(estudios)">ESTUDIOS</li>
+                <li (click)="cambioVista(trabajos)">TRABAJOS</li>
+                <li (click)="cambioVista(cursos)">CURSOS</li>
+            </ul>
 
+            <section class="estudios column" [ngClass]="{active: eleccion == 'estudios'}">
+                <article class="estudio column">
+                    <p class="subtitulo">fechaInicio - fechaFin</p>
+                    <p class="subtitulo">Mislata, Valencia</p>
+                    <h3 class="titulo">Sistemas Microinformaticos y Redes</h3>
+                    <p class="texto">En este curso aprendi a reparar ordenadores, su mantenimiento, el manejo de excel, word, powerpoint y empece a entrar al entorno de la programacion.</p>
+                    <p></p>
+                </article>
+            </section>
+
+            <section class="trabajos column" [ngClass]="{active: eleccion == 'trabajos'}">
+                <article class="trabajo column">
+                    <p class="subtitulo">fechaInicio - fechaFin</p>
+                    <p class="subtitulo">Quart de poblet, Valencia</p>
+                    <h3 class="titulo">Tecnico en Sistemas Microinformaticos y Redes</h3>
+                    <p class="texto">Reparando ordenadores y otros dispositivos.</p>
+                </article>
+            </section>
+
+            <section class="cursos column" [ngClass]="{active: eleccion == 'cursos'}">
+                <article class="curso column">
+                    <h3 class="titulo">Curso angular 11 - de 0 a profesional</h3>
+                    <p class="texto">Dominio de angular en todas sus versiones, dominar typeScript dentro de angular, desarrollar aplicaciones SPA, Mejorar la capacidad de adaptacion a otros frameworks JavaScript.</p>
+                </article>
+            </section>
+    </section>
 </main>
