@@ -12,6 +12,7 @@ import { ContactoComponent } from 'src/app/modules/contacto/contacto.component';
 import { nombreDirective } from 'src/app/modules/shared/validators/nombre/nombre.directive';
 import { empresaDirective } from 'src/app/modules/shared/validators/empresa/empresa.directive';
 import { correoDirective } from 'src/app/modules/shared/validators/correo/correo.directive';
+import { SobreMiComponent } from './modules/sobre-mi/sobre-mi.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { correoDirective } from 'src/app/modules/shared/validators/correo/correo
     ContactoComponent,
     nombreDirective,
     empresaDirective,
-    correoDirective
+    correoDirective,
+    SobreMiComponent
   ],
   imports: [
     BrowserModule,
