@@ -16,7 +16,7 @@ const CONTROLADOR = {
         }
     },
 
-    async getAll(req, res) {
+    async get(req, res) {
         try {
             let proyectos = await PROYECTOS.find({});
             res.status(200).send(proyectos);

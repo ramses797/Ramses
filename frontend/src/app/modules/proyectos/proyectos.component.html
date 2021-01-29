@@ -2,20 +2,10 @@
     <div class="proyectos-contenedor column w50">
         <h1 class="titulo">PROYECTOS</h1>
         <section class="contenedorProyectos row">
-            <article class="proyecto column">
-                <h2 class="titulo">Vacuno Mayor</h2>
-                <h3 class="subtitulo">Grupo ICS Solutions</h3>
-                <p class="texto">Prestashop</p>
-            </article>
-            <article class="proyecto column">
-                <h2 class="titulo">UVA Valencia</h2>
-                <h3 class="subtitulo">Grupo ICS Solutions</h3>
-                <p class="texto">PHP, JavaScript</p>
-            </article>
-            <article class="proyecto column">
-                <h2 class="titulo">Arrova Academia</h2>
-                <h3 class="subtitulo">EncoderApe</h3>
-                <p class="texto">MongoDB, Express, Node.js, Angular</p>
+            <article class="proyecto column" *ngFor="let proyecto of proyectos | async">
+                <h2 class="titulo">{{proyecto.nombreProyecto}}</h2>
+                <h3 class="subtitulo">{{proyecto.empresa}}</h3>
+                <p class="texto">{{proyecto.tecnologias}}</p>
             </article>
         </section>
     </div>

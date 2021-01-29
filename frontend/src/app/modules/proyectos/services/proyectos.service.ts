@@ -16,4 +16,8 @@ export class ProyectosService extends CrudService<Proyectos> {
         super(http);
         this.withUrlPrefix(PREFIX.proyectos);
     }
+
+    read(): Observable<Proyectos[]> {
+        return this.get();
+    }
 }
