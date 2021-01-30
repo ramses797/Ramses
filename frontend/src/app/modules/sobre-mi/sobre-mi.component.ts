@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { EstudiosService } from 'src/app/modules/sobre-mi/services/estudios.service';
+import { TrabajosService } from 'src/app/modules/sobre-mi/services/trabajos.service';
+import { CursosService } from 'src/app/modules/sobre-mi/services/cursos.service';
 
 @Component({
   selector: 'app-sobre-mi',
@@ -6,15 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sobre-mi.component.scss']
 })
 export class SobreMiComponent implements OnInit {
-  estudios: string = 'estudios';
-  trabajos: string = 'trabajos';
-  cursos: string = 'cursos';
+  estudio: string = 'estudios';
+  trabajo: string = 'trabajos';
+  curso: string = 'cursos';
   eleccion: string = 'estudios';
 
-  constructor() { }
+  estudios = this.estudiosService.read();
+  trabajos = this.trabajosService.read();
+  cursos = this.cursosService.read();
 
-  ngOnInit(): void {
-  }
+  constructor(private estudiosService: EstudiosService,
+              private trabajosService: TrabajosService,
+              private cursosService: CursosService
+              ) { }
+
+  ngOnInit(): void {}
 
   cambioVista(vista) {
     this.eleccion = vista;

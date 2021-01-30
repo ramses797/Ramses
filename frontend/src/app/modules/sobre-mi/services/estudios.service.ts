@@ -9,7 +9,7 @@ import { Estudios } from 'src/app/modules/sobre-mi/models/estudios';
 @Injectable({
     providedIn: 'root'
 })
-export class SobreMiService extends CrudService<Estudios> {
+export class EstudiosService extends CrudService<Estudios> {
 
     constructor(http: HttpClient) {
         super(http);

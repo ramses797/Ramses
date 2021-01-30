@@ -2,9 +2,9 @@
     <section class="sobreMi-contenedor column w50">
         <h1 class="titulo">Sobre mi</h1>
             <ul class="menu row w50">
-                <li (click)="cambioVista(estudios)" [ngClass]="{active: eleccion == 'estudios'}">ESTUDIOS</li>
-                <li (click)="cambioVista(trabajos)" [ngClass]="{active: eleccion == 'trabajos'}">TRABAJOS</li>
-                <li (click)="cambioVista(cursos)" [ngClass]="{active: eleccion == 'cursos'}">CURSOS</li>
+                <li (click)="cambioVista(estudio)" [ngClass]="{active: eleccion == 'estudios'}">ESTUDIOS</li>
+                <li (click)="cambioVista(trabajo)" [ngClass]="{active: eleccion == 'trabajos'}">TRABAJOS</li>
+                <li (click)="cambioVista(curso)" [ngClass]="{active: eleccion == 'cursos'}">CURSOS</li>
             </ul>
 
             <section class="estudios column" [ngClass]="{active: eleccion == 'estudios'}">
