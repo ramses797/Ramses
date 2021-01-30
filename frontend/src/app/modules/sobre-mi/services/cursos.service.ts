@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { CrudService } from 'src/app/modules/shared/services/crud.service';
 import { PREFIX } from 'src/app/modules/shared/config/webApiPrefix.config';
-import { Estudios } from 'src/app/modules/sobre-mi/models/estudios';
+import { Cursos } from 'src/app/modules/sobre-mi/models/cursos';
 
 @Injectable({
     providedIn: 'root'
 })
-export class SobreMiService extends CrudService<Estudios> {
+export class CursosService extends CrudService<Cursos> {
 
     constructor(http: HttpClient) {
         super(http);
-        this.withUrlPrefix(PREFIX.estudios);
+        this.withUrlPrefix(PREFIX.cursos);
     }
 
-    read(): Observable<Estudios[]> {
+    read(): Observable<Cursos[]> {
         return this.get();
     }
 }
