@@ -5,7 +5,9 @@ import { LogType } from 'src/app/modules/shared/enums/logType';
 const webApiPrefix: WebApiPrefix = {
     inicio: LogType.INICIO,
     proyectos: LogType.PROYECTOS,
-    sobreMi: LogType.SOBREMI,
+    estudios: LogType.ESTUDIOS,
+    trabajos: LogType.TRABAJOS,
+    cursos: LogType.CURSOS,
     contacto: LogType.CONTACTO
 }
 
