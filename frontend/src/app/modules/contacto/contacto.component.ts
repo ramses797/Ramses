@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contacto } from './models/contacto';
+import { ContactoService } from './services/contacto.service';
 
 @Component({
   selector: 'app-contacto',
@@ -9,17 +10,19 @@ import { Contacto } from './models/contacto';
 export class ContactoComponent implements OnInit {
   contacto: Contacto;
 
-  constructor() { 
+  constructor(private contactoService: ContactoService) { 
     this.contacto = {
-      nombre: '',
-      empresa: '',
-      correo: '',
-      explicacion: '',
-      terminos: false
+      nombre: 'ramses',
+      empresa: 'EncoderApe',
+      correo: 'rmorenor97@gmail.com',
+      explicacion: 'shdfhadkjhfasjhdgfjdh',
+      terminos: true
     };
   }
 
   ngOnInit(): void {
+    
+    this.contactoService.create(this.contacto);
   }
 
 }

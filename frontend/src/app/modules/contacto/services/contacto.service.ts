@@ -17,4 +17,8 @@ export class ContactoService extends CrudService<Contacto> {
         this.withUrlPrefix(PREFIX.contacto);
     }
 
+    create(item: Contacto): void {
+        this.insert(item).subscribe();
+    }
+
 }

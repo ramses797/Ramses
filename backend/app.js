@@ -42,6 +42,7 @@ const _PROYECTOS = require('./routes/proyectos.router');
 const _ESTUDIOS = require('./routes/estudios.router');
 const _TRABAJOS = require('./routes/trabajos.router');
 const _CURSOS = require('./routes/cursos.router');
+const _CONTACTO = require('./routes/contacto.router');
 
 /**
  * Preguntar para que es esto.
@@ -64,6 +65,7 @@ APP.use('/proyectos', _PROYECTOS);
 APP.use('/estudios', _ESTUDIOS);
 APP.use('/trabajos', _TRABAJOS);
 APP.use('/cursos', _CURSOS);
+APP.use('/contacto', _CONTACTO);
 
 APP.listen(PORT, () => {
     console.log(SO_MSG + PORT);

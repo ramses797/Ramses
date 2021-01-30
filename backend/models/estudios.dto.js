@@ -20,7 +20,8 @@ const ESTUDIOS = MONGOOSE.Schema (
         aprendizaje: {
             type: String
         }
-    }
+    },
+    {timestamps: true}
 );
 
 const MODEL = MONGOOSE.model('estudios', ESTUDIOS);

@@ -20,7 +20,8 @@ const TRABAJOS = MONGOOSE.Schema (
         tareas: {
             type: String
         } 
-    }
+    },
+    {timestamps: true}
 );
 
 const MODULE = MONGOOSE.model('trabajos', TRABAJOS);

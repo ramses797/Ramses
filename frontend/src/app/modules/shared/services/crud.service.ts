@@ -37,7 +37,7 @@ export class CrudService<T> {
      * @param id
      */
     getById(id: string): Observable<T> {
-        return this.http.get<T>(`${this.apiRest}/read/${id}`);
+        return this.http.get<T>(`${this.apiRest}/getOneById/${id}`);
     }
 
     /**

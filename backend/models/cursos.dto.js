@@ -8,7 +8,8 @@ const CURSOS = MONGOOSE.Schema (
         aprendizaje: {
             type: String
         }
-    }
+    },
+    {timestamps: true}
 );
 
 const MODEL = MONGOOSE.model('cursos', CURSOS);
