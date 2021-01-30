@@ -32,13 +32,16 @@ MONGOOSE.connect(URI,
 /**
  * Importamos los cors
  */
-const CORS = require('./middlewares/cors.js');
+const CORS = require('./middlewares/cors');
 
 /**
  * Importamos los archivos de rutas
  */
-const _INICIO = require('./routes/inicio.router.js');
-const _PROYECTOS = require('./routes/proyectos.router.js');
+const _INICIO = require('./routes/inicio.router');
+const _PROYECTOS = require('./routes/proyectos.router');
+const _ESTUDIOS = require('./routes/estudios.router');
+const _TRABAJOS = require('./routes/trabajos.router');
+const _CURSOS = require('./routes/cursos.router');
 
 /**
  * Preguntar para que es esto.
@@ -57,7 +60,10 @@ APP.use(EXPRESS.json());
 APP.use(CORS);
 
 APP.use('/inicio', _INICIO);
-APP.use('/proyectos', _PROYECTOS)
+APP.use('/proyectos', _PROYECTOS);
+APP.use('/estudios', _ESTUDIOS);
+APP.use('/trabajos', _TRABAJOS);
+APP.use('/cursos', _CURSOS);
 
 APP.listen(PORT, () => {
     console.log(SO_MSG + PORT);
