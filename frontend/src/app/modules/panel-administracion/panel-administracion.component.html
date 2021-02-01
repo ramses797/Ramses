@@ -1,0 +1,37 @@
+<main class="panel flex-center vw90">
+    <section class="column-center w75">
+        <ul class="menu row-center mBottom50 w100">
+            <li (click)="recogerDatos('inicio')">INICIO</li>
+            <li (click)="recogerDatos('proyectos')">PROYECTOS</li>
+            <li (click)="recogerDatos('estudios')">ESTUDIOS</li>
+            <li (click)="recogerDatos('trabajos')">TRABAJOS</li>
+            <li (click)="recogerDatos('cursos')">CUSROS</li>
+            <li (click)="recogerDatos('contactos')">CONTACTOS</li>
+        </ul>
+
+        <section class="column w50">
+            <button class="añadir mBottom50">AÑADIR</button>
+            <div class="inicio" [ngClass]="{active: eleccionTipo == 'inicio'}">
+                <article class="item row-center">
+                    <p class="titulo">Inicio</p>
+                    <div class="row-center">
+                        <button>Modificar</button>
+                        <button>Eliminar</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="proyectos" [ngClass]="{active: eleccionTipo == 'proyectos'}">
+                <article class="item row-center mBottom10" *ngFor="let proyecto of proyectos | async">
+                    <p class="titulo">{{proyecto.nombreProyecto}}</p>
+                    <div>
+                        <button>Modificar</button>
+                        <button>Eliminar</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        
+    </section>
+</main>

@@ -1,0 +1,27 @@
+@import '../../styles/index.scss';
+
+.menu {
+    justify-content: space-around;
+}
+
+.añadir {
+    margin-left: auto;
+}
+
+.item {
+    justify-content: space-between;
+}
+
+.inicio, 
+.proyectos, 
+.estudios, .trabajos, .cursos, 
+.contactos {
+    display: none;
+}
+
+.inicio.active, 
+.proyectos.active, 
+.estudios.active, .trabajos.active, .cursos.active, 
+.contactos.active {
+    display: block;
+}
