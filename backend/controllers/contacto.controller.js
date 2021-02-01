@@ -1,6 +1,4 @@
-const { update } = require('../models/contacto.dto');
 const CONTACTO = require('../models/contacto.dto');
-const { delete } = require('./inicio.controller');
 
 const CONTROLADOR = {
     async insert(req, res) {
