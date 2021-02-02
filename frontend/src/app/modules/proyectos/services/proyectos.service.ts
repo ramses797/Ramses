@@ -20,4 +20,8 @@ export class ProyectosService extends CrudService<Proyectos> {
     read(): Observable<Proyectos[]> {
         return this.get();
     }
+
+    eliminar(item: Proyectos): Observable<Proyectos> {
+        return this.delete(item);
+    }
 }

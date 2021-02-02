@@ -12,7 +12,5 @@ export class InicioComponent implements OnInit {
   constructor(private inicioService: InicioService) {}
 
   ngOnInit(): void {
-    console.log(this.inicios);
   }
-
 }

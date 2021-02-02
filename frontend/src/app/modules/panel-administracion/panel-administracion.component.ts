@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InicioService } from '../inicio/services/inicio.service';
+import { Proyectos } from '../proyectos/models/proyectos';
 import { ProyectosService } from '../proyectos/services/proyectos.service';
 import { CursosService } from '../sobre-mi/services/cursos.service';
 import { EstudiosService } from '../sobre-mi/services/estudios.service';
@@ -46,6 +47,19 @@ export class PanelAdministracionComponent implements OnInit {
       this.cursos = this.cursosService.get();
     }else if(this.eleccionTipo == 'contactos') {
       this.contactos = this.contactoService.get();
+    }
+  }
+
+  eliminarProyecto(objeto: Proyectos) {
+    this.proyectosService.eliminar(objeto);
+  }
+
+  eliminarDatos(objeto) {
+    if(this.eleccionTipo == 'inicio') {
+      //this.inicioService.eliminar(objeto);
+    } else if(this.eleccionTipo == 'proyectos') {
+      console.log(objeto);
+      this.proyectosService.eliminar(objeto);
     }
   }
 

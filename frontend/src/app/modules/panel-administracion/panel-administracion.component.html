@@ -24,7 +24,48 @@
             <div class="proyectos" [ngClass]="{active: eleccionTipo == 'proyectos'}">
                 <article class="item row-center mBottom10" *ngFor="let proyecto of proyectos | async">
                     <p class="titulo">{{proyecto.nombreProyecto}}</p>
+                    <p class="titulo">{{proyecto._id}}</p>
                     <div>
+                        <button>Modificar</button>
+                        <button (click)="eliminarProyecto(proyecto)">Eliminar</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="estudios" [ngClass]="{active: eleccionTipo == 'estudios'}">
+                <article class="item row-center mBottom10" *ngFor="let estudio of estudios | async">
+                    <p class="titulo">{{estudio.titulo}}</p>
+                    <div class="row-center">
+                        <button>Modificar</button>
+                        <button>Eliminar</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="trabajos" [ngClass]="{active: eleccionTipo == 'trabajos'}">
+                <article class="item row-center mBottom10" *ngFor="let trabajo of trabajos | async">
+                    <p class="titulo">{{trabajo.puesto}}</p>
+                    <div class="row-center">
+                        <button>Modificar</button>
+                        <button>Eliminar</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="cursos" [ngClass]="{active: eleccionTipo == 'cursos'}">
+                <article class="item row-center mBottom10" *ngFor="let curso of cursos | async">
+                    <p class="titulo">{{curso.titulo}}</p>
+                    <div class="row-center">
+                        <button>Modificar</button>
+                        <button>Eliminar</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="contactos" [ngClass]="{active: eleccionTipo == 'contactos'}">
+                <article class="item row-center mBottom10" *ngFor="let contacto of contactos | async">
+                    <p class="titulo">{{contacto.empresa}}</p>
+                    <div class="row-center">
                         <button>Modificar</button>
                         <button>Eliminar</button>
                     </div>
