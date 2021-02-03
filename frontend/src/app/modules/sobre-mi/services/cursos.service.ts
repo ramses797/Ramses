@@ -23,4 +23,8 @@ export class CursosService extends CrudService<Cursos> {
     read(): Observable<Cursos[]> {
         return this.get();
     }
+
+    eliminar(item: Cursos) {
+        this.delete(item).subscribe();
+    }
 }

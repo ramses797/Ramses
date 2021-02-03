@@ -23,4 +23,8 @@ export class TrabajosService extends CrudService<Trabajos> {
     read(): Observable<Trabajos[]> {
         return this.get();
     }
+
+    eliminar(item: Trabajos) {
+        this.delete(item).subscribe();
+    }
 }

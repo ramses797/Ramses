@@ -24,8 +24,8 @@ export class InicioService extends CrudService<Inicio>{
         return this.get();
     }
 
-    eliminar(id: Inicio): Observable<Inicio> {
-        return this.delete(id);
+    eliminar(item: Inicio) {
+        this.delete(item).subscribe();
     }
     
 }
