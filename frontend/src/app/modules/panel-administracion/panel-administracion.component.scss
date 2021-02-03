@@ -13,13 +13,15 @@
 }
 
 .inicio, 
+.añadirDatos,
 .proyectos, 
 .estudios, .trabajos, .cursos, 
 .contactos {
     display: none;
 }
 
-.inicio.active, 
+.inicio.active,
+.añadirDatos.active, 
 .proyectos.active, 
 .estudios.active, .trabajos.active, .cursos.active, 
 .contactos.active {

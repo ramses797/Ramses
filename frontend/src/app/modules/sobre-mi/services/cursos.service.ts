@@ -16,6 +16,10 @@ export class CursosService extends CrudService<Cursos> {
         this.withUrlPrefix(PREFIX.cursos);
     }
 
+    insertar(item: Cursos) {
+        this.insert(item).subscribe();
+    }
+
     read(): Observable<Cursos[]> {
         return this.get();
     }

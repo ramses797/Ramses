@@ -16,6 +16,10 @@ export class EstudiosService extends CrudService<Estudios> {
         this.withUrlPrefix(PREFIX.estudios);
     }
 
+    insertar(item: Estudios) {
+        this.insert(item).subscribe();
+    }
+
     read(): Observable<Estudios[]> {
         return this.get();
     }

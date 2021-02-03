@@ -17,11 +17,15 @@ export class ProyectosService extends CrudService<Proyectos> {
         this.withUrlPrefix(PREFIX.proyectos);
     }
 
+    insertar(item: Proyectos) {
+        this.insert(item).subscribe();
+    }
+
     read(): Observable<Proyectos[]> {
         return this.get();
     }
 
-    eliminar(item: Proyectos): Observable<Proyectos> {
-        return this.delete(item);
+    eliminar(item: Proyectos) {
+        this.delete(item).subscribe();
     }
 }

@@ -16,6 +16,10 @@ export class InicioService extends CrudService<Inicio>{
         this.withUrlPrefix(PREFIX.inicio);
     }
 
+    insertar(item: Inicio) {
+        this.insert(item).subscribe();
+    }
+
     read(): Observable<Inicio[]> {
         return this.get();
     }

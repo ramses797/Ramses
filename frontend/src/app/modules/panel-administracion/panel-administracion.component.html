@@ -10,7 +10,65 @@
         </ul>
 
         <section class="column w50">
-            <button class="añadir mBottom50">AÑADIR</button>
+            <button class="añadir mBottom50" (click)="eleccionTipo = eleccionTipo+'Añadir'">AÑADIR</button>
+
+            <div *ngIf="eleccionTipo == 'inicioAñadir' || eleccionTipo == 'proyectosAñadir' || eleccionTipo == 'estudiosAñadir' || eleccionTipo == 'trabajosAñadir' || eleccionTipo == 'cursosAñadir'">
+                <article class="añadirDatos column" [ngClass]="{active: eleccionTipo == 'inicioAñadir'}">
+                    <p class="titulo">Titulo:</p>
+                    <input class="mBottom20" type="text" name="tituloInicio" #tituloInicio="ngModel" [(ngModel)]="inicio.titulo"/>
+                    <p class="titulo">Subtitulo:</p>
+                    <input class="mBottom20" type="text" name="subtituloInicio" #subtituloInicio="ngModel" [(ngModel)]="inicio.subtitulo"/>
+                    <p class="titulo">Texto:</p>
+                    <textarea class="mBottom20" name="explicacionPersonal" #explicacionPersonal="ngModel" [(ngModel)]="inicio.explicacionPersonal"></textarea>
+                </article>
+
+                <article class="añadirDatos column" [ngClass]="{active: eleccionTipo == 'proyectosAñadir'}">
+                    <p class="titulo">Nombre Proyecto:</p>
+                    <input class="mBottom20" type="text" name="nombreProyecto" #nombreProyecto="ngModel" [(ngModel)]="proyecto.nombreProyecto"/>
+                    <p class="titulo">Empresa:</p>
+                    <input class="mBottom20" type="text" name="empresaProyectos" #empresaProyectos="ngModel" [(ngModel)]="proyecto.empresa"/>
+                    <p class="titulo">Tecnologias del proyecto:</p>
+                    <textarea class="mBottom20" name="tecnologiasProyectos" #tecnologiasProyectos="ngModel" [(ngModel)]="proyecto.tecnologias"></textarea>
+                </article>
+
+                <article class="añadirDatos column" [ngClass]="{active: eleccionTipo == 'estudiosAñadir'}">
+                    <p class="titulo">Fecha de inicio:</p>
+                    <input class="mBottom20" type="text" name="fechaInicioEstudios" #fechaInicioEstudios="ngModel" [(ngModel)]="estudio.fechaInicio"/>
+                    <p class="titulo">fecha de fin:</p>
+                    <input class="mBottom20" type="text" name="fechaFinEstudios" #fechaFinEstudios="ngModel" [(ngModel)]="estudio.fechaFin"/>
+                    <p class="titulo">Localizacion:</p>
+                    <input class="mBottom20" name="localizacionEstudios" #localizacionEstudios="ngModel" [(ngModel)]="estudio.localizacion"/>
+                    <p class="titulo">Centro:</p>
+                    <input class="mBottom20" name="centro" #centro="ngModel" [(ngModel)]="estudio.centro"/>
+                    <p class="titulo">Titulo:</p>
+                    <input class="mBottom20" name="tituloEstudios" #tituloEstudios="ngModel" [(ngModel)]="estudio.titulo"/>
+                    <p class="titulo">Aprendizaje:</p>
+                    <textarea class="mBottom20" name="aprendizajeEstudios" #aprendizajeEstudios="ngModel" [(ngModel)]="estudio.aprendizaje"></textarea>
+                </article>
+
+                <article class="añadirDatos column" [ngClass]="{active: eleccionTipo == 'trabajosAñadir'}">
+                    <p class="titulo">Fecha de inicio:</p>
+                    <input class="mBottom20" type="text" name="fechaInicioTrabajos" #fechaInicioTrabajos="ngModel" [(ngModel)]="trabajo.fechaInicio"/>
+                    <p class="titulo">fecha de fin:</p>
+                    <input class="mBottom20" type="text" name="fechaFinTrabajos" #fechaFinTrabajos="ngModel" [(ngModel)]="trabajo.fechaFin"/>
+                    <p class="titulo">Localizacion:</p>
+                    <input class="mBottom20" name="localizacionTrabajos" #localizacionTrabajos="ngModel" [(ngModel)]="trabajo.localizacion"/>
+                    <p class="titulo">Institucion:</p>
+                    <input class="mBottom20" name="institucion" #institucion="ngModel" [(ngModel)]="trabajo.institucion"/>
+                    <p class="titulo">Puesto:</p>
+                    <input class="mBottom20" name="puesto" #puesto="ngModel" [(ngModel)]="trabajo.puesto"/>
+                    <p class="titulo">Tareas:</p>
+                    <textarea class="mBottom20" name="tareas" #tareas="ngModel" [(ngModel)]="trabajo.tareas"></textarea>
+                </article>
+
+                <article class="añadirDatos column" [ngClass]="{active: eleccionTipo == 'cursosAñadir'}">
+                    <p class="titulo">Titulo curso:</p>
+                    <input class="mBottom20" type="text" name="tituloCursos" #tituloCursos="ngModel" [(ngModel)]="curso.titulo"/>
+                    <p class="titulo">Aprendizaje:</p>
+                    <input class="mBottom20" type="text" name="aprendizajeCursos" #aprendizajeCursos="ngModel" [(ngModel)]="curso.aprendizaje"/>
+                </article>
+                <button (click)="insertarDatos()">INSERTAR</button>
+            </div>
             <div class="inicio" [ngClass]="{active: eleccionTipo == 'inicio'}">
                 <article class="item row-center">
                     <p class="titulo">Inicio</p>
@@ -73,6 +131,6 @@
             </div>
         </section>
 
-        
+
     </section>
 </main>
