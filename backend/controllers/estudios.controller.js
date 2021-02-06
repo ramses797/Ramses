@@ -57,7 +57,7 @@ const CONTROLADOR = {
 
     async delete(req, res) {
         try {
-            let estudios = ESTUDIOS.deleteOne(req.body._id);
+            let estudios = ESTUDIOS.findOneAndDelete(req.body);
             res.status(200).send({
                 message: 'Estudio eliminado correctamente.',
                 estudios

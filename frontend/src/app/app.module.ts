@@ -13,6 +13,7 @@ import { nombreDirective } from 'src/app/modules/shared/validators/nombre/nombre
 import { empresaDirective } from 'src/app/modules/shared/validators/empresa/empresa.directive';
 import { correoDirective } from 'src/app/modules/shared/validators/correo/correo.directive';
 import { SobreMiComponent } from './modules/sobre-mi/sobre-mi.component';
+import { PanelAdministracionComponent } from './modules/panel-administracion/panel-administracion.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SobreMiComponent } from './modules/sobre-mi/sobre-mi.component';
     nombreDirective,
     empresaDirective,
     correoDirective,
-    SobreMiComponent
+    SobreMiComponent,
+    PanelAdministracionComponent
   ],
   imports: [
     BrowserModule,

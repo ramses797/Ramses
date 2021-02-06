@@ -91,11 +91,16 @@
             </div>
 
             <div class="estudios" [ngClass]="{active: eleccionTipo == 'estudios'}">
-                <article class="item row-center mBottom10" *ngFor="let estudio of estudios | async">
-                    <p class="titulo">{{estudio.titulo}}</p>
-                    <div class="row-center">
-                        <button>Modificar</button>
-                        <button>Eliminar</button>
+                <article class="column mBottom10" *ngFor="let estudio of estudios | async">
+                    <div class="item row-center">
+                        <p class="titulo">{{estudio.titulo}}</p>
+                        <div class="row-center">
+                            <button (click)="eleccionTipo = eleccionTipo+'Modificar'">Modificar</button>
+                            <button>Eliminar</button>
+                        </div>
+                    </div>
+                    <div class="modificar column">
+                        <!--<input type="text" value="{{estudio.fechaInicio}}"/>-->
                     </div>
                 </article>
             </div>
@@ -130,7 +135,5 @@
                 </article>
             </div>
         </section>
-
-
     </section>
 </main>
