@@ -42,7 +42,7 @@ const CONTROLADOR = {
 
     async update(req,res) {
         try {
-            let trabajos = await TRABAJOS.findOneAndUpdate(req.body._id, req.body);
+            let trabajos = await TRABAJOS.findByIdAndUpdate(req.body._id, req.body);
             res.satus(200).send({
                 message: 'Datos del trabajo modificados con exito.',
                 trabajos

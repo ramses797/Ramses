@@ -22,13 +22,14 @@ export class PanelAdministracionComponent implements OnInit {
   proyectos;
   proyecto: Proyectos = {nombreProyecto: '', empresa: '', tecnologias: ''};
   estudios;
-  estudio: Estudios = {fechaInicio: '', fechaFin: '', localizacion: '', centro: '', titulo: '', aprendizaje: ''};
+  estudio: Estudios = {_id: '', fechaInicio: '', fechaFin: '', localizacion: '', centro: '', titulo: '', aprendizaje: ''};
   trabajos;
   trabajo: Trabajos = {fechaInicio: '', fechaFin: '', localizacion: '', institucion: '', puesto: '', tareas: ''};
   cursos;
   curso: Cursos = {titulo: '', aprendizaje: ''};
   contactos;
   eleccionTipo: string = 'inicio';
+  eleccionModificar: string = '';
 
   constructor(
     private inicioService: InicioService,
@@ -70,6 +71,22 @@ export class PanelAdministracionComponent implements OnInit {
       this.cursos = this.cursosService.get();
     }else if(this.eleccionTipo == 'contactos') {
       this.contactos = this.contactoService.get();
+    }
+  }
+
+  modificarDatos(objeto) {
+    if(this.eleccionTipo == 'inicio') {
+      //this.inicios = this.inicioService.get();
+    } else if(this.eleccionTipo == 'proyectos') {
+      //this.proyectos = this.proyectosService.get();
+    } else if(this.eleccionTipo == 'estudios') {
+      this.estudioService.modificar(objeto);
+    } else if(this.eleccionTipo == 'trabajos') {
+      //this.trabajos = this.trabajosService.get();
+    }else if(this.eleccionTipo == 'cursos') {
+      //this.cursos = this.cursosService.get();
+    }else if(this.eleccionTipo == 'contactos') {
+      //this.contactos = this.contactoService.get();
     }
   }
 

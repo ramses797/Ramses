@@ -92,15 +92,28 @@
 
             <div class="estudios" [ngClass]="{active: eleccionTipo == 'estudios'}">
                 <article class="column mBottom10" *ngFor="let estudio of estudios | async">
-                    <div class="item row-center">
+                    <div class="item row-center mBottom20">
                         <p class="titulo">{{estudio.titulo}}</p>
                         <div class="row-center">
-                            <button (click)="eleccionTipo = eleccionTipo+'Modificar'">Modificar</button>
+                            <button (click)="eleccionModificar = eleccionTipo+'Modificar'+estudio.titulo">Modificar</button>
                             <button>Eliminar</button>
                         </div>
                     </div>
-                    <div class="modificar column">
-                        <!--<input type="text" value="{{estudio.fechaInicio}}"/>-->
+                    <div class="modificar column mBottom50" [ngClass]="{active: eleccionModificar == 'estudiosModificar'+estudio.titulo}">
+                        <input class="displayNone" type="text" value="{{estudio._id}}" name="idEstudio" #idEstudio="ngModel" [(ngModel)]="estudio._id"/>
+                        <p class="titulo">Fecha de inicio:</p>
+                        <input class="mBottom20" type="text" value="{{estudio.fechaInicio}}" name="fechaInicioEstudio" #fechaInicioEstudio="ngModel" [(ngModel)]="estudio.fechaInicio"/>
+                        <p class="titulo">Fecha de fin:</p>
+                        <input class="mBottom20" type="text" value="{{estudio.fechaFin}}" name="fechaFinEstudio" #fechaFinEstudio="ngModel" [(ngModel)]="estudio.fechaFin"/>
+                        <p class="titulo">Localizacion:</p>
+                        <input class="mBottom20" type="text" value="{{estudio.localizacion}}" name="localizacinEstudio" #localizacionEstudio="ngModel" [(ngModel)]="estudio.localizacion"/>
+                        <p class="titulo">Centro:</p>
+                        <input class="mBottom20" type="text" value="{{estudio.centro}}" name="cestroEstudio" #centroEstudio="ngModel" [(ngModel)]="estudio.centro"/>
+                        <p class="titulo">Titulo:</p>
+                        <input class="mBottom20" type="text" value="{{estudio.titulo}}" name="tituloEstudio" #tituloEstudio="ngModel" [(ngModel)]="estudio.titulo"/>
+                        <p class="titulo">Aprendizaje:</p>
+                        <textarea class="mBottom20" name="aprendizajeEstudio" #aprendizajeEstudio="ngModel" [(ngModel)]="estudio.aprendizaje">{{estudio.aprendizaje}}</textarea>
+                        <button (click)="modificarDatos(estudio)">Modificar</button>
                     </div>
                 </article>
             </div>

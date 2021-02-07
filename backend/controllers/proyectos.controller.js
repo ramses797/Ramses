@@ -40,9 +40,9 @@ const CONTROLADOR = {
         }
     },
 
-    async updateOneById(req, res) {
+    async update(req, res) {
         try {
-            let proyectos = await PROYECTOS.findOneAndUpdate(req.body._id, req.body);
+            let proyectos = await PROYECTOS.findByIdAndUpdate(req.body._id, req.body);
             res.status(201).send({
                 message: 'Datos de un proyecto modificados correctamente.',
                 proyectos

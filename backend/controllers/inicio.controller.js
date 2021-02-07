@@ -45,7 +45,7 @@ const CONTROLADOR = {
      */
     async update(req, res) {
         try {
-            let inicio = await INICIO.findOneAndUpdate(req.body._id, req.body);
+            let inicio = await INICIO.findByIdAndUpdate(req.body._id, req.body);
             res.status(201).send({
                 message: 'Datos del inicio actualizado correctamente.',
                 inicio

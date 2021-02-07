@@ -42,7 +42,7 @@ const CONTROLADOR = {
 
     async update(req,res) {
         try {
-            let cursos = await CURSOS.findOneAndUpdate(req.body._id, req.body);
+            let cursos = await CURSOS.findByIdAndUpdate(req.body._id, req.body);
             res.satus(200).send({
                 message: 'Datos del curso modificados con exito.',
                 cursos

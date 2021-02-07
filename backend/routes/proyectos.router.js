@@ -7,7 +7,7 @@ const ROUTER = EXPRESS.Router();
 ROUTER.post('/insert', PROYECTOS.insert);
 ROUTER.get('/get', PROYECTOS.get);
 ROUTER.get('/getOneById', PROYECTOS.getOneById);
-ROUTER.put('/update', PROYECTOS.updateOneById);
+ROUTER.put('/update', PROYECTOS.update);
 ROUTER.delete('/delete', PROYECTOS.delete);
 
 module.exports = ROUTER;

@@ -42,7 +42,7 @@ const CONTROLADOR = {
 
     async update(req,res) {
         try {
-            let contacto = await CONTACTO.findOneAndUpdate(req.body._id, req.body);
+            let contacto = await CONTACTO.findByIdAndUpdate(req.body._id, req.body);
             res.status(201).send({
                 message: 'Contacto actualizado correctamente.',
                 contacto

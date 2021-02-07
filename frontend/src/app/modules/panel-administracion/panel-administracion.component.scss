@@ -16,7 +16,8 @@
 .añadirDatos,
 .proyectos, 
 .estudios, .trabajos, .cursos, 
-.contactos {
+.contactos,
+.modificar {
     display: none;
 }
 
@@ -24,6 +25,7 @@
 .añadirDatos.active, 
 .proyectos.active, 
 .estudios.active, .trabajos.active, .cursos.active, 
-.contactos.active {
+.contactos.active,
+.modificar.active {
     display: block;
 }

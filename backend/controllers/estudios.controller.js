@@ -42,13 +42,13 @@ const CONTROLADOR = {
 
     async update(req,res) {
         try {
-            let estudios = await ESTUDIOS.findOneAndUpdate(req.body._id, req.body);
-            res.satus(200).send({
+            let estudios = await ESTUDIOS.findByIdAndUpdate(req.body._id, req.body);
+            res.status(200).send({
                 message: 'Datos del estudio modificados con exito.',
                 estudios
             });
         } catch(e) {
-            res.satus(500).send({
+            res.status(500).send({
                 message: 'Error al modificar los datos del estudio.',
                 e
             });
