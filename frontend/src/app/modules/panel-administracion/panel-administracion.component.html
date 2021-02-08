@@ -70,22 +70,49 @@
                 <button (click)="insertarDatos()">INSERTAR</button>
             </div>
             <div class="inicio" [ngClass]="{active: eleccionTipo == 'inicio'}">
-                <article class="item row-center">
-                    <p class="titulo">Inicio</p>
-                    <div class="row-center">
-                        <button>Modificar</button>
-                        <button>Eliminar</button>
+                <article class="column mBottom10" *ngFor="let inicio of inicios | async">
+                    <div class="item row-center mBottom20">
+                        <p class="titulo">Inicio</p>
+                        <div class="row-center">
+                            <button  *ngIf="eleccionModificar != inicio.titulo+'Modificar'" (click)="eleccionModificar = inicio.titulo+'Modificar'">Modificar</button>
+                            <button>Eliminar</button>
+                        </div>
+                    </div>
+                    <div class="modificar column mBottom50" [ngClass]="{active: eleccionModificar == inicio.titulo+'Modificar'}">
+                        <p class="titulo">Titulo:</p>
+                        <input class="mBottom20" type="text" value="{{inicio.titulo}}" name="tituloInicio" #tituloInicio="ngModel" [(ngModel)]="inicio.titulo"/>
+                        <p class="titulo">Subtitulo</p>
+                        <input class="mBottom20" type="text" value="{{inicio.subtitulo}}" name="subtituloInicio" #subtituloInicio="ngModel" [(ngModel)]="inicio.subtitulo">
+                        <p class="titulo">Explicacion Personal:</p>
+                        <textarea class="mBottom20" value="{{inicio.explicacionPersonal}}" name="explicacionInicio" #explicacionInicio="ngModel" [(ngModel)]="inicio.explicacionPersonal"></textarea>
+                        <div class="row-center">
+                            <button class="botonCancelar" (click)="eleccionModificar = ''">Cancelar</button>
+                            <button (click)="modificarDatos(inicio)">Modificar</button>
+                        </div>
                     </div>
                 </article>
             </div>
 
             <div class="proyectos" [ngClass]="{active: eleccionTipo == 'proyectos'}">
-                <article class="item row-center mBottom10" *ngFor="let proyecto of proyectos | async">
-                    <p class="titulo">{{proyecto.nombreProyecto}}</p>
-                    <p class="titulo">{{proyecto._id}}</p>
-                    <div>
-                        <button>Modificar</button>
-                        <button (click)="eliminarProyecto(proyecto)">Eliminar</button>
+                <article class="column mBottom10" *ngFor="let proyecto of proyectos | async">
+                    <div class="item row-center mBottom20">
+                        <p class="titulo">{{proyecto.nombreProyecto}}</p>
+                        <div>
+                            <button *ngIf="eleccionModificar != proyecto.nombreProyecto+'Modificar'" (click)="eleccionModificar = proyecto.nombreProyecto+'Modificar'">Modificar</button>
+                            <button (click)="eliminarProyecto(proyecto)">Eliminar</button>
+                        </div>
+                    </div>
+                    <div class="modificar column mBottom50" [ngClass]="{active: eleccionModificar == proyecto.nombreProyecto+'Modificar'}">
+                        <p class="titulo">Nombre proyecto:</p>
+                        <input class="mBottom20" type="text" value="{{proyecto.nombreProyecto}}" name="nombreProyecto" #nombreProyecto="ngModel" [(ngModel)]="proyecto.nombreProyecto">
+                        <p class="titulo">Empresa:</p>
+                        <input class="mBottom20" type="text" value="{{proyecto.empresa}}" name="empresaProyecto" #empresaProyecto="ngModel" [(ngModel)]="proyecto.empresa">
+                        <p class="titulo">Tecnologias:</p>
+                        <input class="mBottom20" type="text" value="{{proyecto.tecnoogias}}" name="tecnologiasProyecto"  #tecnologiasProyecto="ngModel" [(ngModel)]="proyecto.tecnologias">
+                        <div class="row-center">
+                            <button class="botonCancelar" (click)="eleccionModificar = ''">Cancelar</button>
+                            <button (click)="modificarDatos(proyecto)">Modificar</button>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -95,12 +122,12 @@
                     <div class="item row-center mBottom20">
                         <p class="titulo">{{estudio.titulo}}</p>
                         <div class="row-center">
-                            <button (click)="eleccionModificar = eleccionTipo+'Modificar'+estudio.titulo">Modificar</button>
+                            <button *ngIf="eleccionModificar != estudio.titulo+'Modificar'" (click)="eleccionModificar = estudio.titulo+'Modificar'">Modificar</button>
                             <button>Eliminar</button>
                         </div>
                     </div>
-                    <div class="modificar column mBottom50" [ngClass]="{active: eleccionModificar == 'estudiosModificar'+estudio.titulo}">
-                        <input class="displayNone" type="text" value="{{estudio._id}}" name="idEstudio" #idEstudio="ngModel" [(ngModel)]="estudio._id"/>
+                    <div class="modificar column mBottom50" [ngClass]="{active: eleccionModificar == estudio.titulo+'Modificar'}">
+                        <!--<input class="displayNone" type="text" value="{{estudio._id}}" name="idEstudio" #idEstudio="ngModel" [(ngModel)]="estudio._id"/> Esta linea es innecesaria-->
                         <p class="titulo">Fecha de inicio:</p>
                         <input class="mBottom20" type="text" value="{{estudio.fechaInicio}}" name="fechaInicioEstudio" #fechaInicioEstudio="ngModel" [(ngModel)]="estudio.fechaInicio"/>
                         <p class="titulo">Fecha de fin:</p>
@@ -108,32 +135,67 @@
                         <p class="titulo">Localizacion:</p>
                         <input class="mBottom20" type="text" value="{{estudio.localizacion}}" name="localizacinEstudio" #localizacionEstudio="ngModel" [(ngModel)]="estudio.localizacion"/>
                         <p class="titulo">Centro:</p>
-                        <input class="mBottom20" type="text" value="{{estudio.centro}}" name="cestroEstudio" #centroEstudio="ngModel" [(ngModel)]="estudio.centro"/>
+                        <input class="mBottom20" type="text" value="{{estudio.centro}}" name="centroEstudio" #centroEstudio="ngModel" [(ngModel)]="estudio.centro"/>
                         <p class="titulo">Titulo:</p>
                         <input class="mBottom20" type="text" value="{{estudio.titulo}}" name="tituloEstudio" #tituloEstudio="ngModel" [(ngModel)]="estudio.titulo"/>
                         <p class="titulo">Aprendizaje:</p>
                         <textarea class="mBottom20" name="aprendizajeEstudio" #aprendizajeEstudio="ngModel" [(ngModel)]="estudio.aprendizaje">{{estudio.aprendizaje}}</textarea>
-                        <button (click)="modificarDatos(estudio)">Modificar</button>
+                        <div class="row-center">
+                            <button class="botonCancelar" (click)="eleccionModificar = ''">Cancelar</button>
+                            <button (click)="modificarDatos(estudio)">Modificar</button>
+                        </div>
                     </div>
                 </article>
             </div>
 
             <div class="trabajos" [ngClass]="{active: eleccionTipo == 'trabajos'}">
-                <article class="item row-center mBottom10" *ngFor="let trabajo of trabajos | async">
-                    <p class="titulo">{{trabajo.puesto}}</p>
-                    <div class="row-center">
-                        <button>Modificar</button>
-                        <button>Eliminar</button>
+                <article class="column mBottom10" *ngFor="let trabajo of trabajos | async">
+                    <div class="item row-center mBottom20">
+                        <p class="titulo">{{trabajo.puesto}}</p>
+                        <div class="row-center">
+                            <button *ngIf="eleccionModificar != trabajo.puesto+'Modificar'" (click)="eleccionModificar = trabajo.puesto+'Modificar'">Modificar</button>
+                            <button>Eliminar</button>
+                        </div>
+                    </div>
+                    <div class="modificar column mBottom50" [ngClass]="{active: eleccionModificar == trabajo.puesto+'Modificar'}">
+                        <p class="titulo">Fecha de inicio:</p>
+                        <input class="mBottom20" type="text" value="{{trabajo.fechaInicio}}" name="fechaInicioTrabajo" #fechaInicioTrabajo="ngModel" [(ngModel)]="trabajo.fechaInicio"/>
+                        <p class="titulo">Fecha de fin:</p>
+                        <input class="mBottom20" type="text" value="{{trabajo.fechaFin}}" name="fechaFinTrabajo" #fechaFinTrabajo="ngModel" [(ngModel)]="trabajo.fechaFin"/>
+                        <p class="titulo">Localizacion:</p>
+                        <input class="mBottom20" type="text" value="{{trabajo.localizacion}}" name="localizacionTrabajo" #localizacionTrabajo="ngModel" [(ngModel)]="trabajo.localizacion"/>
+                        <p class="titulo">Institucion:</p>
+                        <input class="mBottom20" type="text" value="{{trabajo.institucion}}" name="intitucionTrabajo" #institucionTrabajo="ngModel" [(ngModel)]="trabajo.institucion"/> 
+                        <p class="titulo">Puesto:</p>
+                        <input class="mBottom20" type="text" value="{{trabajo.puesto}}" name="puestoTrabajo" #puestoTrabajo="ngModel" [(ngModel)]="trabajo.puesto"/>
+                        <p class="titulo">Tareas:</p>
+                        <textarea class="mBottom20" value="{{trabajo.tareas}}" name="tareasTrabajo" #tareasTrabajo="ngModel" [(ngModel)]="trabajo.tareas"></textarea>
+                        <div class="row-center">
+                            <button class="botonCancelar" (click)="eleccionModificar = ''">Cancelar</button>
+                            <button (click)="modificarDatos(trabajo)">Modificar</button>
+                        </div>
                     </div>
                 </article>
             </div>
 
             <div class="cursos" [ngClass]="{active: eleccionTipo == 'cursos'}">
-                <article class="item row-center mBottom10" *ngFor="let curso of cursos | async">
-                    <p class="titulo">{{curso.titulo}}</p>
-                    <div class="row-center">
-                        <button>Modificar</button>
-                        <button>Eliminar</button>
+                <article class="column mBottom10" *ngFor="let curso of cursos | async">
+                    <div class="item row-center mBottom20">
+                        <p class="titulo">{{curso.titulo}}</p>
+                        <div class="row-center">
+                            <button *ngIf="eleccionModificar != curso.titulo+'Modificar'" (click)="eleccionModificar = curso.titulo+'Modificar'">Modificar</button>
+                            <button>Eliminar</button>
+                        </div>
+                    </div>
+                    <div class="modificar column mBottom50" [ngClass]="{active: eleccionModificar == curso.titulo+'Modificar'}">
+                        <p class="titulo">Titulo del curso:</p>
+                        <input class="mBottom20" type="text" name="tituloCurso" #tituloCurso="ngModel" [(ngModel)]="curso.titulo"/>
+                        <p class="titulo">Aprendizaje:</p>
+                        <textarea class="mBottom20" value="curso.aprendizaje" name="aprendizajeCurso" #aprendizajeCurso="ngModel" [(ngModel)]="curso.aprendizaje"></textarea>
+                        <div class="row-center">
+                            <button class="botonCancelar" (click)="eleccionModificar = ''">Cancelar</button>
+                            <button (click)="modificarDatos(curso)">Modificar</button>
+                        </div>
                     </div>
                 </article>
             </div>

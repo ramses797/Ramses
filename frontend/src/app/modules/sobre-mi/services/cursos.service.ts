@@ -24,6 +24,10 @@ export class CursosService extends CrudService<Cursos> {
         return this.get();
     }
 
+    modificar(item: Cursos) {
+        this.update(item).subscribe();
+    }
+
     eliminar(item: Cursos) {
         this.delete(item).subscribe();
     }

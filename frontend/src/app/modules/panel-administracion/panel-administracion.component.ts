@@ -76,18 +76,19 @@ export class PanelAdministracionComponent implements OnInit {
 
   modificarDatos(objeto) {
     if(this.eleccionTipo == 'inicio') {
-      //this.inicios = this.inicioService.get();
+      this.inicioService.modificar(objeto);
     } else if(this.eleccionTipo == 'proyectos') {
-      //this.proyectos = this.proyectosService.get();
+      this.proyectosService.modificar(objeto);
     } else if(this.eleccionTipo == 'estudios') {
       this.estudioService.modificar(objeto);
     } else if(this.eleccionTipo == 'trabajos') {
-      //this.trabajos = this.trabajosService.get();
+      this.trabajosService.modificar(objeto);
     }else if(this.eleccionTipo == 'cursos') {
-      //this.cursos = this.cursosService.get();
+      this.cursosService.modificar(objeto);
     }else if(this.eleccionTipo == 'contactos') {
-      //this.contactos = this.contactoService.get();
+      this.contactoService.modificar(objeto);
     }
+    this.eleccionModificar = '';
   }
 
   eliminarProyecto(objeto: Proyectos) {
