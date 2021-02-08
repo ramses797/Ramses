@@ -18,10 +18,15 @@ import { ContactoService} from '../contacto/services/contacto.service';
 })
 export class PanelAdministracionComponent implements OnInit {
   inicios = this.inicioService.get();
+  inicio: Inicio = {titulo:'', subtitulo: '', explicacionPersonal: ''};
   proyectos;
+  proyecto: Proyectos = {nombreProyecto: '', empresa: '', tecnologias: ''};
   estudios;
+  estudio: Estudios = {_id: '', fechaInicio: '', fechaFin: '', localizacion: '', centro: '', titulo: '', aprendizaje: ''};
   trabajos;
+  trabajo: Trabajos = {fechaInicio: '', fechaFin: '', localizacion: '', institucion: '', puesto: '', tareas: ''};
   cursos;
+  curso: Cursos = {titulo: '', aprendizaje: ''};
   contactos;
   eleccionTipo: string = 'inicio';
   eleccionModificar: string = '';
