@@ -16,7 +16,6 @@ const CONTACTO  = MONGOOSE.Schema(
         },
         terminos: {
             type: Boolean,
-            default: false
         }
     },
     {timestamps: true}

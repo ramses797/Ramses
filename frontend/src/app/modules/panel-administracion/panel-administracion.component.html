@@ -5,12 +5,12 @@
             <li (click)="recogerDatos('proyectos')">PROYECTOS</li>
             <li (click)="recogerDatos('estudios')">ESTUDIOS</li>
             <li (click)="recogerDatos('trabajos')">TRABAJOS</li>
-            <li (click)="recogerDatos('cursos')">CUSROS</li>
+            <li (click)="recogerDatos('cursos')">CURSOS</li>
             <li (click)="recogerDatos('contactos')">CONTACTOS</li>
         </ul>
 
         <section class="column w50">
-            <button class="añadir mBottom50" (click)="eleccionTipo = eleccionTipo+'Añadir'">AÑADIR</button>
+            <button class="añadir mBottom50" *ngIf="eleccionTipo != 'contactos'" (click)="eleccionTipo = eleccionTipo+'Añadir'">AÑADIR</button>
 
             <div *ngIf="eleccionTipo == 'inicioAñadir' || eleccionTipo == 'proyectosAñadir' || eleccionTipo == 'estudiosAñadir' || eleccionTipo == 'trabajosAñadir' || eleccionTipo == 'cursosAñadir'">
                 <article class="añadirDatos column" [ngClass]="{active: eleccionTipo == 'inicioAñadir'}">
@@ -99,7 +99,7 @@
                         <p class="titulo">{{proyecto.nombreProyecto}}</p>
                         <div>
                             <button *ngIf="eleccionModificar != proyecto.nombreProyecto+'Modificar'" (click)="eleccionModificar = proyecto.nombreProyecto+'Modificar'">Modificar</button>
-                            <button (click)="eliminarProyecto(proyecto)">Eliminar</button>
+                            <button (click)="eliminarDatos(proyecto)">Eliminar</button>
                         </div>
                     </div>
                     <div class="modificar column mBottom50" [ngClass]="{active: eleccionModificar == proyecto.nombreProyecto+'Modificar'}">
@@ -200,11 +200,22 @@
             </div>
 
             <div class="contactos" [ngClass]="{active: eleccionTipo == 'contactos'}">
-                <article class="item row-center mBottom10" *ngFor="let contacto of contactos | async">
-                    <p class="titulo">{{contacto.empresa}}</p>
-                    <div class="row-center">
-                        <button>Modificar</button>
-                        <button>Eliminar</button>
+                <article class="column mBottom10" *ngFor="let contacto of contactos | async">
+                    <div class="item row-center mBottom20">
+                        <p class="titulo">{{contacto.empresa}}</p>
+                        <div class="row-center">
+                            <button *ngIf="eleccionModificar != contacto.empresa+'Leer'" (click)="eleccionModificar = contacto.empresa+'Leer'">Leer</button>
+                            <button>Eliminar</button>
+                        </div>
+                    </div>
+                    <div class="leer" [ngClass]="{active: eleccionModificar == contacto.empresa+'Leer'}">
+                        <p class="titulo">{{contacto.nombre}}</p>
+                        <p class="titulo">{{contacto.empresa}}</p>
+                        <p class="titulo">{{contacto.correo}}</p>
+                        <p class="titulo">{{contacto.explicacion}}</p>
+                        <div class="row-center">
+                            <button class="botonCancelar" (click)="eleccionModificar = ''">Cancelar</button>
+                        </div>
                     </div>
                 </article>
             </div>

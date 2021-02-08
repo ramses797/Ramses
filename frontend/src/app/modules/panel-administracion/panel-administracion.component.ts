@@ -22,7 +22,7 @@ export class PanelAdministracionComponent implements OnInit {
   proyectos;
   proyecto: Proyectos = {nombreProyecto: '', empresa: '', tecnologias: ''};
   estudios;
-  estudio: Estudios = {_id: '', fechaInicio: '', fechaFin: '', localizacion: '', centro: '', titulo: '', aprendizaje: ''};
+  estudio: Estudios = {fechaInicio: '', fechaFin: '', localizacion: '', centro: '', titulo: '', aprendizaje: ''};
   trabajos;
   trabajo: Trabajos = {fechaInicio: '', fechaFin: '', localizacion: '', institucion: '', puesto: '', tareas: ''};
   cursos;
@@ -46,14 +46,19 @@ export class PanelAdministracionComponent implements OnInit {
   insertarDatos() {
     if(this.eleccionTipo == 'inicioAñadir') {
       this.inicioService.insertar(this.inicio);
+      this.eleccionTipo = 'inicio';
     } else if(this.eleccionTipo == 'proyectosAñadir') {
       this.proyectosService.insertar(this.proyecto);
+      this.eleccionTipo = 'proyectos';
     } else if(this.eleccionTipo == 'estudiosAñadir') {
       this.estudioService.insertar(this.estudio);
+      this.eleccionTipo = 'estudios';
     } else if(this.eleccionTipo == 'trabajosAñadir') {
       this.trabajosService.insertar(this.trabajo);
+      this.eleccionTipo = 'trabajos';
     } else if(this.eleccionTipo == 'cursosAñadir') {
       this.cursosService.insertar(this.curso);
+      this.eleccionTipo = 'cursos';
     }
   }
 
@@ -98,10 +103,17 @@ export class PanelAdministracionComponent implements OnInit {
 
   eliminarDatos(objeto) {
     if(this.eleccionTipo == 'inicio') {
-      //this.inicioService.eliminar(objeto);
+      this.inicioService.eliminar(objeto);
     } else if(this.eleccionTipo == 'proyectos') {
-      console.log(objeto);
       this.proyectosService.eliminar(objeto);
+    } else if(this.eleccionTipo == 'estudios') {
+      this.estudioService.eliminar(objeto);
+    } else if(this.eleccionTipo == 'trabajos') {
+      this.trabajosService.eliminar(objeto);
+    }else if(this.eleccionTipo == 'cursos') {
+      this.cursosService.eliminar(objeto);
+    }else if(this.eleccionTipo == 'contactos') {
+      this.contactoService.eliminar(objeto);
     }
   }
 

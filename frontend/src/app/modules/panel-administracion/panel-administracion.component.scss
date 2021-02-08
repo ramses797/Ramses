@@ -21,7 +21,8 @@
 .proyectos, 
 .estudios, .trabajos, .cursos, 
 .contactos,
-.modificar {
+.modificar,
+.leer {
     display: none;
 }
 
@@ -30,6 +31,7 @@
 .proyectos.active, 
 .estudios.active, .trabajos.active, .cursos.active, 
 .contactos.active,
-.modificar.active {
+.modificar.active,
+.leer.active {
     display: block;
 }
