@@ -34,6 +34,11 @@
     display:none;
 }
 
+.fixed {
+    position: fixed;
+    z-index: 20;
+}
+
 .vw90 {
     min-width: 88vw;
 }
