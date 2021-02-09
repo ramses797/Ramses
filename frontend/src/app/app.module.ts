@@ -14,6 +14,12 @@ import { empresaDirective } from 'src/app/modules/shared/validators/empresa/empr
 import { correoDirective } from 'src/app/modules/shared/validators/correo/correo.directive';
 import { SobreMiComponent } from './modules/sobre-mi/sobre-mi.component';
 import { PanelAdministracionComponent } from './modules/panel-administracion/panel-administracion.component';
+import { PanelAdministracionInicioComponent } from './modules/panel-administracion-inicio/panel-administracion-inicio.component';
+import { PanelAdministracionProyectosComponent } from './modules/panel-administracion-proyectos/panel-administracion-proyectos.component';
+import { PanelAdministracionEstudiosComponent } from './modules/panel-administracion-estudios/panel-administracion-estudios.component';
+import { PanelAdministracionTrabajosComponent } from './modules/panel-administracion-trabajos/panel-administracion-trabajos.component';
+import { PanelAdministracionCursosComponent } from './modules/panel-administracion-cursos/panel-administracion-cursos.component';
+import { PanelAdministracionContactosComponent } from './modules/panel-administracion-contactos/panel-administracion-contactos.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,13 @@ import { PanelAdministracionComponent } from './modules/panel-administracion/pan
     empresaDirective,
     correoDirective,
     SobreMiComponent,
-    PanelAdministracionComponent
+    PanelAdministracionComponent,
+    PanelAdministracionInicioComponent,
+    PanelAdministracionProyectosComponent,
+    PanelAdministracionEstudiosComponent,
+    PanelAdministracionTrabajosComponent,
+    PanelAdministracionCursosComponent,
+    PanelAdministracionContactosComponent
   ],
   imports: [
     BrowserModule,
