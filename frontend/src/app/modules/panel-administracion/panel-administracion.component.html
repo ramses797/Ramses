@@ -98,11 +98,11 @@
                     <div class="item row-center mBottom20">
                         <p class="titulo">{{proyecto.nombreProyecto}}</p>
                         <div>
-                            <button *ngIf="eleccionModificar != proyecto.nombreProyecto+'Modificar'" (click)="eleccionModificar = proyecto.nombreProyecto+'Modificar'">Modificar</button>
-                            <button (click)="eliminarDatos(proyecto)">Eliminar</button>
+                            <button *ngIf="eleccionModificar != 'proyectoModificar'" (click)="eleccionModificar = 'proyectoModificar'">Modificar</button>
+                            <button (click)="eliminarProyecto(proyecto)">Eliminar</button>
                         </div>
                     </div>
-                    <div class="modificar column mBottom50" [ngClass]="{active: eleccionModificar == proyecto.nombreProyecto+'Modificar'}">
+                    <div class="modificar column mBottom50" [ngClass]="{active: eleccionModificar == 'proyectoModificar'}">
                         <p class="titulo">Nombre proyecto:</p>
                         <input class="mBottom20" type="text" value="{{proyecto.nombreProyecto}}" name="nombreProyecto" #nombreProyecto="ngModel" [(ngModel)]="proyecto.nombreProyecto">
                         <p class="titulo">Empresa:</p>
@@ -122,11 +122,11 @@
                     <div class="item row-center mBottom20">
                         <p class="titulo">{{estudio.titulo}}</p>
                         <div class="row-center">
-                            <button *ngIf="eleccionModificar != estudio.titulo+'Modificar'" (click)="eleccionModificar = estudio.titulo+'Modificar'">Modificar</button>
+                            <button *ngIf="eleccionModificar != estudio.titulo+'Modificar'" (click)="eleccionModificar = 'estudioModificar'">Modificar</button>
                             <button>Eliminar</button>
                         </div>
                     </div>
-                    <div class="modificar column mBottom50" [ngClass]="{active: eleccionModificar == estudio.titulo+'Modificar'}">
+                    <div class="modificar column mBottom50" [ngClass]="{active: eleccionModificar == 'estudioModificar'}">
                         <p class="titulo">Fecha de inicio:</p>
                         <input class="mBottom20" type="text" value="{{estudio.fechaInicio}}" name="fechaInicioEstudio" #fechaInicioEstudio="ngModel" [(ngModel)]="estudio.fechaInicio"/>
                         <p class="titulo">Fecha de fin:</p>
@@ -142,7 +142,7 @@
                         <div class="row-center">
                             <button class="botonCancelar" (click)="eleccionModificar = ''">Cancelar</button>
                             <button (click)="modificarDatos(estudio)">Modificar</button>
-                        </div>
+                    </div>
                     </div>
                 </article>
             </div>

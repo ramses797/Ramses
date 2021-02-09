@@ -52,8 +52,8 @@ export class CrudService<T> {
      * Metodo para eliminar un item concreto de la BD.
      * @param id
      */
-    delete(item: T): Observable<T> {
-        return this.http.delete<T>(`${this.apiRest}/delete`, item);
+    delete(itemId: string): Observable<T> {
+        return this.http.delete<T>(`${this.apiRest}/delete/${itemId}`);
     }
 
     /**

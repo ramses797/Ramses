@@ -19,8 +19,8 @@ import { ContactoService} from '../contacto/services/contacto.service';
 export class PanelAdministracionComponent implements OnInit {
   inicios = this.inicioService.get();
   inicio: Inicio = {titulo:'', subtitulo: '', explicacionPersonal: ''};
-  proyectos;
-  proyecto: Proyectos = {nombreProyecto: '', empresa: '', tecnologias: ''};
+  proyectos = this.proyectosService.get();
+  proyecto: Proyectos = {_id: '', nombreProyecto: '', empresa: '', tecnologias: ''};
   estudios;
   estudio: Estudios = {fechaInicio: '', fechaFin: '', localizacion: '', centro: '', titulo: '', aprendizaje: ''};
   trabajos;
@@ -67,7 +67,7 @@ export class PanelAdministracionComponent implements OnInit {
     if(this.eleccionTipo == 'inicio') {
       this.inicios = this.inicioService.get();
     } else if(this.eleccionTipo == 'proyectos') {
-      this.proyectos = this.proyectosService.get();
+      //this.proyectos = await this.proyectosService.get();
     } else if(this.eleccionTipo == 'estudios') {
       this.estudios = this.estudioService.get();
     } else if(this.eleccionTipo == 'trabajos') {
@@ -97,11 +97,11 @@ export class PanelAdministracionComponent implements OnInit {
   }
 
   eliminarProyecto(objeto: Proyectos) {
-    console.log(objeto);
-    this.proyectosService.eliminar(objeto);
+    this.proyectosService.eliminar(objeto._id);
   }
 
   eliminarDatos(objeto) {
+    console.log(objeto);
     if(this.eleccionTipo == 'inicio') {
       this.inicioService.eliminar(objeto);
     } else if(this.eleccionTipo == 'proyectos') {
