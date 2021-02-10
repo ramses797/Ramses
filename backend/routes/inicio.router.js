@@ -7,6 +7,6 @@ const ROUTER = EXPRESS.Router();
 ROUTER.post('/insert', INICIO.insert);
 ROUTER.get('/get', INICIO.get);
 ROUTER.put('/update', INICIO.update);
-ROUTER.delete('/delete', INICIO.delete);
+ROUTER.delete('/delete/:_id', INICIO.delete);
 
 module.exports = ROUTER;

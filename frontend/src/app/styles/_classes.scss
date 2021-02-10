@@ -59,6 +59,10 @@
     width: 100%;
 }
 
+.pTop170 {
+    padding-top: 170px;
+}
+
 .mBottom10 {
     margin-bottom: 10px;
 }
@@ -79,7 +83,7 @@ li {
     list-style: none;
     cursor: pointer;
     transition: 0.5s;
-
+    outline: none;
     &:hover, &.active {
         transform: scale(1.2);
     }
@@ -161,4 +165,16 @@ button {
     &.disabled {
         opacity: 0.3;
     }
+}
+
+.inicios,
+.anyadir,
+.modificar {
+    display: none;
+}
+
+.inicios.active,
+.anyadir.active,
+.modificar.active {
+    display: block;
 }

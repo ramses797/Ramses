@@ -31,8 +31,8 @@ export class EstudiosService extends CrudService<Estudios> {
         this.update(item).subscribe();
     }
 
-    eliminar(item: Estudios) {
+    /*eliminar(item: Estudios) {
         console.log('eliminar');
         this.delete(item).subscribe();
-    }
+    }*/
 }

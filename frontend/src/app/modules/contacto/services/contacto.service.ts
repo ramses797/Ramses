@@ -25,8 +25,8 @@ export class ContactoService extends CrudService<Contacto> {
         this.update(item).subscribe();
     }
 
-    eliminar(item: Contacto) {
+    /*eliminar(item: Contacto) {
         this.delete(item).subscribe();
-    }
+    }*/
 
 }

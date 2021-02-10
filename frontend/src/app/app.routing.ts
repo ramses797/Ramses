@@ -5,6 +5,7 @@ import { ProyectosComponent } from './modules/proyectos/proyectos.component';
 import { ContactoComponent } from './modules/contacto/contacto.component';
 import { SobreMiComponent } from './modules/sobre-mi/sobre-mi.component';
 import { PanelAdministracionComponent } from './modules/panel-administracion/panel-administracion.component';
+import { PanelAdministracionInicioComponent } from './modules/panel-administracion-inicio/panel-administracion-inicio.component';
 
 const routes: Routes = [
     {path: '', component: InicioComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
     {path: 'contacto', component: ContactoComponent},
     {path: 'sobreMi', component: SobreMiComponent},
     {path: 'panelAdministracionRamses', component: PanelAdministracionComponent},
+    {path: 'panelAdministracionInicio', component: PanelAdministracionInicioComponent},
     {path: '**', component: InicioComponent}
 ];
 

@@ -28,8 +28,8 @@ export class InicioService extends CrudService<Inicio>{
         this.update(item).subscribe();
     }
 
-    eliminar(item: Inicio) {
-        this.delete(item).subscribe();
+    eliminar(itemId: string) {
+        this.delete(itemId).subscribe();
     }
     
 }

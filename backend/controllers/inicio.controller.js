@@ -65,7 +65,7 @@ const CONTROLADOR = {
      */
     async delete(req, res) {
         try {
-            let inicio = await INICIO.findOneAndDelete(req.body);
+            let inicio = await INICIO.findByIdAndDelete(req.params._id);
             res.status(201).send({
                 message: 'Datos del inicio eliminados correctamente.',
                 inicio

@@ -17,8 +17,8 @@ import { ContactoService} from '../contacto/services/contacto.service';
   styleUrls: ['./panel-administracion.component.scss']
 })
 export class PanelAdministracionComponent implements OnInit {
-  inicios = this.inicioService.get();
-  inicio: Inicio = {titulo:'', subtitulo: '', explicacionPersonal: ''};
+  /*inicios = this.inicioService.get();
+  //inicio: Inicio = {titulo:'', subtitulo: '', explicacionPersonal: ''};
   proyectos = this.proyectosService.get();
   proyecto: Proyectos = {_id: '', nombreProyecto: '', empresa: '', tecnologias: ''};
   estudios;
@@ -29,7 +29,7 @@ export class PanelAdministracionComponent implements OnInit {
   curso: Cursos = {titulo: '', aprendizaje: ''};
   contactos;
   eleccionTipo: string = 'inicio';
-  eleccionModificar: string = '';
+  eleccionModificar: string = '';*/
 
   constructor(
     private inicioService: InicioService,
@@ -42,7 +42,7 @@ export class PanelAdministracionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+/*
   insertarDatos() {
     if(this.eleccionTipo == 'inicioAñadir') {
       this.inicioService.insertar(this.inicio);
@@ -98,9 +98,9 @@ export class PanelAdministracionComponent implements OnInit {
 
   eliminarProyecto(objeto: Proyectos) {
     this.proyectosService.eliminar(objeto._id);
-  }
+  }*/
 
-  eliminarDatos(objeto) {
+  /*eliminarDatos(objeto) {
     console.log(objeto);
     if(this.eleccionTipo == 'inicio') {
       this.inicioService.eliminar(objeto);
@@ -115,6 +115,6 @@ export class PanelAdministracionComponent implements OnInit {
     }else if(this.eleccionTipo == 'contactos') {
       this.contactoService.eliminar(objeto);
     }
-  }
+  }*/
 
 }
