@@ -4,7 +4,7 @@
 
     <section class="inicios column w50" [ngClass]="{active: accion === 'inicio'}">
         <button class="botonAnyadir mBottom20" (click)="accion = 'añadir'">Añadir</button>
-        <article class="inicio row-center" *ngFor="let inicio of inicios | async">
+        <article class="row-center JCBetween" *ngFor="let inicio of inicios | async">
                 <p class="titulo">Inicio</p>
                 <div class="row">
                     <button (click)="pasarModificar(inicio)">Modificar</button>
@@ -16,11 +16,11 @@
     <section class="anyadir column w25" [ngClass]="{active: accion === 'añadir'}">
         <h3 class="titulo">Añadir un Inicio</h3>
         <p class="titulo">Titulo:</p>
-        <input class="mBottom20" type="text" name="tituloInicio" #tituloInicio="ngModel" [(ngModel)]="inicioAcciones.titulo">
+        <input class="mBottom20" type="text" name="tituloInicio" #tituloInicio="ngModel" [(ngModel)]="inicio.titulo">
         <p class="titulo">Subtitulo:</p>
-        <input class="mBottom20" type="text" name="subtituloInicio"  #subtituloInicio="ngModel" [(ngModel)]="inicioAcciones.subtitulo">
+        <input class="mBottom20" type="text" name="subtituloInicio"  #subtituloInicio="ngModel" [(ngModel)]="inicio.subtitulo">
         <p class="titulo">Explicacion personal:</p>
-        <input class="mBottom20" type="text" name="explicacionPersonalInicio"  #explicacionPersonalInicio="ngModel" [(ngModel)]="inicioAcciones.explicacionPersonal">
+        <input class="mBottom20" type="text" name="explicacionPersonalInicio"  #explicacionPersonalInicio="ngModel" [(ngModel)]="inicio.explicacionPersonal">
         <div class="botonera row-center">
             <button (click)="accion = 'inicio'">Cancelar</button>
             <button (click)="anyadirInicio()">Añadir</button>
@@ -29,11 +29,11 @@
 
     <section class="modificar column w25" [ngClass]="{active: accion === 'modificar'}">
         <p class="titulo">Titulo:</p>
-        <input class="mBottom20" type="text" name="tituloInicio" #tituloInicio="ngModel" [(ngModel)]="inicioAcciones.titulo">
+        <input class="mBottom20" type="text" name="tituloInicio" #tituloInicio="ngModel" [(ngModel)]="inicio.titulo">
         <p class="titulo">Subtitulo:</p>
-        <input class="mBottom20" type="text" name="subtituloInicio"  #subtituloInicio="ngModel" [(ngModel)]="inicioAcciones.subtitulo">
+        <input class="mBottom20" type="text" name="subtituloInicio"  #subtituloInicio="ngModel" [(ngModel)]="inicio.subtitulo">
         <p class="titulo">Explicacion personal:</p>
-        <input class="mBottom20" type="text" name="explicacionPersonalInicio"  #explicacionPersonalInicio="ngModel" [(ngModel)]="inicioAcciones.explicacionPersonal">
+        <input class="mBottom20" type="text" name="explicacionPersonalInicio"  #explicacionPersonalInicio="ngModel" [(ngModel)]="inicio.explicacionPersonal">
         <div class="botonera row-center">
             <button (click)="accion = 'inicio'">Cancelar</button>
             <button (click)="modificarInicio()">Modificar</button>
