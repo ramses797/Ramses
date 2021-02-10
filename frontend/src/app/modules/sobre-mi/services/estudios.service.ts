@@ -17,22 +17,18 @@ export class EstudiosService extends CrudService<Estudios> {
     }
 
     insertar(item: Estudios) {
-        console.log('insertar');
         this.insert(item).subscribe();
     }
 
     read(): Observable<Estudios[]> {
-        console.log('leer');
         return this.get();
     }
 
     modificar(item: Estudios) {
-        console.log('modificar');
         this.update(item).subscribe();
     }
 
-    /*eliminar(item: Estudios) {
-        console.log('eliminar');
-        this.delete(item).subscribe();
-    }*/
+    eliminar(itemId: string) {
+        this.delete(itemId).subscribe();
+    }
 }

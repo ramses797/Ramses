@@ -17,7 +17,6 @@ export class PanelAdministracionProyectosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.proyectos);
   }
 
   anyadirProyecto() {
@@ -29,7 +28,7 @@ export class PanelAdministracionProyectosComponent implements OnInit {
   modificarProyecto() {
     console.log(this.proyectos);
     this.proyectosService.modificar(this.proyecto);
-    this.proyecto = {nombreProyecto: '', empresa: '', tecnologias: ''}
+    this.proyecto = {nombreProyecto: '', empresa: '', tecnologias: ''};
     this.accion = 'inicios';
   }
   pasarModificar(objeto: Proyectos) {
@@ -37,7 +36,6 @@ export class PanelAdministracionProyectosComponent implements OnInit {
     this.accion = 'modificar';
   }
   eliminarProyecto(objeto: Proyectos) {
-    console.log(objeto);
     this.proyectosService.eliminar(objeto._id);
     location.href = '/panelAdministracionProyectos';
   }

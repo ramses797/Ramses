@@ -57,7 +57,7 @@ const CONTROLADOR = {
 
     async delete(req, res) {
         try {
-            let proyectos = await PROYECTOS.findByIdAndDelete(req.params.id);
+            let proyectos = await PROYECTOS.findByIdAndDelete(req.params._id);
             res.status(201).send({
                 message: 'Datos de un proyecto eliminados correctamente.',
                 proyectos

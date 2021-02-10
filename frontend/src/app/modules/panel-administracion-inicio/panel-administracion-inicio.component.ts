@@ -37,7 +37,6 @@ export class PanelAdministracionInicioComponent implements OnInit {
     this.accion = 'modificar';
   }
   eliminarInicio(objeto: Inicio) {
-    console.log(objeto);
     this.inicioService.eliminar(objeto._id);
     location.href = '/panelAdministracionInicio';
   }

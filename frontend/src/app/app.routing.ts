@@ -7,6 +7,7 @@ import { SobreMiComponent } from './modules/sobre-mi/sobre-mi.component';
 import { PanelAdministracionComponent } from './modules/panel-administracion/panel-administracion.component';
 import { PanelAdministracionInicioComponent } from './modules/panel-administracion-inicio/panel-administracion-inicio.component';
 import { PanelAdministracionProyectosComponent } from './modules/panel-administracion-proyectos/panel-administracion-proyectos.component';
+import { PanelAdministracionEstudiosComponent } from './modules/panel-administracion-estudios/panel-administracion-estudios.component';
 
 const routes: Routes = [
     {path: '', component: InicioComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
     {path: 'panelAdministracionRamses', component: PanelAdministracionComponent},
     {path: 'panelAdministracionInicio', component: PanelAdministracionInicioComponent},
     {path: 'panelAdministracionProyectos', component: PanelAdministracionProyectosComponent},
+    {path: 'panelAdministracionEstudios', component: PanelAdministracionEstudiosComponent},
     {path: '**', component: InicioComponent}
 ];
 

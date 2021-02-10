@@ -8,6 +8,6 @@ ROUTER.post('/insert', PROYECTOS.insert);
 ROUTER.get('/get', PROYECTOS.get);
 ROUTER.get('/getOneById', PROYECTOS.getOneById);
 ROUTER.put('/update', PROYECTOS.update);
-ROUTER.delete('/delete/:id', PROYECTOS.delete);
+ROUTER.delete('/delete/:_id', PROYECTOS.delete);
 
 module.exports = ROUTER;

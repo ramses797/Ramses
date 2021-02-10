@@ -1,1 +1,54 @@
-<p>panel-administracion-estudios works!</p>
+<main class="column-center vw90 pTop170">
+
+    <app-panel-administracion class="flex-center w75"></app-panel-administracion>
+
+    <section class="inicios column w50" [ngClass]="{active: accion === 'inicios'}">
+        <button class="botonAnyadir mBottom20" (click)="accion = 'añadir'">Añadir</button>
+        <article class="inicio row-center JCBetween" *ngFor="let estudio of estudios | async">
+                <p class="titulo">{{estudio.titulo}}</p>
+                <div class="row">
+                    <button (click)="pasarModificar(estudio)">Modificar</button>
+                    <button (click)="eliminarEstudio(estudio)">Eliminar</button>
+                </div>
+        </article>
+    </section>
+
+    <section class="anyadir column w25" [ngClass]="{active: accion === 'añadir'}">
+        <h3 class="titulo">Añadir un Inicio</h3>
+        <p class="titulo">Fecha de inicio:</p>
+        <input class="mBottom20" type="text" name="fechaInicioEstudio" #fechaInicioEstudio="ngModel" [(ngModel)]="estudio.fechaInicio">
+        <p class="titulo">fecha de fin:</p>
+        <input class="mBottom20" type="text" name="fechaFinEstudio" #fechaFinEstudio="ngModel" [(ngModel)]="estudio.fechaFin">
+        <p class="titulo">Localizacion:</p>
+        <input class="mBottom20" type="text" name="localizacionEstudio" #localizacionEstudio="ngModel" [(ngModel)]="estudio.localizacion">
+        <p class="titulo">Centro:</p>
+        <input class="mBottom20" type="text" name="centroEstudio" #centroEstudio="ngModel" [(ngModel)]="estudio.centro">
+        <p class="titulo">Titulo:</p>
+        <input class="mBottom20" type="text" name="tituloEstudio" #tituloEstudio="ngModel" [(ngModel)]="estudio.titulo">
+        <p class="titulo">Aprendizaje:</p>
+        <textarea class="mBottom20" name="aprendizajeEstudio" #aprendizajeEstudio="ngModel" [(ngModel)]="estudio.aprendizaje"></textarea>
+        <div class="botonera row-center">
+            <button (click)="accion = 'inicios'">Cancelar</button>
+            <button (click)="anyadirEstudio()">Añadir</button>
+        </div>
+    </section>
+
+    <section class="modificar column w25" [ngClass]="{active: accion === 'modificar'}">
+        <p class="titulo">Fecha de inicio:</p>
+        <input class="mBottom20" type="text" name="fechaInicioEstudio" #fechaInicioEstudio="ngModel" [(ngModel)]="estudio.fechaInicio">
+        <p class="titulo">fecha de fin:</p>
+        <input class="mBottom20" type="text" name="fechaFinEstudio" #fechaFinEstudio="ngModel" [(ngModel)]="estudio.fechaFin">
+        <p class="titulo">Localizacion:</p>
+        <input class="mBottom20" type="text" name="localizacionEstudio" #localizacionEstudio="ngModel" [(ngModel)]="estudio.localizacion">
+        <p class="titulo">Centro:</p>
+        <input class="mBottom20" type="text" name="centroEstudio" #centroEstudio="ngModel" [(ngModel)]="estudio.centro">
+        <p class="titulo">Titulo:</p>
+        <input class="mBottom20" type="text" name="tituloEstudio" #tituloEstudio="ngModel" [(ngModel)]="estudio.titulo">
+        <p class="titulo">Aprendizaje:</p>
+        <textarea class="mBottom20" name="aprendizajeEstudio" #aprendizajeEstudio="ngModel" [(ngModel)]="estudio.aprendizaje"></textarea>
+        <div class="botonera row-center">
+            <button (click)="accion = 'inicios'">Cancelar</button>
+            <button (click)="modificarEstudio()">Modificar</button>
+        </div>
+    </section>
+</main>

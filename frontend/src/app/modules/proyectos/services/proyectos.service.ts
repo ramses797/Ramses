@@ -29,8 +29,7 @@ export class ProyectosService extends CrudService<Proyectos> {
         this.update(item).subscribe();
     }
 
-    eliminar(item: string) {
-        console.log(item);
-        this.delete(item).subscribe();    
+    eliminar(itemId: string) {
+        this.delete(itemId).subscribe();    
     }
 }

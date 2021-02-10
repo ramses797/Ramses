@@ -15,11 +15,11 @@
 
     <section class="anyadir column w25" [ngClass]="{active: accion === 'añadir'}">
         <h3 class="titulo">Añadir un Inicio</h3>
-        <p class="titulo">Titulo:</p>
+        <p class="titulo">Nombre proyecto:</p>
         <input class="mBottom20" type="text" name="nombreProyecto" #nombreProyecto="ngModel" [(ngModel)]="proyecto.nombreProyecto">
-        <p class="titulo">Subtitulo:</p>
+        <p class="titulo">Empresa:</p>
         <input class="mBottom20" type="text" name="empresaProyecto"  #empresaProyecto="ngModel" [(ngModel)]="proyecto.empresa">
-        <p class="titulo">Explicacion personal:</p>
+        <p class="titulo">Tecnologias:</p>
         <input class="mBottom20" type="text" name="tecnologiasProyecto"  #tecnologiasProyecto="ngModel" [(ngModel)]="proyecto.tecnologias">
         <div class="botonera row-center">
             <button (click)="accion = 'inicios'">Cancelar</button>
@@ -28,11 +28,11 @@
     </section>
 
     <section class="modificar column w25" [ngClass]="{active: accion === 'modificar'}">
-        <p class="titulo">Titulo:</p>
+        <p class="titulo">Nombre proyecto:</p>
         <input class="mBottom20" type="text" name="nombreProyecto" #nombreProyecto="ngModel" [(ngModel)]="proyecto.nombreProyecto">
-        <p class="titulo">Subtitulo:</p>
+        <p class="titulo">Empresa:</p>
         <input class="mBottom20" type="text" name="empresaProyecto"  #empresaProyecto="ngModel" [(ngModel)]="proyecto.empresa">
-        <p class="titulo">Explicacion personal:</p>
+        <p class="titulo">Tecnologias:</p>
         <input class="mBottom20" type="text" name="tecnologiasProyecto"  #tecnologiasProyecto="ngModel" [(ngModel)]="proyecto.tecnologias">
         <div class="botonera row-center">
             <button (click)="accion = 'inicios'">Cancelar</button>
