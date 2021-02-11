@@ -10,7 +10,7 @@ import { InicioService } from '../inicio/services/inicio.service';
 export class PanelAdministracionInicioComponent implements OnInit {
   inicios = this.inicioService.read();
   inicio: Inicio;
-  accion: string = 'inicio';
+  accion: string = 'inicios';
   
 
   constructor(private inicioService: InicioService) { 
@@ -23,14 +23,14 @@ export class PanelAdministracionInicioComponent implements OnInit {
   anyadirInicio() {
     this.inicioService.insertar(this.inicio);
     this.inicios = this.inicioService.read();
-    this.accion = 'inicio';
+    this.accion = 'inicios';
   }
 
   modificarInicio() {
     console.log(this.inicio);
     this.inicioService.modificar(this.inicio);
     this.inicio = {titulo: '', subtitulo: '', explicacionPersonal: ''}
-    this.accion = 'inicio';
+    this.accion = 'inicios';
   }
   pasarModificar(objeto: Inicio) {
     this.inicio = objeto;

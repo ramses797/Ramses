@@ -2,7 +2,7 @@
 
     <app-panel-administracion class="flex-center w75"></app-panel-administracion>
 
-    <section class="inicios column w50" [ngClass]="{active: accion === 'inicio'}">
+    <section class="inicios column w50" [ngClass]="{active: accion === 'inicios'}">
         <button class="botonAnyadir mBottom20" (click)="accion = 'añadir'">Añadir</button>
         <article class="row-center JCBetween" *ngFor="let inicio of inicios | async">
                 <p class="titulo">Inicio</p>

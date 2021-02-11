@@ -1,1 +1,38 @@
-<p>panel-administracion-cursos works!</p>
+<main class="column-center vw90 pTop170">
+
+    <app-panel-administracion class="flex-center w75"></app-panel-administracion>
+
+    <section class="inicios column w50" [ngClass]="{active: accion === 'inicios'}">
+        <button class="botonAnyadir mBottom20" (click)="accion = 'añadir'">Añadir</button>
+        <article class="row-center JCBetween" *ngFor="let curso of cursos | async">
+                <p class="titulo">{{curso.titulo}}</p>
+                <div class="row">
+                    <button (click)="pasarModificar(curso)">Modificar</button>
+                    <button (click)="eliminarCurso(curso)">Eliminar</button>
+                </div>
+        </article>
+    </section>
+
+    <section class="anyadir column w25" [ngClass]="{active: accion === 'añadir'}">
+        <h3 class="titulo">Añadir un Inicio</h3>
+        <p class="titulo">Titulo del curso:</p>
+        <input class="mBottom20" type="text" name="tituloCurso" #tituloCurso="ngModel" [(ngModel)]="curso.titulo">
+        <p class="titulo">Aprendizaje:</p>
+        <textarea class="mBottom20" name="aprendizajeCurso" #aprendizajeCurso="ngModel" [(ngModel)]="curso.aprendizaje"></textarea>
+        <div class="botonera row-center">
+            <button (click)="accion = 'inicio'">Cancelar</button>
+            <button (click)="anyadirCurso()">Añadir</button>
+        </div>
+    </section>
+
+    <section class="modificar column w25" [ngClass]="{active: accion === 'modificar'}">
+        <p class="titulo">Titulo del curso:</p>
+        <input class="mBottom20" type="text" name="tituloCurso" #tituloCurso="ngModel" [(ngModel)]="curso.titulo">
+        <p class="titulo">Aprendizaje:</p>
+        <textarea class="mBottom20" name="aprendizajeCurso" #aprendizajeCurso="ngModel" [(ngModel)]="curso.aprendizaje"></textarea>
+        <div class="botonera row-center">
+            <button (click)="accion = 'inicio'">Cancelar</button>
+            <button (click)="modificarCurso()">Modificar</button>
+        </div>
+    </section>
+</main>
