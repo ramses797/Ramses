@@ -57,8 +57,8 @@ const CONTROLADOR = {
 
     async delete(req, res) {
         try {
-            let trabajos = TRABAJOS.deleteOne(req.body._id);
-            res.status(200).send({
+            let trabajos = TRABAJOS.findByIdAndDelete(req.params._id);
+            res.status(201).send({
                 message: 'Trabajo eliminado correctamente.',
                 trabajos
             });

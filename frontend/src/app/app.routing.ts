@@ -8,6 +8,7 @@ import { PanelAdministracionComponent } from './modules/panel-administracion/pan
 import { PanelAdministracionInicioComponent } from './modules/panel-administracion-inicio/panel-administracion-inicio.component';
 import { PanelAdministracionProyectosComponent } from './modules/panel-administracion-proyectos/panel-administracion-proyectos.component';
 import { PanelAdministracionEstudiosComponent } from './modules/panel-administracion-estudios/panel-administracion-estudios.component';
+import { PanelAdministracionTrabajosComponent } from './modules/panel-administracion-trabajos/panel-administracion-trabajos.component';
 
 const routes: Routes = [
     {path: '', component: InicioComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
     {path: 'panelAdministracionInicio', component: PanelAdministracionInicioComponent},
     {path: 'panelAdministracionProyectos', component: PanelAdministracionProyectosComponent},
     {path: 'panelAdministracionEstudios', component: PanelAdministracionEstudiosComponent},
+    {path: 'panelAdministracionTrabajos', component: PanelAdministracionTrabajosComponent},
     {path: '**', component: InicioComponent}
 ];
 

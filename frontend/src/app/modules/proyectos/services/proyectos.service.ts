@@ -9,7 +9,6 @@ import { Proyectos } from 'src/app/modules/proyectos/models/proyectos';
 @Injectable({
     providedIn: 'root'
 })
-
 export class ProyectosService extends CrudService<Proyectos> {
 
     constructor(http: HttpClient) {
