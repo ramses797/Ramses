@@ -173,12 +173,14 @@ button {
 
 .inicios,
 .anyadir,
-.modificar {
+.modificar,
+.leer {
     display: none;
 }
 
 .inicios.active,
 .anyadir.active,
-.modificar.active {
+.modificar.active,
+.leer.active {
     display: block;
 }

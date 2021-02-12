@@ -21,12 +21,16 @@ export class ContactoService extends CrudService<Contacto> {
         this.insert(item).subscribe();
     }
 
+    read(): Observable<Contacto[]> {
+        return this.get();
+    }
+
     modificar(item: Contacto) {
         this.update(item).subscribe();
     }
 
-    /*eliminar(item: Contacto) {
-        this.delete(item).subscribe();
-    }*/
+    eliminar(itemId: string) {
+        this.delete(itemId).subscribe();
+    }
 
 }

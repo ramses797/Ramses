@@ -8,6 +8,6 @@ ROUTER.post('/insert', CONTACTO.insert);
 ROUTER.get('/get', CONTACTO.get);
 ROUTER.get('/getOneById', CONTACTO.getOneById);
 ROUTER.put('/update', CONTACTO.update);
-ROUTER.delete('/delete', CONTACTO.delete);
+ROUTER.delete('/delete/:_id', CONTACTO.delete);
 
 module.exports = ROUTER;
