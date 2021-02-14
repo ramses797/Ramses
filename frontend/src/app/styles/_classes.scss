@@ -1,3 +1,6 @@
+@import './classes/padding.scss';
+@import './classes/margin.scss';
+
 .flex-center{
     display: flex;
     justify-content: center;
@@ -44,7 +47,7 @@
 }
 
 .vw90 {
-    min-width: 100vw;
+    min-width: 88vw;
 }
 
 .w25 {
@@ -61,10 +64,6 @@
 
 .w100 {
     width: 100%;
-}
-
-.pTop170 {
-    padding-top: 170px;
 }
 
 .mBottom10 {
@@ -146,7 +145,7 @@ textarea {
 
 .checkbox {
     width: 22px;
-    margin: 10px 30px;
+    margin: 5px 30px;
     border: 50px solid $title-color;
     cursor: pointer;
     transition: 0s;
