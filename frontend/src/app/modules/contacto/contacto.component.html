@@ -1,8 +1,8 @@
-<main class="contacto flex-center w100">
+<main class="contacto flex-center vw90 pTop170 mLeft200">
     <section class="contacto-contenedor column w75">
         <h1 class="titulo">Contacto</h1>
         <div class="row">
-            <form class="formulario column w50" #contctoForm="ngForm">
+            <form class="formulario column w50" #contactoForm="ngForm">
                 <div class="column mBottom20">
                     <p class="titulo">Nombre:</p>
                     <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre" placeholder="Ramsés Moreno Rodríguez" for="nombre" [ngClass]="{invalid: nombre.invalid && (nombre.dirty || nombre.touched)}" required nombre/>
@@ -20,15 +20,15 @@
                  </div>
                 <div class="column mBottom20">
                     <p class="titulo">Explicacion:</p>
-                    <textarea name="explicacion" #explicacion="ngModel" [(ngModel)]="contacto.explicacion" placeholder="Nos gustaria tener una entrevista..." [ngClass]="{invalid: explicacion.touched}" required explicacion></textarea>
-                    <span [ngClass]="{error: explicacion.touched}">Este campo no puede estar vacío.</span>
+                    <textarea name="explicacion" #explicacion="ngModel" [(ngModel)]="contacto.explicacion" placeholder="Nos gustaria tener una entrevista..." [ngClass]="{invalid: explicacion.invalid && (explicacion.dirty || explicacion.touched)}" required explicacion></textarea>
+                    <span [ngClass]="{error: explicacion.invalid && (explicacion.dirty || explicacion.touched)}">Este campo no puede estar vacío.</span>
                 </div>
                 <div class="politicas row">
-                    <input class="checkbox" type="checkbox" required/>
+                    <input name="politicas" #politicas="ngModel" [(ngModel)]="contacto.terminos" class="checkbox" type="checkbox" required/>
                     <small class="texto w75">La información que proporciones unicamente se utilizara para hacerme llegar un correo que les hara ponerse en contacto conmigo.</small>
                 </div>
-                <div class="enviar column-center">
-                    <button>ENVIAR</button>
+                <div class="enviar flex-center">
+                    <button [ngClass]="{ disabled: contactoForm.invalid }" [disabled]="contactoForm.invalid" (click)="anyadirContacto()">ENVIAR</button>
                 </div>
             </form>
             <article class="texto w50">

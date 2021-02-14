@@ -12,17 +12,19 @@ export class ContactoComponent implements OnInit {
 
   constructor(private contactoService: ContactoService) { 
     this.contacto = {
-      nombre: 'ramses',
-      empresa: 'EncoderApe',
-      correo: 'rmorenor97@gmail.com',
-      explicacion: 'shdfhadkjhfasjhdgfjdh',
-      terminos: true
+      nombre: '',
+      empresa: '',
+      correo: '',
+      explicacion: '',
+      terminos: false
     };
   }
 
   ngOnInit(): void {
-    
-    this.contactoService.create(this.contacto);
+  }
+
+  anyadirContacto() {
+      this.contactoService.create(this.contacto);
   }
 
 }
