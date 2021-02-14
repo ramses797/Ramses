@@ -5,4 +5,5 @@ export type WebApiPrefix = {
     trabajos: string;
     cursos: string;
     contacto: string;
+    usuarios: string;
 }

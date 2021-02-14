@@ -8,7 +8,8 @@ const webApiPrefix: WebApiPrefix = {
     estudios: LogType.ESTUDIOS,
     trabajos: LogType.TRABAJOS,
     cursos: LogType.CURSOS,
-    contacto: LogType.CONTACTO
+    contacto: LogType.CONTACTO,
+    usuarios: LogType.USUARIOS
 }
 
 const webApiBaseURL = environment.API_URL;

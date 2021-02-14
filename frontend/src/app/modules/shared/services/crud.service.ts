@@ -56,6 +56,10 @@ export class CrudService<T> {
         return this.http.delete<T>(`${this.apiRest}/delete/${itemId}`);
     }
 
+    userLogin(item: T): Observable<T> {
+        return this.http.post<T>(`${this.apiRest}/login/`, item)
+    }
+
     /**
      * Metodo para cambiar la ruta.
      * @param urlPrefix 

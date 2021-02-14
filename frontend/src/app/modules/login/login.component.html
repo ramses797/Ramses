@@ -1,0 +1,10 @@
+<main class="flex-center vw90 pTop170">
+    <section class="column w25">
+        <h3 class="titulo">LOGIN</h3>
+        <p class="titulo">Correo:</p>
+        <input class="mBottom20" type="texto" name="correoLogin" #correoLogin="ngModel" [(ngModel)]="login.correo">
+        <p class="titulo">Contraseña:</p>
+        <input class="mBottom20" type="password" name="contrasenyaLogin" #contrasenyaLogin="ngModel" [(ngModel)]="login.contrasenya">
+        <button (click)="entrar()">ENTRAR</button>
+    </section>
+</main>
