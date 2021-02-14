@@ -11,6 +11,8 @@ import { PanelAdministracionEstudiosComponent } from './modules/panel-administra
 import { PanelAdministracionTrabajosComponent } from './modules/panel-administracion-trabajos/panel-administracion-trabajos.component';
 import { PanelAdministracionCursosComponent } from './modules/panel-administracion-cursos/panel-administracion-cursos.component';
 import { PanelAdministracionContactosComponent } from './modules/panel-administracion-contactos/panel-administracion-contactos.component';
+import { LoginComponent } from './modules/login/login.component';
+import { Guards } from './modules/shared/guards/guards';
 
 const routes: Routes = [
     {path: '', component: InicioComponent},
@@ -18,13 +20,14 @@ const routes: Routes = [
     {path: 'proyectos', component: ProyectosComponent},
     {path: 'contacto', component: ContactoComponent},
     {path: 'sobreMi', component: SobreMiComponent},
-    {path: 'panelAdministracionRamses', component: PanelAdministracionComponent},
-    {path: 'panelAdministracionInicio', component: PanelAdministracionInicioComponent},
-    {path: 'panelAdministracionProyectos', component: PanelAdministracionProyectosComponent},
-    {path: 'panelAdministracionEstudios', component: PanelAdministracionEstudiosComponent},
-    {path: 'panelAdministracionTrabajos', component: PanelAdministracionTrabajosComponent},
-    {path: 'panelAdministracionCursos', component: PanelAdministracionCursosComponent},
-    {path: 'panelAdministracionContacto', component: PanelAdministracionContactosComponent},
+    {path: 'panelAdministracionRamses', component: PanelAdministracionComponent, canActivate: [Guards]},
+    {path: 'panelAdministracionInicio', component: PanelAdministracionInicioComponent, canActivate: [Guards]},
+    {path: 'panelAdministracionProyectos', component: PanelAdministracionProyectosComponent, canActivate: [Guards]},
+    {path: 'panelAdministracionEstudios', component: PanelAdministracionEstudiosComponent, canActivate: [Guards]},
+    {path: 'panelAdministracionTrabajos', component: PanelAdministracionTrabajosComponent, canActivate: [Guards]},
+    {path: 'panelAdministracionCursos', component: PanelAdministracionCursosComponent, canActivate: [Guards]},
+    {path: 'panelAdministracionContacto', component: PanelAdministracionContactosComponent, canActivate: [Guards]},
+    {path: 'login', component: LoginComponent},
     {path: '**', component: InicioComponent}
 ];
 

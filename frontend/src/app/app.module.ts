@@ -20,6 +20,7 @@ import { PanelAdministracionEstudiosComponent } from './modules/panel-administra
 import { PanelAdministracionTrabajosComponent } from './modules/panel-administracion-trabajos/panel-administracion-trabajos.component';
 import { PanelAdministracionCursosComponent } from './modules/panel-administracion-cursos/panel-administracion-cursos.component';
 import { PanelAdministracionContactosComponent } from './modules/panel-administracion-contactos/panel-administracion-contactos.component';
+import { LoginComponent } from './modules/login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PanelAdministracionContactosComponent } from './modules/panel-administr
     PanelAdministracionEstudiosComponent,
     PanelAdministracionTrabajosComponent,
     PanelAdministracionCursosComponent,
-    PanelAdministracionContactosComponent
+    PanelAdministracionContactosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
