@@ -10,17 +10,25 @@ import { Usuarios } from 'src/app/modules/login/models/usuarios';
     providedIn: 'root'
 })
 export class LoginService extends CrudService<Usuarios> {
+    respuesta: boolean = false;
 
     constructor(http: HttpClient) {
         super(http);
         this.withUrlPrefix(PREFIX.usuarios);
     }
 
-    login(objeto: Usuarios) {
+    login(objeto: Usuarios): void {
         this.userLogin(objeto).subscribe((res) => {
-            if(res.message == true) {
-                location.href = 'panelAdministracionInicio'
+            localStorage.setItem('usuario', res.usuario.correo);
+            this.respuesta = res.message;
+            if (res.message === true) {
+                location.href = 'panelAdministracionInicio';
             }
         });
+    }
+
+    logout() {
+        localStorage.removeItem('usuario');
+        location.href = 'inicio';
     }
 }
