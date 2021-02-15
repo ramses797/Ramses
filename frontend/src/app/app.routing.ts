@@ -14,6 +14,7 @@ import { PanelAdministracionContactosComponent } from './modules/panel-administr
 import { LoginComponent } from './modules/login/login.component';
 import { Guards } from './modules/shared/guards/guards';
 
+//crear Lazylouding
 const routes: Routes = [
     {path: '', component: InicioComponent},
     {path: 'inicio', component: InicioComponent},

@@ -40,6 +40,7 @@ const CONTROLADOR = {
         }
     },
 
+    //Pasar todos los updates a hacerlos por parametros.
     async update(req,res) {
         try {
             let cursos = await CURSOS.findByIdAndUpdate(req.body._id, req.body);
@@ -57,8 +58,7 @@ const CONTROLADOR = {
 
     async delete(req, res) {
         try {
-            console.log(req.params._id);
-            let cursos = CURSOS.findByIdAndDelete(req.params._id);
+            let cursos = await CURSOS.findByIdAndDelete(req.params._id);
             res.status(200).send({
                 message: 'curso eliminado correctamente.',
                 cursos

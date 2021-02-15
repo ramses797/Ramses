@@ -37,7 +37,7 @@ export class PanelAdministracionTrabajosComponent implements OnInit {
   eliminarTrabajo(objeto: Trabajos) {
     console.log(objeto);
     this.trabajosService.eliminar(objeto._id);
-    //location.href = '/panelAdministracionEstudios';
+    location.href = '/panelAdministracionTrabajos';
   }
 
 }

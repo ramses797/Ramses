@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
     this.login = {correo: '', contrasenya: ''};
   }
 
+  //Eliminar nodos los ngOnInit donde no se usan.
   ngOnInit(): void {
   }
 

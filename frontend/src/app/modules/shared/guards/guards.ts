@@ -9,6 +9,7 @@ import { LoginService } from '../../login/services/login.service';
 export class Guards implements CanActivate {
 
     constructor(
+        //Eliminar router y LoginService ya que no se estan usando.
         private router: Router,
         private loginService: LoginService
         ) { }
@@ -16,6 +17,7 @@ export class Guards implements CanActivate {
         canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree  {
+            //Eliminar identidad y hacer el if directamente de localStorage.
             const identidad = localStorage.getItem('usuario')
             if(identidad === 'rmorenor97@gmail.com') {
                 return true;

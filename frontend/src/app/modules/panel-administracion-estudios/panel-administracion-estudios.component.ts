@@ -10,7 +10,7 @@ export class PanelAdministracionEstudiosComponent implements OnInit {
   estudios = this.estudiosService.read();
   estudio: Estudios;
   accion: string = 'inicios';
-
+  
   constructor(private estudiosService: EstudiosService) { 
     this.estudio = {fechaInicio: '', fechaFin: '', localizacion: '', centro: '', titulo: '', aprendizaje: ''};
   }
@@ -37,7 +37,7 @@ export class PanelAdministracionEstudiosComponent implements OnInit {
   eliminarEstudio(objeto: Estudios) {
     console.log(objeto);
     this.estudiosService.eliminar(objeto._id);
-    //location.href = '/panelAdministracionEstudios';
+    location.href = '/panelAdministracionEstudios';
   }
 
 }

@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BASEURL } from 'src/app/modules/shared/config/webApiPrefix.config';
 
+
+//TODO: Crear el crud service de tipo ANY de esta manera podriamos tener un unico servicio que se utilizase en todos los ts de los modulos.
 @Injectable()
 export class CrudService<T> {
     apiRest: String;

@@ -35,7 +35,7 @@ export class PanelAdministracionCursosComponent implements OnInit {
   eliminarCurso(objeto: Cursos) {
     console.log(objeto);
     this.cursosService.eliminar(objeto._id);
-    //location.href = '/panelAdministracionEstudios';
+    //location.href = '/panelAdministracionCursos';
   }
 
 }

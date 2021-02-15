@@ -22,6 +22,7 @@ import { PanelAdministracionCursosComponent } from './modules/panel-administraci
 import { PanelAdministracionContactosComponent } from './modules/panel-administracion-contactos/panel-administracion-contactos.component';
 import { LoginComponent } from './modules/login/login.component';
 
+//Separarlo en distintos modulos que luego se mecionaran en este.
 @NgModule({
   declarations: [
     AppComponent,
