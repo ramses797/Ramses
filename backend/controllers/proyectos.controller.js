@@ -3,7 +3,7 @@ const PROYECTOS = require('../models/proyectos.dto');
 const CONTROLADOR = {
     insert: async (req, res) => {
         try {
-            let proyectos = await PROYECTOS.create(req.body);
+            const proyectos = await PROYECTOS.create(req.body);
             res.status(201).send({
                 message: 'Datos de los proyectos insertados con exito.',
                 proyectos
@@ -17,7 +17,7 @@ const CONTROLADOR = {
     },
     get: async (req, res) => {
         try {
-            let proyectos = await PROYECTOS.find({});
+            const proyectos = await PROYECTOS.find({});
             res.status(200).send(proyectos);
         } catch(e) {
             res.status(400).send({
@@ -28,7 +28,7 @@ const CONTROLADOR = {
     },
     getOneById: async (req, res) => {
         try {
-            let proyectos = await PROYECTOS.findOne(req.body._id);
+            const proyectos = await PROYECTOS.findOne(req.body._id);
             res.status(200).send(proyectos);
         } catch(e) {
             res.status(404).send({

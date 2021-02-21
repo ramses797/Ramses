@@ -3,7 +3,7 @@ const INICIO = require('../models/inicio.dto.js');
 const CONTROLADOR = {
     insert: async (req, res) => {
         try {
-            let inicio = await INICIO.create(req.body);
+            const inicio = await INICIO.create(req.body);
             res.status(201).send({
                 message: 'Datos del inicio insertado correctamente.',
                 inicio
@@ -17,7 +17,7 @@ const CONTROLADOR = {
     },
     get: async (req, res) => {
         try{
-            let inicio = await INICIO.find({});
+            const inicio = await INICIO.find({});
             res.status(200).send(inicio);
         } catch(e) {
             res.status(400).send({
