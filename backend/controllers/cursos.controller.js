@@ -1,70 +1,59 @@
 const CURSOS = require('../models/cursos.dto');
 
 const CONTROLADOR = {
-    async insert(req, res) {
+    insert: async (req, res) => {
         try {
-            let cursos = await CURSOS.create(req.body);
+            const cursos = await CURSOS.create(req.body);
             res.status(201).send({
                 message: 'Cursos insertados correctamente.',
                 cursos
             });
         } catch(e) {
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al insertar los cursos.',
                 e
             });
         }
     },
-
-    async get(req, res) {
+    get: async (req, res) => {
         try {
-            let cursos = await CURSOS.find({});
+            const cursos = await CURSOS.find({});
             res.status(200).send(cursos);
         } catch(e) {
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al recoger los cursos.',
                 e
             });
         }
     },
-
-    async getOneById(req, res) {
+    getOneById: async(req, res) => {
         try {
-            let cursos = await CURSOS.find(req.body._id);
+            const cursos = await CURSOS.find(req.body._id);
             res.status(201).send(cursos);
         } catch(e){
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al recoger los datos de un curso',
                 e
             });
         }
     },
-
-    //Pasar todos los updates a hacerlos por parametros.
-    async update(req,res) {
+    update: async (req, res) => {
         try {
-            let cursos = await CURSOS.findByIdAndUpdate(req.body._id, req.body);
-            res.satus(200).send({
-                message: 'Datos del curso modificados con exito.',
-                cursos
-            });
+            const cursos = await CURSOS.findByIdAndUpdate(req.params.id, req.body);
+            res.sendStatus(201);
         } catch(e) {
-            res.satus(500).send({
+            res.satus(404).send({
                 message: 'Error al modificar los datos del curso.',
                 e
             });
         }
     },
-
-    async delete(req, res) {
+    delete: async (req, res) => {
         try {
-            let cursos = await CURSOS.findByIdAndDelete(req.params._id);
-            res.status(200).send({
-                message: 'curso eliminado correctamente.',
-                cursos
-            });
+            const cursos = await CURSOS.findByIdAndDelete(req.params.id);
+            res.sendStatus(201);
         } catch(e) {
-            res.status(500).send({
+            res.status(404).send({
                 message: 'Error al eliminar los cursos',
                 e
             });

@@ -1,69 +1,59 @@
 const CONTACTO = require('../models/contacto.dto');
 
 const CONTROLADOR = {
-    async insert(req, res) {
+    insert: async (req, res) => {
         try {
-            let contacto = await CONTACTO.create(req.body);
+            const contacto = await CONTACTO.create(req.body);
             res.status(201).send({
                 message: 'Contacto insertado correctamente.',
                 contacto
             });
         } catch(e) {
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al insertar el contacto.',
                 e
             });
         }
     },
-
-    async get(req, res) {
+    get: async (req, res) => {
         try {
-            let contacto = await CONTACTO.find({});
+            const contacto = await CONTACTO.find({});
             res.status(200).send(contacto)
         } catch(e) {
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al leer los contactos.',
                 e
             })
         }
     },
-
-    async getOneById(req, res) {
+    getOneById: async (req, res) => {
         try {
-            let contacto = await CONTACTO.findOne(req.body._id);
+            const contacto = await CONTACTO.findOne(req.body._id);
             res.status(200).send(contacto);
         } catch(e) {
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al leer un contacto',
                 e
             });
         }
     },
-
-    async update(req,res) {
+    update: async (req, res) => {
         try {
-            let contacto = await CONTACTO.findByIdAndUpdate(req.body._id, req.body);
-            res.status(201).send({
-                message: 'Contacto actualizado correctamente.',
-                contacto
-            });
+            await CONTACTO.findByIdAndUpdate(req.params.id, req.body);
+            res.sendStatus(201);
         } catch(e) {
-            res.status(500).send({
+            res.status(404).send({
                 message: 'Error al actualizar el contacto.',
                 e
             })
         }
     },
-
-    async delete(req, res) {
+    delete: async (req, res) => {
         try {
-            let contacto = await CONTACTO.findByIdAndDelete(req.params._id);
-            res.status(201).send({
-                message: 'Contacto eliminado correctamente.',
-                contacto
-            })
+            await CONTACTO.findByIdAndDelete(req.params.id);
+            res.sendStatus(201);
         } catch(e) {
-            res.status(500).send({
+            res.status(404).send({
                 message: 'Error al eliminar el contacto.',
                 e
             })
