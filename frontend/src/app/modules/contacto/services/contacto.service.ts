@@ -25,12 +25,11 @@ export class ContactoService extends CrudService<Contacto> {
         return this.get();
     }
 
-    modificar(item: Contacto) {
-        this.update(item).subscribe();
+    modificar(item: Contacto): void {
+        this.update(item._id, item).subscribe();
     }
 
-    eliminar(itemId: string) {
+    eliminar(itemId: string): void {
         this.delete(itemId).subscribe();
     }
-
 }

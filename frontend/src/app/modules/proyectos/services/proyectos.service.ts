@@ -16,7 +16,7 @@ export class ProyectosService extends CrudService<Proyectos> {
         this.withUrlPrefix(PREFIX.proyectos);
     }
 
-    insertar(item: Proyectos) {
+    insertar(item: Proyectos): void {
         this.insert(item).subscribe();
     }
 
@@ -24,11 +24,11 @@ export class ProyectosService extends CrudService<Proyectos> {
         return this.get();
     }
 
-    modificar(item: Proyectos) {
-        this.update(item).subscribe();
+    modificar(item: Proyectos): void {
+        this.update(item._id, item).subscribe();
     }
 
-    eliminar(itemId: string) {
-        this.delete(itemId).subscribe();    
+    eliminar(itemId: string): void {
+        this.delete(itemId).subscribe();
     }
 }

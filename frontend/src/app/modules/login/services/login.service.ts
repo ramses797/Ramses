@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
-import { CrudService } from 'src/app/modules/shared/services/crud.service';
+import { CrudService } from 'src/app/modules/shared/services/crud.service';
 import { PREFIX } from 'src/app/modules/shared/config/webApiPrefix.config';
 import { Usuarios } from 'src/app/modules/login/models/usuarios';
 
@@ -10,7 +9,7 @@ import { Usuarios } from 'src/app/modules/login/models/usuarios';
     providedIn: 'root'
 })
 export class LoginService extends CrudService<Usuarios> {
-    respuesta: boolean = false;
+    respuesta = false;
 
     constructor(http: HttpClient) {
         super(http);
@@ -26,8 +25,7 @@ export class LoginService extends CrudService<Usuarios> {
             }
         });
     }
-
-    logout() {
+    logout(): void {
         localStorage.removeItem('usuario');
         location.href = 'inicio';
     }
