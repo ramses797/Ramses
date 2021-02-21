@@ -1,52 +1,46 @@
 const ESTUDIOS = require('../models/estudios.dto');
 
 const CONTROLADOR = {
-    async insert(req, res) {
+    insert: async (req, res) => {
         try {
-            let estudios = await ESTUDIOS.create(req.body);
+            const estudios = await ESTUDIOS.create(req.body);
             res.status(201).send({
                 message: 'Estudios insertados correctamente.',
                 estudios
             });
         } catch(e) {
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al insertar los estudios.',
                 e
             });
         }
     },
-
-    async get(req, res) {
+    get: async (rq, res) => {
         try {
-            let estudios = await ESTUDIOS.find({});
+            const estudios = await ESTUDIOS.find({});
             res.status(200).send(estudios);
         } catch(e) {
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al recoger los estudios.',
                 e
             });
         }
     },
-
-    async getOneById(req, res) {
+    getOneById: async (req, res) => {
         try {
-            let estudios = await ESTUDIOS.find(req.body._id);
+            const estudios = await ESTUDIOS.find(req.body._id);
             res.status(201).send(estudios);
         } catch(e){
-            res.status(500).send({
+            res.status(404).send({
                 message: 'Error al recoger los datos de un estudio',
                 e
             });
         }
     },
-
-    async update(req,res) {
+    update: async (req, res) => {
         try {
-            let estudios = await ESTUDIOS.findByIdAndUpdate(req.body._id, req.body);
-            res.status(200).send({
-                message: 'Datos del estudio modificados con exito.',
-                estudios
-            });
+            await ESTUDIOS.findByIdAndUpdate(req.params.id, req.body);
+            res.sendStatus(201);
         } catch(e) {
             res.status(500).send({
                 message: 'Error al modificar los datos del estudio.',
@@ -54,14 +48,10 @@ const CONTROLADOR = {
             });
         }
     },
-
-    async delete(req, res) {
+    delete: async (req, res) => {
         try {
-            let estudios = await ESTUDIOS.findByIdAndDelete(req.params._id);
-            res.status(200).send({
-                message: 'Estudio eliminado correctamente.',
-                estudios
-            });
+            await ESTUDIOS.findByIdAndDelete(req.params.id);
+            res.sendStatus(201);
         } catch(e) {
             res.status(500).send({
                 message: 'Error al eliminar el estudio',
