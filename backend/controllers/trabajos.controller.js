@@ -1,69 +1,60 @@
 const TRABAJOS = require('../models/trabajos.dto');
 
 const CONTROLADOR = {
-    async insert(req, res) {
+    insert: async (req, res) => {
         try {
-            let trabajos = await TRABAJOS.create(req.body);
+            const trabajos = await TRABAJOS.create(req.body);
             res.status(201).send({
                 message: 'Trabajos insertados correctamente.',
                 trabajos
             });
         } catch(e) {
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al insertar los trabajos.',
                 e
             });
         }
     },
-
-    async get(req, res) {
+    get: async (req, res) => {
         try {
-            let trabajos = await TRABAJOS.find({});
+            const trabajos = await TRABAJOS.find({});
             res.status(200).send(trabajos);
         } catch(e) {
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al recoger los trabajos.',
                 e
             });
         }
     },
 
-    async getOneById(req, res) {
+    getOneById: async (req, res) => {
         try {
-            let trabajos = await TRABAJOS.find(req.body._id);
+            const trabajos = await TRABAJOS.find(req.body._id);
             res.status(201).send(trabajos);
         } catch(e){
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al recoger los datos de un trabajo',
                 e
             });
         }
     },
-
-    async update(req,res) {
+    update: async (req, res) => {
         try {
-            let trabajos = await TRABAJOS.findByIdAndUpdate(req.body._id, req.body);
-            res.satus(200).send({
-                message: 'Datos del trabajo modificados con exito.',
-                trabajos
-            });
+            await TRABAJOS.findByIdAndUpdate(req.params.id, req.body);
+            res.sendStatus(201);
         } catch(e) {
-            res.satus(500).send({
+            res.status(404).send({
                 message: 'Error al modificar los datos del trabajo.',
                 e
             });
         }
     },
-
-    async delete(req, res) {
+    delete: async (req, res) => {
         try {
-            let trabajos = await TRABAJOS.findByIdAndDelete(req.params._id);
-            res.status(201).send({
-                message: 'Trabajo eliminado correctamente.',
-                trabajos
-            });
+            await TRABAJOS.findByIdAndDelete(req.params.id);
+            res.sendStatus(201);
         } catch(e) {
-            res.status(500).send({
+            res.status(404).send({
                 message: 'Error al eliminar el trabajo',
                 e
             });
