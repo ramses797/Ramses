@@ -3,22 +3,28 @@ const MONGOOSE = require('mongoose');
 const TRABAJOS = new MONGOOSE.Schema (
     {
         fechaInicio: {
-            type: String
+            type: String,
+            required: true
         },
         fechaFin: {
-            type: String
+            type: String,
+            required: true
         },
         localizacion: {
-            type: String
+            type: String,
+            required: true
         },
         institucion: {
-            type: String
+            type: String,
+            required: true
         },
         puesto: {
-            type: String
+            type: String,
+            required: true
         },
         tareas: {
-            type: String
+            type: String,
+            required: true
         } 
     },
     {timestamps: true}

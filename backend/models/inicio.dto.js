@@ -3,13 +3,16 @@ const MONGOOSE = require('mongoose');
 const INICIO = new MONGOOSE.Schema (
     {
         titulo: {
-            type: String
+            type: String,
+            required: true
         },
         subtitulo: {
-            type: String
+            type: String,
+            required: true
         },
         explicacionPersonal: {
-            type: String
+            type: String,
+            required: true
         }
     },
     {timestamps: true}

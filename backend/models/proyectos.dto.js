@@ -3,13 +3,16 @@ const MONGOOSE = require('mongoose');
 const PROYECTOS = new MONGOOSE.Schema(
     {
         nombreProyecto: {
-            type: String
+            type: String,
+            required: true
         },
         empresa: {
-            type: String
+            type: String,
+            required: true
         },
         tecnologias: {
-            type: String
+            type: String,
+            required: true
         }
         
     },

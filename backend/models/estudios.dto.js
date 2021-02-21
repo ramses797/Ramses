@@ -3,22 +3,28 @@ const MONGOOSE = require('mongoose');
 const ESTUDIOS = new MONGOOSE.Schema (
     {
         fechaInicio: {
-            type: String
+            type: String,
+            required: true
         },
         fechaFin: {
-            type: String
+            type: String,
+            required: true
         },
         localizacion: {
-            type: String
+            type: String,
+            required: true
         },
         centro: {
-            type: String
+            type: String,
+            required: true
         },
         titulo: {
-            type: String
+            type: String,
+            required: true
         },
         aprendizaje: {
-            type: String
+            type: String,
+            required: true
         }
     },
     {timestamps: true}

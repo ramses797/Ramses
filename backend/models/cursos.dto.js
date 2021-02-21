@@ -3,10 +3,12 @@ const MONGOOSE = require('mongoose');
 const CURSOS = new MONGOOSE.Schema (
     {
         titulo: {
-            type: String
+            type: String,
+            required: true
         },
         aprendizaje: {
-            type: String
+            type: String,
+            required: true
         }
     },
     {timestamps: true}

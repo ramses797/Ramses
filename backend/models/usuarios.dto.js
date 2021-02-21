@@ -3,14 +3,17 @@ const MONGOOSE = require('mongoose');
 const USUARIOS = new MONGOOSE.Schema (
     {
         nombre: {
-            type: String
+            type: String,
+            required: true
         },
         correo: {
             type: String,
-            unique: true
+            unique: true,
+            required: true
         },
         contrasenya: {
-            type: String
+            type: String,
+            required: true
         }
     },
     {timestamps: true}
