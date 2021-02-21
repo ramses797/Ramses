@@ -25,7 +25,7 @@ export class InicioService extends CrudService<Inicio>{
     }
 
     modificar(item: Inicio) {
-        this.update(item).subscribe();
+        this.update(item._id, item).subscribe();
     }
 
     eliminar(itemId: string) {

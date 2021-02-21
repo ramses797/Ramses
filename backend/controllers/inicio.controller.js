@@ -1,12 +1,7 @@
 const INICIO = require('../models/inicio.dto.js');
 
 const CONTROLADOR = {
-    /**
-     * Metodo para insertar datos del inicio.
-     * @param {*} req 
-     * @param {*} res 
-     */
-    async insert(req, res) {
+    insert: async (req, res) => {
         try {
             let inicio = await INICIO.create(req.body);
             res.status(201).send({
@@ -14,69 +9,45 @@ const CONTROLADOR = {
                 inicio
             });
         } catch(e) {
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al insertar datos del inicio.',
                 e
             });
-        }         
+        } 
     },
-
-    /**
-     * Metodo para recoger datos del inicio.
-     * @param {*} req 
-     * @param {*} res 
-     */
-    async get(req, res) {
+    get: async (req, res) => {
         try{
             let inicio = await INICIO.find({});
             res.status(200).send(inicio);
         } catch(e) {
-            res.status(500).send({
+            res.status(400).send({
                 message: 'Error al recoger datos del inicio',
                 e
             });
         }
     },
-
-    /**
-     * Metodo para actualizar datos del inicio.
-     * @param {*} req 
-     * @param {*} res 
-     */
-    async update(req, res) {
+    update: async (req, res) => {
         try {
-            let inicio = await INICIO.findByIdAndUpdate(req.body._id, req.body);
-            res.status(201).send({
-                message: 'Datos del inicio actualizado correctamente.',
-                inicio
-            });
+            await INICIO.findByIdAndUpdate(req.params.id, req.body);
+            res.sendStatus(201);
         } catch(e) {
-            res.status(500).send({
+            res.status(404).send({
                 message: 'Error al actualizar los datos del inicio.',
                 e
             });
         }
     },
-
-    /**
-     * Metodo para eliminar los datos del inicio.
-     * @param {*} req 
-     * @param {*} res 
-     */
-    async delete(req, res) {
+    delete: async (req, res) => {
         try {
-            let inicio = await INICIO.findByIdAndDelete(req.params._id);
-            res.status(201).send({
-                message: 'Datos del inicio eliminados correctamente.',
-                inicio
-            });
+            await INICIO.findByIdAndDelete(req.params.id);
+            res.sendStatus(201);
         } catch(e) {
-            res.status(500).send({
+            res.status(404).send({
                 message: 'Error al eliminar los datos del inicio',
                 e
             });
         }
-    },
+    }
 }
 
 module.exports = CONTROLADOR;

@@ -46,8 +46,8 @@ export class CrudService<T> {
      * Metodo para actualizar un item concreto en la BD.
      * @param item 
      */
-    update(item: T): Observable<T> {
-        return this.http.put<T>(`${this.apiRest}/update`, item);
+    update(id: String, item: T): Observable<T> {
+        return this.http.put<T>(`${this.apiRest}/update/${id}`, item);
     }
 
     /**
