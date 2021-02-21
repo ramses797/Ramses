@@ -9,35 +9,33 @@ import { EstudiosService } from '../sobre-mi/services/estudios.service';
 export class PanelAdministracionEstudiosComponent implements OnInit {
   estudios = this.estudiosService.read();
   estudio: Estudios;
-  accion: string = 'inicios';
-  
-  constructor(private estudiosService: EstudiosService) { 
+  accion = 'inicios';
+  constructor(private estudiosService: EstudiosService) {
     this.estudio = {fechaInicio: '', fechaFin: '', localizacion: '', centro: '', titulo: '', aprendizaje: ''};
   }
 
   ngOnInit(): void {
   }
 
-  anyadirEstudio() {
+  anyadirEstudio(): void {
     this.estudiosService.insertar(this.estudio);
     this.estudios = this.estudiosService.read();
     this.accion = 'inicios';
   }
 
-  modificarEstudio() {
+  modificarEstudio(): void {
     console.log(this.estudios);
     this.estudiosService.modificar(this.estudio);
     this.estudio = {fechaInicio: '', fechaFin: '', localizacion: '', centro: '', titulo: '', aprendizaje: ''};
     this.accion = 'inicios';
   }
-  pasarModificar(objeto: Estudios) {
+  pasarModificar(objeto: Estudios): void {
     this.estudio = objeto;
     this.accion = 'modificar';
   }
-  eliminarEstudio(objeto: Estudios) {
+  eliminarEstudio(objeto: Estudios): void {
     console.log(objeto);
     this.estudiosService.eliminar(objeto._id);
     location.href = '/panelAdministracionEstudios';
   }
-
 }

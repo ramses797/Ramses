@@ -10,33 +10,31 @@ import { InicioService } from '../inicio/services/inicio.service';
 export class PanelAdministracionInicioComponent implements OnInit {
   inicios = this.inicioService.read();
   inicio: Inicio;
-  accion: string = 'inicios';
-  
-
-  constructor(private inicioService: InicioService) { 
+  accion = 'inicios';
+  constructor(private inicioService: InicioService) {
     this.inicio = {titulo: '', subtitulo: '', explicacionPersonal: ''};
   }
 
   ngOnInit(): void {
   }
 
-  anyadirInicio() {
+  anyadirInicio(): void {
     this.inicioService.insertar(this.inicio);
     this.inicios = this.inicioService.read();
     this.accion = 'inicios';
   }
 
-  modificarInicio() {
+  modificarInicio(): void {
     console.log(this.inicio);
     this.inicioService.modificar(this.inicio);
     this.inicio = {titulo: '', subtitulo: '', explicacionPersonal: ''}
     this.accion = 'inicios';
   }
-  pasarModificar(objeto: Inicio) {
+  pasarModificar(objeto: Inicio): void {
     this.inicio = objeto;
     this.accion = 'modificar';
   }
-  eliminarInicio(objeto: Inicio) {
+  eliminarInicio(objeto: Inicio): void {
     this.inicioService.eliminar(objeto._id);
     location.href = '/panelAdministracionInicio';
   }
