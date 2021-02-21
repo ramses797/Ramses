@@ -1,6 +1,6 @@
 const MONGOOSE = require('mongoose');
 
-const CURSOS = MONGOOSE.Schema (
+const CURSOS = new MONGOOSE.Schema (
     {
         titulo: {
             type: String

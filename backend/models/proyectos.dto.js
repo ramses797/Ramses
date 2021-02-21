@@ -1,6 +1,6 @@
 const MONGOOSE = require('mongoose');
 
-const PROYECTOS = MONGOOSE.Schema(
+const PROYECTOS = new MONGOOSE.Schema(
     {
         nombreProyecto: {
             type: String

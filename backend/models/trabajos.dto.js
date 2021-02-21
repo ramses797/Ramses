@@ -1,6 +1,6 @@
 const MONGOOSE = require('mongoose');
 
-const TRABAJOS = MONGOOSE.Schema (
+const TRABAJOS = new MONGOOSE.Schema (
     {
         fechaInicio: {
             type: String
