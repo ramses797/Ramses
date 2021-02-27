@@ -1,21 +1,12 @@
-// TODO: ELIMINAR MENSAJES
-// TODO: REVISAR CODIGOS DE RESPUESTA
-// TODO: GETBYID
 const ESTUDIOS = require('../models/estudios.dto');
 
 const CONTROLADOR = {
     insert: async (req, res) => {
         try {
-            const estudios = await ESTUDIOS.create(req.body);
-            res.status(201).send({
-                message: 'Estudios insertados correctamente.',
-                estudios
-            });
+            const estudio = await ESTUDIOS.create(req.body);
+            res.status(201).send(estudio);
         } catch(e) {
-            res.status(400).send({
-                message: 'Error al insertar los estudios.',
-                e
-            });
+            res.status(400).send(e);
         }
     },
     get: async (rq, res) => {
@@ -23,21 +14,15 @@ const CONTROLADOR = {
             const estudios = await ESTUDIOS.find({});
             res.status(200).send(estudios);
         } catch(e) {
-            res.status(400).send({
-                message: 'Error al recoger los estudios.',
-                e
-            });
+            res.status(400).send(e);
         }
     },
     getOneById: async (req, res) => {
         try {
-            const estudios = await ESTUDIOS.find(req.body._id);
-            res.status(201).send(estudios);
+            const estudio = await ESTUDIOS.findById(req.params.id);
+            res.status(201).send(estudio);
         } catch(e){
-            res.status(404).send({
-                message: 'Error al recoger los datos de un estudio',
-                e
-            });
+            res.status(404).send(e);
         }
     },
     update: async (req, res) => {
@@ -45,10 +30,7 @@ const CONTROLADOR = {
             await ESTUDIOS.findByIdAndUpdate(req.params.id, req.body);
             res.sendStatus(201);
         } catch(e) {
-            res.status(500).send({
-                message: 'Error al modificar los datos del estudio.',
-                e
-            });
+            res.status(404).send(e);
         }
     },
     delete: async (req, res) => {
@@ -56,10 +38,7 @@ const CONTROLADOR = {
             await ESTUDIOS.findByIdAndDelete(req.params.id);
             res.sendStatus(201);
         } catch(e) {
-            res.status(500).send({
-                message: 'Error al eliminar el estudio',
-                e
-            });
+            res.status(404).send(e);
         }
     }
  }

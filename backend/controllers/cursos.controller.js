@@ -1,4 +1,3 @@
-// TODO: GETBYID
 const CURSOS = require('../models/cursos.dto');
 
 const CONTROLADOR = {
