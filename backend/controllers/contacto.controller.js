@@ -11,8 +11,8 @@ const CONTROLADOR = {
     },
     get: async (req, res) => {
         try {
-            const contacto = await CONTACTO.find({});
-            res.status(200).send(contacto)
+            const contactos = await CONTACTO.find({});
+            res.status(200).send(contactos)
         } catch(e) {
             res.status(400).send(e)
         }
