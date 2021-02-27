@@ -6,16 +6,10 @@ const PROYECTOS = require('../models/proyectos.dto');
 const CONTROLADOR = {
     insert: async (req, res) => {
         try {
-            const proyectos = await PROYECTOS.create(req.body);
-            res.status(201).send({
-                message: 'Datos de los proyectos insertados con exito.',
-                proyectos
-            });
+            const proyecto = await PROYECTOS.create(req.body);
+            res.status(201).send(proyecto);
         } catch(e) {
-            res.status(400).send({
-                message:'Error al insertar los datos de proyectos.',
-                e
-            });
+            res.status(400).send(e);
         }
     },
     get: async (req, res) => {
@@ -23,21 +17,15 @@ const CONTROLADOR = {
             const proyectos = await PROYECTOS.find({});
             res.status(200).send(proyectos);
         } catch(e) {
-            res.status(400).send({
-                message: 'Error al recoger los datos de los proyectos',
-                e
-            });
+            res.status(400).send(e);
         }
     },
     getOneById: async (req, res) => {
         try {
-            const proyectos = await PROYECTOS.findOne(req.body._id);
-            res.status(200).send(proyectos);
+            const proyecto = await PROYECTOS.findById(req.params.id);
+            res.status(200).send(proyecto);
         } catch(e) {
-            res.status(404).send({
-                message: 'Error al recoger los datos de un proyecto.',
-                e
-            });
+            res.status(404).send(e);
         }
     },
     update: async (req, res) => {
@@ -45,10 +33,7 @@ const CONTROLADOR = {
             await PROYECTOS.findByIdAndUpdate(req.params.id, req.body);
             res.sendStatus(201);
         } catch(e) {
-            res.status(404).send({
-                message: 'Error al medificar los datos de un proyecto.',
-                e
-            });
+            res.status(404).send(e);
         }
     },
     delete: async (req, res) => {
@@ -56,10 +41,7 @@ const CONTROLADOR = {
             await PROYECTOS.findByIdAndDelete(req.params.id);
             res.sendStatus(201);
         } catch(e) {
-            res.status(404).send({
-                message: 'Error al eliminar los datos de un proyecto.',
-                e
-            });
+            res.status(404).send(e);
         }
     }
 };

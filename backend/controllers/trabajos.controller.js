@@ -6,16 +6,10 @@ const TRABAJOS = require('../models/trabajos.dto');
 const CONTROLADOR = {
     insert: async (req, res) => {
         try {
-            const trabajos = await TRABAJOS.create(req.body);
-            res.status(201).send({
-                message: 'Trabajos insertados correctamente.',
-                trabajos
-            });
+            const trabajo = await TRABAJOS.create(req.body);
+            res.status(201).send(trabajo);
         } catch(e) {
-            res.status(400).send({
-                message: 'Error al insertar los trabajos.',
-                e
-            });
+            res.status(400).send(e);
         }
     },
     get: async (req, res) => {
@@ -23,22 +17,16 @@ const CONTROLADOR = {
             const trabajos = await TRABAJOS.find({});
             res.status(200).send(trabajos);
         } catch(e) {
-            res.status(400).send({
-                message: 'Error al recoger los trabajos.',
-                e
-            });
+            res.status(400).send(e);
         }
     },
 
     getOneById: async (req, res) => {
         try {
-            const trabajos = await TRABAJOS.find(req.body._id);
-            res.status(201).send(trabajos);
+            const trabajo = await TRABAJOS.findById(req.params.id);
+            res.status(201).send(trabajo);
         } catch(e){
-            res.status(400).send({
-                message: 'Error al recoger los datos de un trabajo',
-                e
-            });
+            res.status(400).send(e);
         }
     },
     update: async (req, res) => {
@@ -46,10 +34,7 @@ const CONTROLADOR = {
             await TRABAJOS.findByIdAndUpdate(req.params.id, req.body);
             res.sendStatus(201);
         } catch(e) {
-            res.status(404).send({
-                message: 'Error al modificar los datos del trabajo.',
-                e
-            });
+            res.status(404).send(e);
         }
     },
     delete: async (req, res) => {
@@ -57,10 +42,7 @@ const CONTROLADOR = {
             await TRABAJOS.findByIdAndDelete(req.params.id);
             res.sendStatus(201);
         } catch(e) {
-            res.status(404).send({
-                message: 'Error al eliminar el trabajo',
-                e
-            });
+            res.status(404).send(e);
         }
     }
  }

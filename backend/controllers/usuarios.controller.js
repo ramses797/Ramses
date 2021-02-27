@@ -1,5 +1,3 @@
-// TODO: ELIMINAR MENSAJES
-// TODO: REVISAR CODIGOS DE RESPUESTA
 const USUARIOS = require('../models/usuarios.dto');
 const BCRYPTJS = require('bcryptjs');
 
@@ -7,35 +5,23 @@ const CONTROLADOR = {
     insert: async (req, res) => {
         try {
             req.body.contrasenya = await BCRYPTJS.hash(req.body.contrasenya, 10);
-            const usuarios = await USUARIOS.create(req.body);
-            res.status(201).send({
-                message: 'Usuario insertado correctamente.',
-                usuarios
-            });
+            const usuario = await USUARIOS.create(req.body);
+            res.status(201).send(usuario);
         } catch(e) {
-            res.status(400).send({
-                message: 'Error al insertar el usuario.',
-                e
-            })
+            res.status(400).send(e)
         }
     },
-
     login: async (req, res) => {
         try{
             const usuario = await USUARIOS.findOne({correo: req.body.correo});
-            // TODO: PASSMATCH
-            const comparacion = await BCRYPTJS.compare(req.body.contrasenya, usuario.contrasenya);
-            // TODO: REVISAR IF
-            if(!comparacion || !usuario) res.sendStatus(400);
+            const passmatch = await BCRYPTJS.compare(req.body.contrasenya, usuario.contrasenya);
+            if(!passmatch) res.sendStatus(400);
             res.status(200).send({
                 message: true,
                 usuario
             });
         } catch(e) {
-            res.status(500).send({
-                message: 'Error al intentar loguearse.',
-                e
-            });
+            res.status(400).send(e);
         }
     }
 }
