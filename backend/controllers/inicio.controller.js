@@ -1,20 +1,12 @@
-// TODO: ELIMINAR MENSAJES
-// TODO: REVISAR CODIGOS DE RESPUESTA
 const INICIO = require('../models/inicio.dto.js');
 
 const CONTROLADOR = {
     insert: async (req, res) => {
         try {
             const inicio = await INICIO.create(req.body);
-            res.status(201).send({
-                message: 'Datos del inicio insertado correctamente.',
-                inicio
-            });
+            res.status(201).send(inicio);
         } catch(e) {
-            res.status(400).send({
-                message: 'Error al insertar datos del inicio.',
-                e
-            });
+            res.status(400).send(e);
         } 
     },
     get: async (req, res) => {
@@ -22,10 +14,7 @@ const CONTROLADOR = {
             const inicio = await INICIO.find({});
             res.status(200).send(inicio);
         } catch(e) {
-            res.status(400).send({
-                message: 'Error al recoger datos del inicio',
-                e
-            });
+            res.status(400).send(e);
         }
     },
     update: async (req, res) => {
@@ -33,10 +22,7 @@ const CONTROLADOR = {
             await INICIO.findByIdAndUpdate(req.params.id, req.body);
             res.sendStatus(201);
         } catch(e) {
-            res.status(404).send({
-                message: 'Error al actualizar los datos del inicio.',
-                e
-            });
+            res.status(404).send(e);
         }
     },
     delete: async (req, res) => {
@@ -44,10 +30,7 @@ const CONTROLADOR = {
             await INICIO.findByIdAndDelete(req.params.id);
             res.sendStatus(201);
         } catch(e) {
-            res.status(404).send({
-                message: 'Error al eliminar los datos del inicio',
-                e
-            });
+            res.status(404).send(e);
         }
     }
 }
