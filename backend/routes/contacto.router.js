@@ -6,7 +6,7 @@ const ROUTER = EXPRESS.Router();
 
 ROUTER.post('/insert', CONTACTO.insert);
 ROUTER.get('/get', CONTACTO.get);
-ROUTER.get('/getOneById', CONTACTO.getOneById);
+ROUTER.get('/get/:id', CONTACTO.getOneById);
 ROUTER.put('/update/:id', CONTACTO.update);
 ROUTER.delete('/delete/:id', CONTACTO.delete);
 
