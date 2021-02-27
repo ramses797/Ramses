@@ -39,6 +39,7 @@ const CONTROLADOR = {
     },
     update: async (req, res) => {
         try {
+            //TODO: eliminar costantes en update y delete.
             const cursos = await CURSOS.findByIdAndUpdate(req.params.id, req.body);
             res.sendStatus(201);
         } catch(e) {

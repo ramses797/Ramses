@@ -5,6 +5,7 @@ const CONTROLADOR = {
         try {
             const contacto = await CONTACTO.create(req.body);
             res.status(201).send({
+                //TODO: Quitar los mensajes de todos los controladores.
                 message: 'Contacto insertado correctamente.',
                 contacto
             });
@@ -26,6 +27,7 @@ const CONTROLADOR = {
             })
         }
     },
+    //TODO: Pasar todos los getOneById a por parametros y e codigo de error de 400 a 404.
     getOneById: async (req, res) => {
         try {
             const contacto = await CONTACTO.findOne(req.body._id);
