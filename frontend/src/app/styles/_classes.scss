@@ -1,12 +1,15 @@
 @import './classes/padding.scss';
 @import './classes/margin.scss';
 
+// TODO: ROW CENTER
 .flex-center{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+// TODO: FLEX DIRECTION SOBRA
+// TODO: ROW WRAP
 .row {
     display: flex;
     flex-direction: row;
@@ -18,6 +21,8 @@
     flex-direction: column;
 }
 
+// TODO: ROW WRAP CENTER
+// TODO: FLEX DIRECTION SOBRA
 .row-center {
     display: flex;
     flex-direction: row;
@@ -33,23 +38,28 @@
     align-items: center;
 }
 
+// TODO: ROW WRAP BETWEEN
 .JCBetween {
     justify-content: space-between;
 }
 
+// TODO: NONE
 .displayNone {
-    display:none;
+    display: none;
 }
 
 .fixed {
     position: fixed;
+  // TODO: GENERAL
     z-index: 20;
 }
 
+// TODO: GENERAL
 .vw90 {
     min-width: 88vw;
 }
 
+// TODO: WIDTH GENERAL
 .w25 {
     width: 25%;
 }
@@ -66,6 +76,7 @@
     width: 100%;
 }
 
+// TODO: MARGIN GENERAL
 .mBottom10 {
     margin-bottom: 10px;
 }
@@ -78,11 +89,15 @@
     margin-bottom: 50px;
 }
 
+// TODO: ARCHIVO OVERRIDE
+// TODO: ORDENAR PROPIEDADES
+// TODO: PENSAR REFACTORIZACION
 ul {
     padding: 0;
 }
 
 li {
+  // TODO: LIST STYLE EN UL
     list-style: none;
     cursor: pointer;
     transition: 0.5s;
@@ -142,20 +157,6 @@ textarea {
     }
 }
 
-
-.checkbox {
-    width: 22px;
-    margin: 5px 30px;
-    border: 50px solid $title-color;
-    cursor: pointer;
-    transition: 0s;
-
-    &:checked {
-        box-shadow: inset 0 0 0 10px white;
-        background-color: $title-color;
-    }
-}
-
 button {
     width: 100px;
     height: 40px;
@@ -170,6 +171,20 @@ button {
     }
 }
 
+.checkbox {
+    width: 22px;
+    margin: 5px 30px;
+    border: 50px solid $title-color;
+    cursor: pointer;
+    transition: 0s;
+
+    &:checked {
+        box-shadow: inset 0 0 0 10px white;
+        background-color: $title-color;
+    }
+}
+
+// TODO: REFACTORIZAR ESTO
 .inicios,
 .anyadir,
 .modificar,

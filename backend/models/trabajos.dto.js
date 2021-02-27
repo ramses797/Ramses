@@ -2,6 +2,7 @@ const MONGOOSE = require('mongoose');
 
 const TRABAJOS = new MONGOOSE.Schema (
     {
+        // TODO: VALIDADOR QUE CHEQUE QUE LA FECHA DE INICIO ES MENOR A LA FECHA FIN
         fechaInicio: {
             type: String,
             required: true

@@ -1,3 +1,6 @@
+// TODO: ELIMINAR MENSAJES
+// TODO: REVISAR CODIGOS DE RESPUESTA
+// TODO: GETBYID
 const ESTUDIOS = require('../models/estudios.dto');
 
 const CONTROLADOR = {

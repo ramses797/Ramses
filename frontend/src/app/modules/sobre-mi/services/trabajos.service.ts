@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { CrudService } from 'src/app/modules/shared/services/crud.service';
-import { PREFIX } from 'src/app/modules/shared/config/webApiPrefix.config';
+import { PREFIX } from 'src/app/modules/shared/config/webApiPrefix.config';
 import { Trabajos } from 'src/app/modules/sobre-mi/models/trabajos';
 
 @Injectable({
@@ -24,6 +24,7 @@ export class TrabajosService extends CrudService<Trabajos> {
         return this.get();
     }
 
+  // TODO: MODIFICAR(ITEMID: STRING, ITEM: CURSOS)
     modificar(item: Trabajos): void {
         this.update(item._id, item).subscribe();
     }

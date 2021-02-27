@@ -1,5 +1,8 @@
 @import './_variables.scss';
 
+// TODO: FONT FAMILY VARIABLE
+// TODO: REM
+// TODO: REPASAR LOS FONT WEIGHT
 h1 {
     font-family: Comfortaa;
     font-size: 30px;
@@ -52,6 +55,7 @@ span {
     }
 }
 
+// TODO: LOGO NAME
 .LOGO {
     font-family: Rock Salt;
     font-size: 20px;
@@ -60,6 +64,7 @@ span {
     cursor: pointer;
 }
 
+// TODO: REFACTORIZAR ESTO
 .titulo {
     color: $title-color;
 }
@@ -72,6 +77,7 @@ span {
     color: $text-color;
 }
 
+// TODO: REFACTORIZAR ESTO
 ::placeholder {
     font-family: Comfortaa;
     color: $subtitle-color;

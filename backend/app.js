@@ -1,3 +1,7 @@
+// TODO: ADMIN AUTH MIDDLEWARE
+// TODO: VALIDADORES
+// TODO: TEST UNITARIOS
+// TODO: TEST INTEGRACION (OPCIONAL)
 const EXPRESS = require('express');
 const MORGAN = require('morgan');
 
@@ -43,7 +47,6 @@ APP.use(MORGAN('combined'));
 APP.use(EXPRESS.urlencoded({
     extended: true
 }))
-
 APP.use(EXPRESS.json());
 APP.use(CORS);
 
