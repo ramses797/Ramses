@@ -1,3 +1,5 @@
+// TODO: ELIMINAR MENSAJES
+// TODO: REVISAR CODIGOS DE RESPUESTA
 const INICIO = require('../models/inicio.dto.js');
 
 const CONTROLADOR = {

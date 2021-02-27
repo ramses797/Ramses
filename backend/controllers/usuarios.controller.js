@@ -1,3 +1,5 @@
+// TODO: ELIMINAR MENSAJES
+// TODO: REVISAR CODIGOS DE RESPUESTA
 const USUARIOS = require('../models/usuarios.dto');
 const BCRYPTJS = require('bcryptjs');
 
@@ -21,9 +23,10 @@ const CONTROLADOR = {
     login: async (req, res) => {
         try{
             const usuario = await USUARIOS.findOne({correo: req.body.correo});
+            // TODO: PASSMATCH
             const comparacion = await BCRYPTJS.compare(req.body.contrasenya, usuario.contrasenya);
+            // TODO: REVISAR IF
             if(!comparacion || !usuario) res.sendStatus(400);
-
             res.status(200).send({
                 message: true,
                 usuario
