@@ -1,10 +1,15 @@
 const MONGOOSE = require('mongoose');
+const ms = require('ms');
+
+const stringValidator = require('../validators/stringValidator.js');
+const correoValidator = require('../validators/correoValidator.js');
 
 const CONTACTO  = new MONGOOSE.Schema(
     {
         nombre: {
             type: String,
-            required: true
+            required: true,
+            validate: stringValidator
         },
         empresa: {
             type: String,
@@ -12,7 +17,8 @@ const CONTACTO  = new MONGOOSE.Schema(
         },
         correo: {
             type: String,
-            required: true
+            required: true,
+            validator: correoValidator
         },
         explicacion: {
             type: String,
@@ -21,8 +27,14 @@ const CONTACTO  = new MONGOOSE.Schema(
         terminos: {
             type: Boolean,
             default: false
+        },
+        expireAt: {
+            type: Date,
+            default: Date.now,
+            index: {
+                expires: ms('30 days'),
+            },
         }
-        // TODO: EXPIRE
     },
     {timestamps: true}
 );

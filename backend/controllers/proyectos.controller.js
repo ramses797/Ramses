@@ -1,6 +1,3 @@
-// TODO: ELIMINAR MENSAJES
-// TODO: REVISAR CODIGOS DE RESPUESTA
-// TODO: GETBYID
 const PROYECTOS = require('../models/proyectos.dto');
 
 const CONTROLADOR = {

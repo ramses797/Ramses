@@ -5,17 +5,17 @@
             <form class="formulario column w50" #contactoForm="ngForm">
                 <div class="column mBottom20">
                     <p class="titulo">Nombre:</p>
-                    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre" placeholder="Ramsés Moreno Rodríguez" for="nombre" [ngClass]="{invalid: nombre.invalid && (nombre.dirty || nombre.touched)}" required nombre/>
-                    <span [ngClass]="{error: nombre.invalid && (nombre.dirty || nombre.touched)}" >Este campo no acepta numeros. Ni puede estar vacío.</span>
+                    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre" placeholder="Ramsés Moreno Rodríguez" [ngClass]="{invalid: nombre.invalid && (nombre.dirty || nombre.touched)}" required nombre/>
+                  <span [ngClass]="{error: nombre.invalid && (nombre.dirty || nombre.touched)}" >Este campo no acepta numeros. Ni puede estar vacío.</span>
                 </div>
                 <div class="column mBottom20">
                     <p class="titulo">Empresa:</p>
-                    <input type="text" name="empresa" #empresa="ngModel" [(ngModel)]="contacto.empresa" placeholder="EncoderApe" for="empresa" [ngClass]="{invalid: empresa.invalid && (empresa.dirty || empresa.touched)}" required empresa/>
+                    <input type="text" name="empresa" #empresa="ngModel" [(ngModel)]="contacto.empresa" placeholder="EncoderApe" [ngClass]="{invalid: empresa.invalid && (empresa.dirty || empresa.touched)}" required empresa/>
                     <span [ngClass]="{error: empresa.invalid && (empresa.dirty || empresa.touched)}" >Este campo no puede estar vacío.</span>
                 </div>
                 <div class="column mBottom20">
                     <p class="titulo">Correo:</p>
-                    <input type="email" name="correo" #correo="ngModel" [(ngModel)]="contacto.correo" placeholder="Nombre@dominio.com" for="correo" [ngClass]="{invalid: correo.invalid && (correo.dirty || correo.touched)}" required correo/>
+                    <input type="email" name="correo" #correo="ngModel" [(ngModel)]="contacto.correo" placeholder="Nombre@dominio.com" [ngClass]="{invalid: correo.invalid && (correo.dirty || correo.touched)}" required correo/>
                     <span [ngClass]="{error: correo.invalid && (correo.dirty || correo.touched)}">Este campo debe de tener esta estructura: nombre@dominio.com. Ni puede esta vacío</span>
                  </div>
                 <div class="column mBottom20">
