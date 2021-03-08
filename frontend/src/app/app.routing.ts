@@ -12,11 +12,13 @@ import { PanelAdministracionTrabajosComponent } from './modules/panel-administra
 import { PanelAdministracionCursosComponent } from './modules/panel-administracion-cursos/panel-administracion-cursos.component';
 import { PanelAdministracionContactosComponent } from './modules/panel-administracion-contactos/panel-administracion-contactos.component';
 import { LoginComponent } from './modules/login/login.component';
+import { PruebaComponent } from './modules/prueba/prueba.component';
 import { Guards } from './modules/shared/guards/guards';
 
 // TODO: LAZY LOADING
 const routes: Routes = [
     {path: '', component: InicioComponent},
+    {path: 'prueba', component: PruebaComponent},
     {path: 'inicio', component: InicioComponent},
     {path: 'proyectos', component: ProyectosComponent},
     {path: 'contacto', component: ContactoComponent},

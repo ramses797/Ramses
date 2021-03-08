@@ -1,11 +1,11 @@
 export type Estudios = {
     _id?: string;
-    // TODO: DATE;
+    // TODO: DATE
     fechaInicio: string,
-    // TODO: DATE;
+  // TODO: DATE
     fechaFin: string,
     localizacion: string,
     centro: string,
     titulo: string,
     aprendizaje: string
-}
+};

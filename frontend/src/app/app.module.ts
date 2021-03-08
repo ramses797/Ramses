@@ -21,6 +21,7 @@ import { PanelAdministracionTrabajosComponent } from './modules/panel-administra
 import { PanelAdministracionCursosComponent } from './modules/panel-administracion-cursos/panel-administracion-cursos.component';
 import { PanelAdministracionContactosComponent } from './modules/panel-administracion-contactos/panel-administracion-contactos.component';
 import { LoginComponent } from './modules/login/login.component';
+import { PruebaComponent } from './modules/prueba/prueba.component';
 
 // TODO: LAZY LOADING
 @NgModule({
@@ -41,7 +42,8 @@ import { LoginComponent } from './modules/login/login.component';
     PanelAdministracionTrabajosComponent,
     PanelAdministracionCursosComponent,
     PanelAdministracionContactosComponent,
-    LoginComponent
+    LoginComponent,
+    PruebaComponent
   ],
   imports: [
     BrowserModule,
