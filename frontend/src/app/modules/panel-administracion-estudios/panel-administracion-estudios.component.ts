@@ -25,7 +25,7 @@ export class PanelAdministracionEstudiosComponent implements OnInit {
 
   modificarEstudio(): void {
     console.log(this.estudios);
-    this.estudiosService.modificar(this.estudio);
+    this.estudiosService.modificar(this.estudio._id, this.estudio);
     this.estudio = {fechaInicio: '', fechaFin: '', localizacion: '', centro: '', titulo: '', aprendizaje: ''};
     this.accion = 'inicios';
   }

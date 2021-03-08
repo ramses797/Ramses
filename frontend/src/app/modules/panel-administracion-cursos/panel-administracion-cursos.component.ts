@@ -10,32 +10,32 @@ import { CursosService } from '../sobre-mi/services/cursos.service';
 export class PanelAdministracionCursosComponent implements OnInit {
   cursos = this.cursosService.read();
   curso: Cursos = {titulo: '', aprendizaje: ''};
-  accion: string = 'inicios';
+  accion = 'inicios';
 
   constructor(private cursosService: CursosService) { }
 
   ngOnInit(): void {
   }
 
-  anyadirCurso() {
+  anyadirCurso(): void {
     this.cursosService.insertar(this.curso);
     this.cursos = this.cursosService.read();
     this.accion = 'inicios';
   }
 
-  modificarCurso() {
-    this.cursosService.modificar(this.curso);
+  modificarCurso(): void {
+    this.cursosService.modificar(this.curso._id, this.curso);
     this.curso = {titulo: '', aprendizaje: ''};
     this.accion = 'inicios';
   }
-  pasarModificar(objeto: Cursos) {
+  pasarModificar(objeto: Cursos): void {
     this.curso = objeto;
     this.accion = 'modificar';
   }
-  eliminarCurso(objeto: Cursos) {
+  eliminarCurso(objeto: Cursos): void {
     console.log(objeto);
     this.cursosService.eliminar(objeto._id);
-    //location.href = '/panelAdministracionCursos';
+    location.href = '/panelAdministracionCursos';
   }
 
 }

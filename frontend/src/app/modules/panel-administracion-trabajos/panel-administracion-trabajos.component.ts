@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Trabajos } from '../sobre-mi/models/trabajos';
-import { TrabajosService } from '../sobre-mi/services/trabajos.service'; 
+import { TrabajosService } from '../sobre-mi/services/trabajos.service';
 
 @Component({
   selector: 'app-panel-administracion-trabajos',
@@ -12,29 +12,29 @@ export class PanelAdministracionTrabajosComponent implements OnInit {
   trabajo: Trabajos;
   accion = 'inicios';
 
-  constructor(private trabajosService: TrabajosService) { 
+  constructor(private trabajosService: TrabajosService) {
     this.trabajo = {fechaInicio: '', fechaFin: '', localizacion: '', institucion: '', puesto: '', tareas: ''};
   }
 
   ngOnInit(): void {
   }
 
-  anyadirTrabajo() {
+  anyadirTrabajo(): void {
     this.trabajosService.insertar(this.trabajo);
     this.trabajos = this.trabajosService.read();
     this.accion = 'inicios';
   }
 
-  modificarTrabajo() {
-    this.trabajosService.modificar(this.trabajo);
+  modificarTrabajo(): void {
+    this.trabajosService.modificar(this.trabajo._id, this.trabajo);
     this.trabajo = {fechaInicio: '', fechaFin: '', localizacion: '', institucion: '', puesto: '', tareas: ''};
     this.accion = 'inicios';
   }
-  pasarModificar(objeto: Trabajos) {
+  pasarModificar(objeto: Trabajos): void {
     this.trabajo = objeto;
     this.accion = 'modificar';
   }
-  eliminarTrabajo(objeto: Trabajos) {
+  eliminarTrabajo(objeto: Trabajos): void {
     console.log(objeto);
     this.trabajosService.eliminar(objeto._id);
     location.href = '/panelAdministracionTrabajos';

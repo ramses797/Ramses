@@ -24,9 +24,8 @@ export class EstudiosService extends CrudService<Estudios> {
         return this.get();
     }
 
-  // TODO: MODIFICAR(ITEMID: STRING, ITEM: CURSOS)
-    modificar(item: Estudios): void {
-        this.update(item._id, item).subscribe();
+    modificar(itemId: string, item: Estudios): void {
+        this.update(itemId, item).subscribe();
     }
 
     eliminar(itemId: string): void {
