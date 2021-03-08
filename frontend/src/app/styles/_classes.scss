@@ -1,47 +1,6 @@
 @import './classes/padding.scss';
 @import './classes/margin.scss';
-
-// TODO: ROW CENTER
-.flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-// TODO: FLEX DIRECTION SOBRA
-// TODO: ROW WRAP
-.row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
-// TODO: ROW WRAP CENTER
-// TODO: FLEX DIRECTION SOBRA
-.row-center {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.column-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-// TODO: ROW WRAP BETWEEN
-.JCBetween {
-    justify-content: space-between;
-}
+@import './classes/flex.scss';
 
 // TODO: NONE
 .displayNone {
@@ -59,22 +18,6 @@
     min-width: 88vw;
 }
 
-// TODO: WIDTH GENERAL
-.w25 {
-    width: 25%;
-}
-
-.w50 {
-    width: 50%;
-}
-
-.w75 {
-    width: 75%;
-}
-
-.w100 {
-    width: 100%;
-}
 
 // TODO: MARGIN GENERAL
 .mBottom10 {
@@ -89,87 +32,6 @@
     margin-bottom: 50px;
 }
 
-// TODO: ARCHIVO OVERRIDE
-// TODO: ORDENAR PROPIEDADES
-// TODO: PENSAR REFACTORIZACION
-ul {
-    padding: 0;
-}
-
-li {
-  // TODO: LIST STYLE EN UL
-    list-style: none;
-    cursor: pointer;
-    transition: 0.5s;
-    outline: none;
-    &:hover, &.active {
-        transform: scale(1.2);
-    }
-
-    &.active {
-        font-weight: 700;
-    }
-}
-
-input {
-    width: 90%;
-    height: 22px;
-    background-color: transparent;
-    margin-top: 10px;
-    border: none;
-    border-bottom: 1px solid $subtitle-color;
-    opacity: 0.5;
-    color: $title-color;
-    outline: none;
-    cursor: text;
-    transition: 0.5s;
-
-    &:hover, &:focus {
-        border-bottom: 1px solid $title-color;
-    }
-
-    &.invalid {
-        color: $color-error;
-        border-bottom: 1px solid $color-error;
-    }
-}
-
-
-textarea {
-    width: 90%;
-    height: 90px;
-    background-color: transparent;
-    margin-top: 10px;
-    border: none;
-    border-bottom: 1px solid $subtitle-color;
-    opacity: 0.5;
-    color: $title-color;
-    outline: none;
-    transition: 0.5s;
-
-    &:hover, &:focus {
-        border-bottom: 1px solid $title-color;
-    }
-
-    &.invalid {
-        color: $color-error;
-        border-bottom: 1px solid $color-error;
-    }
-}
-
-button {
-    width: 100px;
-    height: 40px;
-    background-color: transparent;
-    border: 1px solid $title-color;
-    color: $title-color;
-    cursor: pointer;
-    outline: none;
-
-    &.disabled {
-        opacity: 0.3;
-    }
-}
 
 .checkbox {
     width: 22px;
