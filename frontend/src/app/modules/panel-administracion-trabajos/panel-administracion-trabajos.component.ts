@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Trabajos } from '../sobre-mi/models/trabajos';
 import { TrabajosService } from '../sobre-mi/services/trabajos.service';
 
@@ -7,16 +7,13 @@ import { TrabajosService } from '../sobre-mi/services/trabajos.service';
   templateUrl: './panel-administracion-trabajos.component.html',
   styleUrls: ['./panel-administracion-trabajos.component.scss']
 })
-export class PanelAdministracionTrabajosComponent implements OnInit {
+export class PanelAdministracionTrabajosComponent {
   trabajos = this.trabajosService.read();
   trabajo: Trabajos;
   accion = 'inicios';
 
   constructor(private trabajosService: TrabajosService) {
     this.trabajo = {fechaInicio: '', fechaFin: '', localizacion: '', institucion: '', puesto: '', tareas: ''};
-  }
-
-  ngOnInit(): void {
   }
 
   anyadirTrabajo(): void {

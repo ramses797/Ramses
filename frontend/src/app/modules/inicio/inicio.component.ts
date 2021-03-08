@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { InicioService } from 'src/app/modules/inicio/services/inicio.service';
 
 @Component({
@@ -6,11 +6,9 @@ import { InicioService } from 'src/app/modules/inicio/services/inicio.service';
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.scss']
 })
-export class InicioComponent implements OnInit {
+export class InicioComponent {
   inicios = this.inicioService.read();
 
   constructor(private inicioService: InicioService) {}
 
-  ngOnInit(): void {
-  }
 }

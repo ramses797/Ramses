@@ -1,17 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'header',
+  selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-  public screen;
+export class HeaderComponent {
   constructor() { }
-
-  ngOnInit(): void {
-    this.screen = screen.width;
-    console.log(this.screen);
-  }
-
 }

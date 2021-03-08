@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Usuarios } from 'src/app/modules/login/models/usuarios';
 import { LoginService } from 'src/app/modules/login/services/login.service';
 
@@ -7,18 +7,14 @@ import { LoginService } from 'src/app/modules/login/services/login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   login: Usuarios;
 
-  constructor(private loginService: LoginService) { 
+  constructor(private loginService: LoginService) {
     this.login = {correo: '', contrasenya: ''};
   }
 
-  //Eliminar nodos los ngOnInit donde no se usan.
-  ngOnInit(): void {
-  }
-
-  entrar() {
+  entrar(): void {
     this.loginService.login(this.login);
   }
 

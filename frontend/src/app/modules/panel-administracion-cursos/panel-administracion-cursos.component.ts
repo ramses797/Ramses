@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Cursos } from '../sobre-mi/models/cursos';
 import { CursosService } from '../sobre-mi/services/cursos.service';
 
@@ -7,15 +7,12 @@ import { CursosService } from '../sobre-mi/services/cursos.service';
   templateUrl: './panel-administracion-cursos.component.html',
   styleUrls: ['./panel-administracion-cursos.component.scss']
 })
-export class PanelAdministracionCursosComponent implements OnInit {
+export class PanelAdministracionCursosComponent {
   cursos = this.cursosService.read();
   curso: Cursos = {titulo: '', aprendizaje: ''};
   accion = 'inicios';
 
   constructor(private cursosService: CursosService) { }
-
-  ngOnInit(): void {
-  }
 
   anyadirCurso(): void {
     this.cursosService.insertar(this.curso);

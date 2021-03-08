@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Proyectos } from '../proyectos/models/proyectos';
 import { ProyectosService } from '../proyectos/services/proyectos.service';
 
@@ -7,16 +7,13 @@ import { ProyectosService } from '../proyectos/services/proyectos.service';
   templateUrl: './panel-administracion-proyectos.component.html',
   styleUrls: ['./panel-administracion-proyectos.component.scss']
 })
-export class PanelAdministracionProyectosComponent implements OnInit {
+export class PanelAdministracionProyectosComponent {
   proyectos = this.proyectosService.read();
   proyecto: Proyectos;
   accion = 'inicios';
 
   constructor(private proyectosService: ProyectosService) {
     this.proyecto = {nombreProyecto: '', empresa: '', tecnologias: ''};
-  }
-
-  ngOnInit(): void {
   }
 
   anyadirProyecto(): void {

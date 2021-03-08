@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Inicio } from '../inicio/models/inicio';
 import { InicioService } from '../inicio/services/inicio.service';
 
@@ -7,15 +7,12 @@ import { InicioService } from '../inicio/services/inicio.service';
   templateUrl: './panel-administracion-inicio.component.html',
   styleUrls: ['./panel-administracion-inicio.component.scss']
 })
-export class PanelAdministracionInicioComponent implements OnInit {
+export class PanelAdministracionInicioComponent {
   inicios = this.inicioService.read();
   inicio: Inicio;
   accion = 'inicios';
   constructor(private inicioService: InicioService) {
     this.inicio = {titulo: '', subtitulo: '', explicacionPersonal: ''};
-  }
-
-  ngOnInit(): void {
   }
 
   anyadirInicio(): void {

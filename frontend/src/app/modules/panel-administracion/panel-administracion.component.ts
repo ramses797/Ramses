@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoginService } from 'src/app/modules/login/services/login.service';
 
 @Component({
@@ -6,14 +6,11 @@ import { LoginService } from 'src/app/modules/login/services/login.service';
   templateUrl: './panel-administracion.component.html',
   styleUrls: ['./panel-administracion.component.scss']
 })
-export class PanelAdministracionComponent implements OnInit {
+export class PanelAdministracionComponent {
 
   constructor(private loginService: LoginService) { }
 
-  ngOnInit(): void {
-  }
-
-  salir() {
+  salir(): void {
     this.loginService.logout();
   }
 

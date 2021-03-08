@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { EstudiosService } from 'src/app/modules/sobre-mi/services/estudios.service';
 import { TrabajosService } from 'src/app/modules/sobre-mi/services/trabajos.service';
 import { CursosService } from 'src/app/modules/sobre-mi/services/cursos.service';
@@ -8,11 +8,11 @@ import { CursosService } from 'src/app/modules/sobre-mi/services/cursos.service'
   templateUrl: './sobre-mi.component.html',
   styleUrls: ['./sobre-mi.component.scss']
 })
-export class SobreMiComponent implements OnInit {
-  estudio: string = 'estudios';
-  trabajo: string = 'trabajos';
-  curso: string = 'cursos';
-  eleccion: string = 'estudios';
+export class SobreMiComponent {
+  estudio = 'estudios';
+  trabajo = 'trabajos';
+  curso = 'cursos';
+  eleccion = 'estudios';
 
   estudios = this.estudiosService.read();
   trabajos = this.trabajosService.read();
@@ -23,9 +23,7 @@ export class SobreMiComponent implements OnInit {
               private cursosService: CursosService
               ) { }
 
-  ngOnInit(): void {}
-
-  cambioVista(vista) {
+  cambioVista(vista): void {
     this.eleccion = vista;
     console.log(this.eleccion);
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Contacto } from './models/contacto';
 import { ContactoService } from './services/contacto.service';
 
@@ -7,10 +7,10 @@ import { ContactoService } from './services/contacto.service';
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.scss']
 })
-export class ContactoComponent implements OnInit {
+export class ContactoComponent {
   contacto: Contacto;
 
-  constructor(private contactoService: ContactoService) { 
+  constructor(private contactoService: ContactoService) {
     this.contacto = {
       nombre: '',
       empresa: '',
@@ -20,10 +20,7 @@ export class ContactoComponent implements OnInit {
     };
   }
 
-  ngOnInit(): void {
-  }
-
-  anyadirContacto() {
+  anyadirContacto(): void {
       this.contactoService.create(this.contacto);
   }
 
