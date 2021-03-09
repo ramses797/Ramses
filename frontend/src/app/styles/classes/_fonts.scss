@@ -1,0 +1,11 @@
+@import '../variables/_text.scss';
+@import '../variables/_colors.scss';
+
+.logo {
+  font-family: $fontFamily-Secundary;
+  font-size: $medium-font;
+  outline: none;
+  cursor: pointer;
+  color: $primary-color;
+
+}
