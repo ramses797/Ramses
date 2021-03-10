@@ -1,0 +1,76 @@
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  transition: 0.5s;
+  cursor: pointer;
+  outline: none;
+  &:hover, &.active {
+    transform: scale(1.2);
+  }
+
+  &.active {
+    font-weight: 700;
+  }
+}
+
+input {
+  opacity: 0.5;
+  transition: 0.5s;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 1px solid $secundary-color;
+  width: 90%;
+  height: 22px;
+  background-color: transparent;
+  cursor: text;
+  outline: none;
+  color: $primary-color;
+
+  &:hover, &:focus {
+    border-bottom: 1px solid $primary-color;
+  }
+
+  &.invalid {
+    border-bottom: 1px solid $error-color;
+    color: $error-color;
+  }
+}
+
+textarea {
+  opacity: 0.5;
+  transition: 0.5s;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 1px solid $secundary-color;
+  width: 90%;
+  height: 90px;
+  background-color: transparent;
+  outline: none;
+  color: $primary-color;
+
+  &:hover, &:focus {
+    border-bottom: 1px solid $primary-color;
+  }
+
+  &.invalid {
+    border-bottom: 1px solid $error-color;
+    color: $error-color;
+  }
+}
+
+button {
+  border: 1px solid $primary-color;
+  width: 100px;
+  height: 40px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  color: $primary-color;
+
+  &.disabled {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,29 @@
+<main class="column-center vw90 pTop170">
+
+    <app-panel-administracion class="flex-center w75"></app-panel-administracion>
+
+    <section class="inicios column w50" [ngClass]="{active: accion === 'inicios'}">
+        <button class="botonAnyadir mBottom20" (click)="accion = 'añadir'">Añadir</button>
+        <article class="row-center JCBetween" *ngFor="let contacto of contactos | async">
+                <p class="titulo">{{contacto.empresa}}</p>
+                <div class="row">
+                    <button (click)="pasarLeer(contacto)">Leer</button>
+                    <button (click)="eliminarContacto(contacto)">Eliminar</button>
+                </div>
+        </article>
+    </section>
+
+    <section class="leer column w25" [ngClass]="{active: accion === 'leer'}">
+        <p class="titulo">Nombre:</p>
+        <input class="mBottom20" type="text" value="{{contacto.nombre}}">
+        <p class="titulo">Empresa:</p>
+        <input class="mBottom20" type="text" value="{{contacto.empresa}}">
+        <p class="titulo">Correo:</p>
+        <input class="mBottom20" type="text" value="{{contacto.correo}}">
+        <p class="titulo">Explicacion:</p>
+        <textarea class="mBottom20" value="{{contacto.explicacion}}"></textarea>
+        <div class="botonera row-center">
+            <button (click)="accion = 'inicios'">Cerrar</button>
+        </div>
+    </section>
+</main>

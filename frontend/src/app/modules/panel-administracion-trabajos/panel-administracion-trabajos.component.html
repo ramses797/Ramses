@@ -1,0 +1,54 @@
+<main class="column-center vw90 pTop170">
+
+    <app-panel-administracion class="flex-center w75"></app-panel-administracion>
+
+    <section class="inicios column w50" [ngClass]="{active: accion === 'inicios'}">
+        <button class="botonAnyadir mBottom20" (click)="accion = 'añadir'">Añadir</button>
+        <article class="inicio row-center JCBetween" *ngFor="let trabajo of trabajos | async">
+                <p class="titulo">{{trabajo.institucion}}</p>
+                <div class="row">
+                    <button (click)="pasarModificar(trabajo)">Modificar</button>
+                    <button (click)="eliminarTrabajo(trabajo)">Eliminar</button>
+                </div>
+        </article>
+    </section>
+
+    <section class="anyadir column w25" [ngClass]="{active: accion === 'añadir'}">
+        <h3 class="titulo">Añadir un Inicio</h3>
+        <p class="titulo">Fecha de inicio:</p>
+        <input class="mBottom20" type="text" name="fechaInicioTrabajo" #fechaInicioTrabajo="ngModel" [(ngModel)]="trabajo.fechaInicio">
+        <p class="titulo">fecha de fin:</p>
+        <input class="mBottom20" type="text" name="fechaFinTrabajo" #fechaFinTrabajo="ngModel" [(ngModel)]="trabajo.fechaFin">
+        <p class="titulo">Localizacion:</p>
+        <input class="mBottom20" type="text" name="localizacionEstudio" #localizacionEstudio="ngModel" [(ngModel)]="trabajo.localizacion">
+        <p class="titulo">Institucion:</p>
+        <input class="mBottom20" type="text" name="institucionTrabajo" #institucionTrabajo="ngModel" [(ngModel)]="trabajo.institucion">
+        <p class="titulo">Puesto:</p>
+        <input class="mBottom20" type="text" name="puestoTrabajo" #puestoTrabajo="ngModel" [(ngModel)]="trabajo.puesto">
+        <p class="titulo">Tareas:</p>
+        <textarea class="mBottom20" name="tareasTrabajo" #tareasTrabajo="ngModel" [(ngModel)]="trabajo.tareas"></textarea>
+        <div class="botonera row-center">
+            <button (click)="accion = 'inicios'">Cancelar</button>
+            <button (click)="anyadirTrabajo()">Añadir</button>
+        </div>
+    </section>
+
+    <section class="modificar column w25" [ngClass]="{active: accion === 'modificar'}">
+        <p class="titulo">Fecha de inicio:</p>
+        <input class="mBottom20" type="text" name="fechaInicioTrabajo" #fechaInicioTrabajo="ngModel" [(ngModel)]="trabajo.fechaInicio">
+        <p class="titulo">fecha de fin:</p>
+        <input class="mBottom20" type="text" name="fechaFinTrabajo" #fechaFinTrabajo="ngModel" [(ngModel)]="trabajo.fechaFin">
+        <p class="titulo">Localizacion:</p>
+        <input class="mBottom20" type="text" name="localizacionEstudio" #localizacionEstudio="ngModel" [(ngModel)]="trabajo.localizacion">
+        <p class="titulo">Institucion:</p>
+        <input class="mBottom20" type="text" name="institucionTrabajo" #institucionTrabajo="ngModel" [(ngModel)]="trabajo.institucion">
+        <p class="titulo">Puesto:</p>
+        <input class="mBottom20" type="text" name="puestoTrabajo" #puestoTrabajo="ngModel" [(ngModel)]="trabajo.puesto">
+        <p class="titulo">Tareas:</p>
+        <textarea class="mBottom20" name="tareasTrabajo" #tareasTrabajo="ngModel" [(ngModel)]="trabajo.tareas"></textarea>
+        <div class="botonera row-center">
+            <button (click)="accion = 'inicios'">Cancelar</button>
+            <button (click)="modificarTrabajo()">Modificar</button>
+        </div>
+    </section>
+</main>

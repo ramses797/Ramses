@@ -1,0 +1,62 @@
+@import './classes/padding.scss';
+@import './classes/margin.scss';
+@import './classes/flex.scss';
+
+// TODO: NONE
+.displayNone {
+    display: none;
+}
+
+.fixed {
+    position: fixed;
+  // TODO: GENERAL
+    z-index: 20;
+}
+
+// TODO: GENERAL
+.vw90 {
+    min-width: 88vw;
+}
+
+
+// TODO: MARGIN GENERAL
+.mBottom10 {
+    margin-bottom: 10px;
+}
+
+.mBottom20 {
+    margin-bottom: 20px;
+}
+
+.mBottom50 {
+    margin-bottom: 50px;
+}
+
+
+.checkbox {
+    width: 22px;
+    margin: 5px 30px;
+    border: 50px solid $title-color;
+    cursor: pointer;
+    transition: 0s;
+
+    &:checked {
+        box-shadow: inset 0 0 0 10px white;
+        background-color: $title-color;
+    }
+}
+
+// TODO: REFACTORIZAR ESTO
+.inicios,
+.anyadir,
+.modificar,
+.leer {
+    display: none;
+}
+
+.inicios.active,
+.anyadir.active,
+.modificar.active,
+.leer.active {
+    display: block;
+}

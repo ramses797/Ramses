@@ -1,0 +1,37 @@
+<main class="sobreMi column-center vw90 pTop170 mLeft200">
+    <section class="sobreMi-contenedor column w50">
+        <h1 class="titulo">Sobre mi</h1>
+        <ul class="menu row w50">
+            <li (click)="cambioVista(estudio)" [ngClass]="{active: eleccion == 'estudios'}">ESTUDIOS</li>
+            <li (click)="cambioVista(trabajo)" [ngClass]="{active: eleccion == 'trabajos'}">TRABAJOS</li>
+            <li (click)="cambioVista(curso)" [ngClass]="{active: eleccion == 'cursos'}">CURSOS</li>
+        </ul>
+
+        <section class="estudios column" [ngClass]="{active: eleccion == 'estudios'}">
+            <article class="estudio column mBottom50" *ngFor="let estudio of estudios | async">
+                <p class="subtitulo mBottom10">{{estudio.fechaInicio}} - {{estudio.fechaFin}}</p>
+                <p class="subtitulo mBottom10">{{estudio.centro}}</p>
+                <p class="subtitulo">{{estudio.localizacion}}</p>
+                <h3 class="titulo">{{estudio.titulo}}</h3>
+                <p class="texto">{{estudio.aprendizaje}}</p>
+            </article>
+        </section>
+
+        <section class="trabajos column" [ngClass]="{active: eleccion == 'trabajos'}">
+            <article class="trabajo column" *ngFor="let trabajo of trabajos | async">
+                <p class="subtitulo mBottom10">{{trabajo.fechaInicio}} - {{trabajo.fechaFin}}</p>
+                <p class="subtitulo mBottom10">{{trabajo.institucion}}</p>
+                <p class="subtitulo">{{trabajo.localizacion}}</p>
+                <h3 class="titulo">{{trabajo.puesto}}</h3>
+                <p class="texto">{{trabajo.tareas}}</p>
+            </article>
+        </section>
+
+        <section class="cursos column" [ngClass]="{active: eleccion == 'cursos'}">
+            <article class="curso column" *ngFor="let curso of cursos | async">
+                <h3 class="titulo">{{curso.titulo}}</h3>
+                <p class="texto">{{curso.aprendizaje}}</p>
+            </article>
+        </section>
+    </section>
+</main>

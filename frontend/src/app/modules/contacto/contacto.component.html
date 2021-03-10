@@ -1,0 +1,42 @@
+<main class="contacto flex-center vw90 pTop170 mLeft200">
+    <section class="contacto-contenedor column w75">
+        <h1 class="titulo">Contacto</h1>
+        <div class="row">
+            <form class="formulario column w50" #contactoForm="ngForm">
+                <div class="column mBottom20">
+                    <p class="titulo">Nombre:</p>
+                    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre" placeholder="Ramsés Moreno Rodríguez" [ngClass]="{invalid: nombre.invalid && (nombre.dirty || nombre.touched)}" required nombre/>
+                  <span [ngClass]="{error: nombre.invalid && (nombre.dirty || nombre.touched)}" >Este campo no acepta numeros. Ni puede estar vacío.</span>
+                </div>
+                <div class="column mBottom20">
+                    <p class="titulo">Empresa:</p>
+                    <input type="text" name="empresa" #empresa="ngModel" [(ngModel)]="contacto.empresa" placeholder="EncoderApe" [ngClass]="{invalid: empresa.invalid && (empresa.dirty || empresa.touched)}" required empresa/>
+                    <span [ngClass]="{error: empresa.invalid && (empresa.dirty || empresa.touched)}" >Este campo no puede estar vacío.</span>
+                </div>
+                <div class="column mBottom20">
+                    <p class="titulo">Correo:</p>
+                    <input type="email" name="correo" #correo="ngModel" [(ngModel)]="contacto.correo" placeholder="Nombre@dominio.com" [ngClass]="{invalid: correo.invalid && (correo.dirty || correo.touched)}" required correo/>
+                    <span [ngClass]="{error: correo.invalid && (correo.dirty || correo.touched)}">Este campo debe de tener esta estructura: nombre@dominio.com. Ni puede esta vacío</span>
+                 </div>
+                <div class="column mBottom20">
+                    <p class="titulo">Explicacion:</p>
+                    <textarea name="explicacion" #explicacion="ngModel" [(ngModel)]="contacto.explicacion" placeholder="Nos gustaria tener una entrevista..." [ngClass]="{invalid: explicacion.invalid && (explicacion.dirty || explicacion.touched)}" required explicacion></textarea>
+                    <span [ngClass]="{error: explicacion.invalid && (explicacion.dirty || explicacion.touched)}">Este campo no puede estar vacío.</span>
+                </div>
+                <div class="politicas row">
+                    <input name="politicas" #politicas="ngModel" [(ngModel)]="contacto.terminos" class="checkbox" type="checkbox" required/>
+                    <small class="texto w75">La información que proporciones unicamente se utilizara para hacerme llegar un correo que les hara ponerse en contacto conmigo.</small>
+                </div>
+                <div class="enviar flex-center">
+                    <button [ngClass]="{ disabled: contactoForm.invalid }" [disabled]="contactoForm.invalid" (click)="anyadirContacto()">ENVIAR</button>
+                </div>
+            </form>
+            <article class="texto w50">
+                <p>¡Hola!</p>
+                <p>Por favor rellena todos los datos, de esta manera yo sere capaz de dirigirme hacia ti de una forma acertada.
+                    Este contacto me enviara un correo, asi podre ponerme en contacto contigo.
+                </p>
+            </article>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,37 @@
+@import '../../styles/index.scss';
+
+.menu {
+    justify-content: space-around;
+}
+
+.añadir {
+    margin-left: auto;
+}
+
+.item {
+    justify-content: space-between;
+}
+
+.botonCancelar {
+    margin-left: auto;
+}
+
+.inicio, 
+.añadirDatos,
+.proyectos, 
+.estudios, .trabajos, .cursos, 
+.contactos,
+.modificar,
+.leer {
+    display: none;
+}
+
+.inicio.active,
+.añadirDatos.active, 
+.proyectos.active, 
+.estudios.active, .trabajos.active, .cursos.active, 
+.contactos.active,
+.modificar.active,
+.leer.active {
+    display: block;
+}

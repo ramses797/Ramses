@@ -1,0 +1,78 @@
+@import '../variables/_text.scss';
+@import '../variables/_colors.scss';
+
+h1 {
+  font-family: $fontFamily-primary;
+  font-size: $veryBig-font;
+  font-weight: 700;
+  color: $primary-color;
+}
+
+h2 {
+  font-family: $fontFamily-primary;
+  font-size: $big-font;
+  font-weight: 600;
+  color: $secundary-color;
+}
+
+h3 {
+  font-family: $fontFamily-primary;
+  font-size: $medium-font;
+  font-weight: 500;
+  color: $tertiary-color;
+}
+
+p {
+  font-family: $fontFamily-primary;
+  font-size: $small-font;
+  font-weight: 400;
+}
+
+a {
+  font-family: $fontFamily-primary;
+  font-size: $small-font;
+  font-weight: 600;
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+span {
+  font-family: $fontFamily-primary;
+  font-size: $verySmall-font;
+  font-weight: 400;
+
+  &.hidden {
+    visibility: hidden;
+  }
+
+  &.error {
+    visibility: visible;
+    color: $error-color;
+  }
+}
+
+small {
+  font-family: $fontFamily-primary;
+}
+
+input, textarea {
+  font-family: $fontFamily-primary;
+
+  &::placeholder {
+    color: $secundary-color;
+  }
+}
+
+i {
+  transition: 0.5s;
+  font-size: $big-font;
+  color: $primary-color;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}

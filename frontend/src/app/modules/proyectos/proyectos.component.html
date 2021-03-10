@@ -1,0 +1,12 @@
+<main class="proyectos flex-center vw90 pTop170 mLeft200">
+    <div class="proyectos-contenedor column w50">
+        <h1 class="titulo">PROYECTOS</h1>
+        <section class="contenedorProyectos row">
+            <article class="proyecto column" *ngFor="let proyecto of proyectos | async">
+                <h2 class="titulo">{{proyecto.nombreProyecto}}</h2>
+                <h3 class="subtitulo">{{proyecto.empresa}}</h3>
+                <p class="texto">{{proyecto.tecnologias}}</p>
+            </article>
+        </section>
+    </div>
+</main>
