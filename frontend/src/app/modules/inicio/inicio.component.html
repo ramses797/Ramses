@@ -1,7 +1,7 @@
-<main class="inicio flex-center vw90 pTop170">
-    <section class="column w50" *ngFor="let inicio of inicios | async">
-        <h1 class="titulo">{{inicio.titulo}}</h1>
-        <h2 class="subtitulo">{{inicio.subtitulo}}</h2>
-        <h3 class="texto">{{inicio.explicacionPersonal}}</h3>
-    </section>
+<main style="height: 100vh;"class="row-center-wrap vw90">
+  <section class="vw50" *ngFor="let inicio of inicios | async">
+    <h1>{{ inicio.titulo }}</h1>
+    <h2>{{ inicio.subtitulo }}</h2>
+    <h3>{{ inicio.explicacionPersonal }}</h3>
+  </section>
 </main>
